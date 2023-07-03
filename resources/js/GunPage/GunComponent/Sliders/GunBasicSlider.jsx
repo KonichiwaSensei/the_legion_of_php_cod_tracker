@@ -10,28 +10,31 @@ export default function GunBasicSlider() {
     const [maxSliderValue, setMaxSliderValue] = useState('50')
 
     const handleSliderChange = (event) => {
-        
+
+        const percentage = (event.target.value - event.target.min) / (event.target.max - event.target.min);
+
         if (event.target.value === maxSliderValue) {
             setSliderValue(event.target.value)
             setChallengeDone(true)
             console.log('DONE');
         } else {
-            setSliderValue(event.target.value)
-            console.log(sliderValue);
+            setSliderValue(event.target.value);
         }
     }
 
-return (
-    <div className="gun_basic_slider_with_tracking">  
-        <input type="range" min="0" max={maxSliderValue} step="1" name="slider" value={sliderValue} onChange={handleSliderChange} className="gun_basic_slider" id="gun_basic_slider" />
-        {
-            sliderValue < 10
-            ?
-            <span className="gun_slider_tracking" >&nbsp;&nbsp;{sliderValue}/{maxSliderValue}</span>
-            :
-            <span className="gun_slider_tracking" >{sliderValue}/{maxSliderValue}</span>
-        }   
-    </div>
-)
+
+
+    return (
+        <div className="gun_basic_slider_with_tracking">
+            <input type="range" min="0" max={maxSliderValue} step="1" name="slider" value={sliderValue} onChange={handleSliderChange} className="gun_basic_slider" id="gun_basic_slider" />
+            {
+                sliderValue < 10
+                    ?
+                    <span className="gun_slider_tracking" >&nbsp;&nbsp;{sliderValue}/{maxSliderValue}</span>
+                    :
+                    <span className="gun_slider_tracking" >{sliderValue}/{maxSliderValue}</span>
+            }
+        </div>
+    )
 
 }
