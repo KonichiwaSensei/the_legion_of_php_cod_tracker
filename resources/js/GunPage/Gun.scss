@@ -1,0 +1,257 @@
+// VARIABLES:
+$font: Coda Caption;
+$background_color: #D9D9D9;
+$gun_component_divider_color: #868686;
+$gun_component_background_color: #FFF;
+$gun_component_border_color: #000;
+$gun_component_text_color: #000;
+$gun_component_slider_color1: #80FF00;
+$gun_component_slider_color2: #000000;
+
+
+// Mobile first approach 768px min:
+
+//GunClass.jsx styling:
+.gun_class_section {
+    // Layout:
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+
+    //Style:
+    background-color: $background_color;
+
+    .gun_class_section_divider {
+        // Layout:
+        width: 740px;
+        height: 5.6px;
+
+        //Style
+        background: $gun_component_divider_color;
+
+    }
+
+    .gun_class_section_title {
+        // Layout:
+        display: flex;
+        width: 720px;
+        flex-direction: column;
+
+        //Style:
+        color: $gun_component_text_color;
+        font-size: 43.2px;
+        font-family: Coda Caption;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+
+    .gun_class_guns {
+        // Layout:
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        width: 720px;
+        overflow-x: scroll;
+        white-space: nowrap
+    }
+
+    // Scrollbar Styling:
+    .gun_class_guns::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 10px;
+    }
+
+    .gun_class_guns::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, .5);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    }
+}
+
+// GunComponent styling:
+.gun_component {
+    // Layout:
+    display: flex;
+    width: 300px;
+    height: auto;
+    padding: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 30px;
+    // gap: 10px;
+
+    // Style:
+    border: 2.4px solid $gun_component_border_color;
+    background: $gun_component_background_color;
+
+    .gun_name {
+        // Layout:
+        display: flex;
+        width: 262.4px;
+        flex-direction: column;
+        flex-shrink: 0;
+
+        // Style:
+        display: flex;
+        width: 262.4px;
+        flex-direction: column;
+        flex-shrink: 0;
+        color: $gun_component_text_color;
+        font-size: 25.6px;
+        font-family: $font;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        text-decoration-line: underline;
+    }
+
+    .gun_challenges {
+        // Layout:
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+
+        // Basic Challenge Styling
+        .gun_basic_challenge {
+            // Layout:
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+
+            // Basic Challenge Text Styling:
+            .gun_basic_challenge_text {
+                // Style:
+                color: $gun_component_text_color;
+                text-align: center;
+                font-size: 14px;
+                font-family: $font;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal;
+            }
+
+
+            // Basic Challenge Slider Styling:
+            .gun_basic_slider_with_tracking {
+                // Layout:
+                display: flex;
+                justify-content: space-between;
+
+
+                .gun_basic_slider {
+                    // Layout:
+                    width: 260px;
+                    height: 10px;
+                    flex-shrink: 0;
+
+                    // Style:
+                    background: linear-gradient($gun_component_slider_color2, $gun_component_slider_color1);
+                    outline: none;
+                }
+
+                // Basic Challenge Slider 'Thumb' Styling:
+                .gun_basic_slider::-moz-range-thumb {
+                    // Layout:
+                    width: 24px;
+                    height: 16px;
+
+                    // Style:
+                    border: none;
+                    background: linear-gradient($gun_component_slider_color1, $gun_component_slider_color2);
+                    cursor: crosshair;
+                }
+
+                .gun_basic_slider::-webkit-slider-thumb {
+                    // Layout:
+                    width: 24px;
+                    height: 16px;
+
+                    // Style:
+                    -webkit-appearance: none;
+                    /* Hides the slider so that custom slider can be made */
+                    border: none;
+                    background: linear-gradient($gun_component_slider_color1, $gun_component_slider_color2);
+                    cursor: crosshair;
+                }
+            }
+
+        }
+
+        // Divider Styling:
+        .gun_challenge_divider {
+            // Layout:
+            width: 300px;
+            height: 5.6px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            // Style:
+            background: $gun_component_divider_color;
+
+        }
+
+        // Mastery Challenge Styling
+        .gun_mastery_challenge {
+            // Layout:
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+
+            // Mastery Challenge Text Styling:
+            .gun_mastery_challenge_text {
+                // Style:
+                color: $gun_component_text_color;
+                text-align: center;
+                font-size: 19.2px;
+                font-family: $font;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal;
+            }
+
+            // Mastery Challenge Slider Styling:
+            .gun_mastery_slider_with_tracking {
+                // Layout:
+                display: flex;
+
+                .gun_mastery_slider {
+                    // Layout:
+                    width: 260px;
+                    height: 13px;
+                    flex-shrink: 0;
+
+                    // Style:
+                    background: linear-gradient($gun_component_slider_color1, $gun_component_slider_color2);
+                    outline: none;
+                }
+
+                // Mastery Challenge Slider 'Thumb' Styling:
+                .gun_mastery_slider::-moz-range-thumb {
+                    // Layout:
+                    width: 24px;
+                    height: 16px;
+
+                    // Style:
+                    border: none;
+                    background: linear-gradient($gun_component_slider_color2, $gun_component_slider_color1);
+                    cursor: crosshair;
+                }
+            }
+        }
+
+        // Tracking (0/50) text styling
+        .gun_slider_tracking {
+            font-family: $font;
+
+        }
+    }
+}
