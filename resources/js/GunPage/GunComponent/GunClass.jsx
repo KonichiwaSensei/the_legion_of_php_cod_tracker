@@ -1,4 +1,4 @@
-import GunTracker from "./GunComponent/GunTracker";
+import GunTracker from "./GunTracker";
 
 export default function GunClass({classname}) {
 

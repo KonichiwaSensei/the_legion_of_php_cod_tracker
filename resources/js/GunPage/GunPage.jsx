@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import GunClass from './GunClass'
+import GunClass from './GunComponent/GunClass'
 
 ReactDOM.createRoot(document.getElementById('gun_page_render')).render(
     <>
