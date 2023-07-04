@@ -298,6 +298,19 @@ $gun_component_slider_color2: #000000;
     }
 }
 
+    .orion_tracker_div{
+        display: flex;
+        justify-content: center;
+    }
+
+    .mastery_trackers_div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+
 // Min 768px sizes:
 @media (min-width: 768px) {
     .gun_class_section {
