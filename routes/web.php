@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/gun', function () {
     return view('Gun/guncomponent');
 });
+
+Route::get('/about-us', function () {
+    return view('aboutus');
+});
