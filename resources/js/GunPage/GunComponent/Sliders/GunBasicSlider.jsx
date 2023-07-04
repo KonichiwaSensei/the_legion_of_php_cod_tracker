@@ -27,13 +27,7 @@ export default function GunBasicSlider() {
     return (
         <div className="gun_basic_slider_with_tracking">
             <input type="range" min="0" max={maxSliderValue} step="1" name="slider" value={sliderValue} onChange={handleSliderChange} className="gun_basic_slider" id="gun_basic_slider" />
-            {
-                sliderValue < 10
-                    ?
-                    <span className="gun_slider_tracking" >&nbsp;&nbsp;{sliderValue}/{maxSliderValue}</span>
-                    :
-                    <span className="gun_slider_tracking" >{sliderValue}/{maxSliderValue}</span>
-            }
+            <span className="gun_slider_tracking" >{sliderValue}/{maxSliderValue}</span>
         </div>
     )
 
