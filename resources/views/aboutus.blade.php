@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/AboutUs.scss">
+    {{-- <link rel="stylesheet" href="../css/AboutUs.scss"> --}}
     @viteReactRefresh
     {{-- @vite('resources/js/Something/Something.jsx') --}}
+    @vite('resources/css/about-us.scss')
   </head>
   <body>
   
@@ -19,8 +20,7 @@
       @vite('resources/js/Navigation/Header/header-app.jsx')
 
     
-    <p>AboutUs
-        WE ARE  THE LEGION OF PHP
+    <p class="title">ABOUT US - WE ARE  THE LEGION OF PHP!!!
     </p>
 
 
