@@ -6,6 +6,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="{{ asset('resources/js/app.js') }}"></script>
+    <script src="{{ asset('js/app.jsx') }}"></script>
   </body>
 </html>
