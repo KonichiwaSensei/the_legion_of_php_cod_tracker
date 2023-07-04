@@ -1,8 +1,15 @@
-@extends('layouts.main')
+@extends('layouts/main')
 
-@section('content')
-    <h1>here 2</h1>
+@section('head')
+    @vite('resources/css/Gun.scss')
+    @vite('resources/js/OrionTracker/OrionTracker.scss')
+    @vite('resources/js/MasteryTracker/MasteryTracker.scss')
+    @viteReactRefresh
 @endsection
 
+@section('content')
 
+<div>Hello World</div>
+
+@endsection
 

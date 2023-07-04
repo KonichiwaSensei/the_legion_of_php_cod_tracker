@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/gun', function () {
-    return view('Gun/guncomponent');
+Route::get('/tracker', function () {
+    return view('gunpage');
 });
 
 Route::get('/about-us', function () {

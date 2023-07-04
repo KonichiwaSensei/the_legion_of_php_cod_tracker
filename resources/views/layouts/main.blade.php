@@ -4,29 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>COD:MW2 Gun Tracker</title>
     
-
+  @yield('head')
   @viteReactRefresh
-  {{-- @vite('resources/js/Something/Something.jsx') --}}
+  @vite('resources/js/Navigation/Footer/Footer-app.jsx')
+  @viteReactRefresh
+  @vite('resources/js/Navigation/Header/header-app.jsx')
+  @vite('resources/css/Global.scss')
 </head>
 <body>
+    <div id="header-app">
 
-    <div id="header-app"></div>
+    </div>
     
-    {{-- @viteReactRefresh --}}
-    @vite('resources/js/Navigation/Header/header-app.jsx')
+    @yield('content')
     
-  
-   
+    <div id="Footer-app">
 
-    
-
-    @yield('test')
-    @viteReactRefresh
-    <div id="Footer-app"></div>
-
-    @vite('resources/js/Navigation/Footer/Footer-app.jsx')
+    </div>
 
 </body>
 </html>

@@ -18,14 +18,6 @@ export default function MasteryProgressBar(props) {
             image = PolyatomicImage;
             break;
     }
-    // if (masterycamo === "Gold") {
-    // }
-    // if (masterycamo === "Gold") {
-    //     image = GoldImage;
-    // }
-    // if (masterycamo === "Gold") {
-    //     image = GoldImage;
-    // }
 
 const fillerStyles = {
     width: `${completion / 51 * 100}%`,

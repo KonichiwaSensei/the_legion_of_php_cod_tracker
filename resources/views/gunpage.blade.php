@@ -1,13 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @yield('head')
-</head>
-<body>
-    @yield('content')
-</body>
-</html>
+@extends('layouts/main')
+
+@section('head')
+    @vite('resources/css/Gun.scss')
+    @vite('resources/js/OrionTracker/OrionTracker.scss')
+    @vite('resources/js/MasteryTracker/MasteryTracker.scss')
+    @viteReactRefresh
+    @vite('resources/js/GunComponent/GunDisplay.jsx')
+@endsection
+
+@section('content')
+
+<div id="gun_page_render">
+
+</div>
+
+@endsection

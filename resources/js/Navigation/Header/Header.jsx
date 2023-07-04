@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Header.scss";
+import "../../../css/Header.scss";
 
 
 
@@ -28,7 +28,7 @@ export default function Header()
             <nav className="navigation">
                 <a className="Home" href="/">Home</a>
                 <a className="Register" href="#">Register</a>
-                <a className="Camos" href="#">Camos</a>
+                <a className="Camos" href="/tracker">Camos</a>
             </nav>
             
             {/* show below 768px, not above - CSS */}

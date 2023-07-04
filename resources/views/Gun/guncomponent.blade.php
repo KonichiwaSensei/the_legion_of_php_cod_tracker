@@ -1,11 +1,11 @@
-@extends('gunpage')
+@extends('layouts/main')
 
 @section('head')
-    @vite('resources/js/GunPage/Gun.scss')
+    @vite('resources/css/Gun.scss')
     @vite('resources/js/OrionTracker/OrionTracker.scss')
     @vite('resources/js/MasteryTracker/MasteryTracker.scss')
     @viteReactRefresh
-    @vite('resources/js/GunPage/GunPage.jsx')
+    @vite('resources/js/GunComponent/GunDisplay.jsx')
 @endsection
 
 @section('content')

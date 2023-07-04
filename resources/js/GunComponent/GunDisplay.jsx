@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import GunClass from './GunComponent/GunClass'
+import GunClass from './GunClass'
 import OrionTracker from '../OrionTracker/OrionTracker'
 import MasteryTracker from '../MasteryTracker/MasteryTracker'
 
