@@ -2,23 +2,27 @@
 
 // VARIABLES:
 $font: MuseoModerno;
+$background_colour:  #a6a6a6;
+$progressbar_background_colour:  #424242;
+$font_colour: black;
+$label_colour: white;
 
 .orion_tracker {
+    // Layout:
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 200px;
 
-
-
     //Style:
     font-family: $font;
-    background-color: #a6a6a6;
+    background-color: $background_colour;
     .orion_tracker_title_div {
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: $font_colour;
 
         .orion_tracker_title {
             font-weight: bold;
@@ -34,7 +38,7 @@ $font: MuseoModerno;
         position: relative;
         height: 20px;
         width: 70%;
-        background-color: #424242;
+        background-color: $progressbar_background_colour;
         border-radius: 50px;
         margin: 10px;
 
@@ -48,7 +52,7 @@ $font: MuseoModerno;
                 position: absolute;
                 right: 0;
                 margin-right: 5px;
-                color: rgb(255, 255, 255);
+                color: $label_colour;
                 line-height: 20px;
                 
                 font-size: 18px;
@@ -76,12 +80,12 @@ $font: MuseoModerno;
 @media (max-width: 767px) {
 
     .orion_tracker {
-        width: 300px;
-        font-size: 16px;
+        width: 340px;
+        font-size: 20px;
     }
 
     .orion_tracker_title_percentage_left{
-        font-size: 12px;
+        font-size: 15px;
     }
 }
 
