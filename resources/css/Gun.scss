@@ -68,6 +68,7 @@ $gun_component_slider_color2: #000000;
         // Layout:
         display: flex;
         flex-direction: column;
+        
 
         //Style:
         color: $gun_class_text_color;
@@ -151,6 +152,7 @@ $gun_component_slider_color2: #000000;
                     font-style: normal;
                     font-weight: 800;
                     line-height: normal;
+                    margin-left: 10px;
                 }
             }
 
@@ -177,6 +179,7 @@ $gun_component_slider_color2: #000000;
                     font-style: normal;
                     font-weight: 800;
                     line-height: normal;
+                    margin-left: 10px;
                 }
             }
         }
@@ -192,7 +195,8 @@ $gun_component_slider_color2: #000000;
     .gun_basic_slider_with_tracking {
         // Layout:
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        // margin-right: 5px;
 
         .gun_basic_slider {
             // Layout:
@@ -203,7 +207,7 @@ $gun_component_slider_color2: #000000;
             -moz-appearance: none;
             appearance: none;
             background: none;
-            outline: none;
+
 
             // Slider Track Style
             &::-webkit-slider-runnable-track {
@@ -248,7 +252,7 @@ $gun_component_slider_color2: #000000;
     .gun_mastery_slider_with_tracking {
         // Layout:
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
 
         .gun_mastery_slider {
             // Layout:        
