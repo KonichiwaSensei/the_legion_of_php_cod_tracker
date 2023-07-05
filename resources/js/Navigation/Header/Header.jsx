@@ -45,11 +45,10 @@ export default function Header()
                     <a className="Home" href="/">Home</a><br />
                     <a className="Register" href="#">Register</a><br />
                     <a className="Camos" href="#">Camos</a><br />
-                </div>
+                </div> 
                 : 
                 <></>
-            }
-            
+            }      
         </header>
         
     );

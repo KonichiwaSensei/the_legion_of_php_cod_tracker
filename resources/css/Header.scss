@@ -1,102 +1,78 @@
-
-
 .Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #F5F6F7;
+    height: 100px;
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+  }
+  
+  .Header_title {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 800;
+  }
 
-display: flex;
-padding: 10px 10px;
-justify-content: space-around;
-align-items: flex-start;
-align-self: stretch;
-background: #F5F6F7;
-width: 100%;
-height: 100px;
-}
-
-
-.Header_title{
-display: flex;
-width: 450px;
-color: #000;
-font-size: 16.678px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-justify-content: space-between;
-}
-
-.Logo{
+  .Logo {
     width: 75px;
     height: 75px;
     background: #F5F6F7;
-    align-items: flex-start;
-}
-
-.navigation{
+  }
+  
+  .navigation {
     display: flex;
     justify-content: space-around;
     padding: 10px;
-    margin: 5px;
     width: 200px;
-}
-
-
-.Camos{
-color: #000;
-font-size: 16.678px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-padding: 3px;
-}
-
-.Register{
+  }
+  
+  .navigation a {
     color: #000;
-font-size: 16.678px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-padding: 3px;
-}
-
-.Home{
-    
-color: #000;
-font-size: 16.678px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-padding: 3px;
-}
-
-.burger-icon {
-    display: flex;
-    width: 24px;
-    height: 24px;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    div {
-        background-color: gray;
-        width: 80%;
-        height: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 3px;
+    text-decoration: none;
+  }
+  
+  .burger-icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .Header {
+      padding: 10px;
     }
-}
-
-
-
-
-.navigation {
-    display: none; /* menu is hidden on mobile */
-}
-
-@media screen and (min-width: 768px) {
+  
+    .Header_title {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+  
     .navigation {
-        display: block; /* menu can now be shown, there is enough room */
+      display: none;
     }
-    .burger-menu,
+  
     .burger-icon {
-        display: none; /* which means that we no longer need the burger icon */
+      display: flex;
+      width: 24px;
+      height: 24px;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
     }
-}
-
-
+  
+    .burger-icon div {
+      background-color: gray;
+      width: 80%;
+      height: 4px;
+    }
+  }
+  
+  
