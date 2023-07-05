@@ -208,7 +208,6 @@ $gun_component_slider_color2: #000000;
         // Layout:
         display: flex;
         justify-content: space-around;
-        
 
         .gun_basic_slider {
             // Layout:
@@ -258,6 +257,10 @@ $gun_component_slider_color2: #000000;
             }
 
         }
+
+        // input.gun_basic_checkbox:checked {
+        //     color: #80FF00;
+        // }
 
     }
 
@@ -330,7 +333,7 @@ $gun_component_slider_color2: #000000;
         .gun_page_top_title {
             // Style:
             color: $gun_component_text_color;
-            
+
         }
     }
 }

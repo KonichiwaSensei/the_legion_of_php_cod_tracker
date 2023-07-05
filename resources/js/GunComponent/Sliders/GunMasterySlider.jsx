@@ -32,6 +32,7 @@ export default function GunMasterySlider() {
     const handleCheckboxChange = (event) => {
         if (event.target.checked) {
             setChallengeDone(true)
+            setSliderValue(maxSliderValue)
         } else {
             setChallengeDone(false)
             setSliderValue(String(parseInt(maxSliderValue) - 1))

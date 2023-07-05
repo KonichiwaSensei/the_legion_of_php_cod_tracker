@@ -32,6 +32,7 @@ export default function GunBasicSlider() {
     const handleCheckboxChange = (event) => {
         if (event.target.checked) {
             setChallengeDone(true);
+            setSliderValue(maxSliderValue)
         } else {
             setChallengeDone(false);
             setSliderValue(String(parseInt(maxSliderValue) - 1));
@@ -47,6 +48,7 @@ export default function GunBasicSlider() {
                         checked={challengeDone}
                         onChange={handleCheckboxChange}
                         className="gun_basic_checkbox"
+                        value={sliderValue}
                     />
                     <span className="gun_slider_tracking">Challenge Complete!</span>
                 </>
