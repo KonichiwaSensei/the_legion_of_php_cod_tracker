@@ -1,11 +1,8 @@
 #header-render{
-    position: sticky; 
+    position: sticky;
 top: 0;
-
 }
-
 .Header {
-
 display: flex;
 padding: 10px 10px;
 justify-content: space-around;
@@ -15,114 +12,72 @@ background: #F5F6F7;
 width: 100%;
 height: 100px;
 padding: 16px;
-
 }
-
-
-.Header_title{
-display: flex;
-width: 450px;
-color: #000;
-font-size: 16.678px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-justify-content: space-between;
+.Header_title {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 800;
 }
-
-.Logo{
+.Logo {
     width: 75px;
     height: 75px;
     background: #F5F6F7;
-    align-items: flex-start;
 }
-
-.navigation{
+.navigation {
     display: flex;
     justify-content: space-around;
     padding: 10px;
-    margin: 5px;
     width: 200px;
 }
-
-
-.Camos{
-color: #000;
-font-size: 16.678px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-padding: 3px;
-}
-
-.Register{
+.navigation a {
     color: #000;
-font-size: 16.678px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-padding: 3px;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 3px;
+    text-decoration: none;
 }
-
-.Home{
-    
-color: #000;
-font-size: 16.678px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
-padding: 3px;
-}
-
 .burger-icon {
-    display: flex;
-    width: 24px;
-    height: 24px;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    div {
+    display: none;
+}
+@media screen and (max-width: 767px) {
+    .Header {
+        padding: 10px;
+    }
+    .Header_title {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    .navigation {
+        display: none;
+    }
+    .burger-icon {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .burger-icon div {
         background-color: gray;
         width: 80%;
         height: 4px;
     }
 }
-
-
-
-
-.navigation {
-    display: none; /* menu is hidden on mobile */
-}
-
-@media screen and (min-width: 768px) {
-    .navigation {
-        display: block; /* menu can now be shown, there is enough room */
-    }
-    .burger-menu,
-    .burger-icon {
-        display: none; /* which means that we no longer need the burger icon */
-    }
-}
-
-@media (min-width: 1024px){
-
-    .Header{
-        display:flex;
+@media (min-width: 1024px) {
+    .Header {
+        display: flex;
         justify-content: space-between;
     }
-
-
 }
-
-@media (min-width: 1440px){
-
-    .Header{
-        display:flex;
+@media (min-width: 1440px) {
+    .Header {
+        display: flex;
         justify-content: space-between;
     }
-
-
 }
-
 
