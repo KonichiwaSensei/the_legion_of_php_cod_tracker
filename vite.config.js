@@ -11,7 +11,6 @@ export default defineConfig({
                 'resources/js/Tracker.jsx',
                 'resources/js/Navigation/Header/header-app.jsx',
                 'resources/js/Navigation/Footer/Footer-app.jsx',
-                
             ],
             refresh: true,
         }),

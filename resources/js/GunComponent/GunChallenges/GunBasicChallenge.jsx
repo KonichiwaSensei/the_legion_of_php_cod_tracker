@@ -1,6 +1,6 @@
 import GunBasicSlider from "../Sliders/GunBasicSlider"
 
-
+// This component returns the Basic Slider component wrapped for styling purposes
 export default function GunBasicChallenge({challengetext}) {
 
     return (

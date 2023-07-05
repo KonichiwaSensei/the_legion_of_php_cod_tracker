@@ -1,7 +1,7 @@
 import { useState } from "react"
 import GunMasterySlider from "../Sliders/GunMasterySlider"
 
-
+// This component returns the Mastery Slider component wrapped for styling purposes
 export default function GunMasteryChallenge({masteryname}) {
 
 
