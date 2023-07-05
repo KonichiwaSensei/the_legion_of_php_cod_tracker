@@ -17,3 +17,14 @@ body {
     margin: 0;
     font-family: $font;
 }
+
+.orion_tracker_div {
+    display: flex;
+    justify-content: center;
+}
+
+.mastery_trackers_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
