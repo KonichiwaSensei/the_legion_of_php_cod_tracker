@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../css/ModalRegistration.scss';
 
-const ModalRegistration = () => {
+const ModalRegistration = ({ closeModal }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -16,15 +16,20 @@ const ModalRegistration = () => {
   };
 
   const handleRegistration = () => {
-    // Perform registration logic here
+    
     console.log('Registering...');
     console.log('Username:', username);
     console.log('Email:', email);
     console.log('Password:', password);
   };
 
+  useEffect(() => {
+    // set styling
+  }, [])
+
   return (
     <div>
+      <button onClick={ closeModal }>&times;</button>
       <button type="button" onClick={handleOpenModal} className="register-button">
         Register
       </button>

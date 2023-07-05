@@ -1,8 +1,7 @@
 @extends('layouts/main')
 
 @section('head')
-    @viteReactRefresh
-    @vite('resources/css/about-us.scss')
+
 @endsection
 
 @section('content')
