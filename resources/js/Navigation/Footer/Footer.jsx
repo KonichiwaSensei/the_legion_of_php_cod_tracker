@@ -6,12 +6,12 @@ export default function Footer(){
 
 
    return (
-    <section className="Footer">
+    <footer className="Footer">
 
     <div className="Left">@ THE LEGION OF PHP</div>
 
     <a className="Right" href="/about-us">About Us</a>
 
-    </section>
+    </footer>
 )
 }

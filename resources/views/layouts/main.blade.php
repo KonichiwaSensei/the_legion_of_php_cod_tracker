@@ -10,17 +10,20 @@
   @viteReactRefresh
   @vite('resources/js/Navigation/Footer/Footer-app.jsx')
   @viteReactRefresh
-  @vite('resources/js/Navigation/Header/header-app.jsx')
+  @vite('resources/js/Navigation/Header/Header-app.jsx')
+  @viteReactRefresh
+  @vite('resources/js/Modal/Modal.jsx')
+  @viteReactRefresh
   @vite('resources/css/Global.scss')
 </head>
 <body>
-    <div id="header-app">
+    <div id="header-render">
 
     </div>
     
     @yield('content')
     
-    <div id="Footer-app">
+    <div id="footer-render">
 
     </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './ModalRegistration.scss';
+import '../../css/ModalRegistration.scss';
 
 const ModalRegistration = () => {
   const [isOpen, setIsOpen] = useState(false);

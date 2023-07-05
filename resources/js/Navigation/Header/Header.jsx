@@ -18,7 +18,7 @@ export default function Header()
         
     
         
-        <section className="Header">
+        <header className="Header">
             <div className="Header_title">
                 <img className="Logo" src="/img/bullets-g501bdc5d1_640.jpg" alt="" />
                 <h2>COD: M W 2 CAMO TRACKER</h2>
@@ -50,7 +50,7 @@ export default function Header()
                 <></>
             }
             
-        </section>
+        </header>
         
     );
 }

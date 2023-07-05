@@ -2,7 +2,7 @@ import React from 'react';
 import Login from '../Login/Login';
 import Modal from '../Modal/Modal';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       <h1>Call of Duty: MWII</h1>
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

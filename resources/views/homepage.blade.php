@@ -5,11 +5,14 @@
     @vite('resources/js/OrionTracker/OrionTracker.scss')
     @vite('resources/js/MasteryTracker/MasteryTracker.scss')
     @viteReactRefresh
+    @vite('resources/js/Home')
 @endsection
 
 @section('content')
 
-<div>Hello World</div>
+<div id="root">
+  
+</div>
 
 @endsection
 
