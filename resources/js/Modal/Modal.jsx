@@ -38,7 +38,7 @@ const ModalRegistration = () => {
             <form>
               <div className="form-group">
                 <label htmlFor="username">Username:</label>
-                <input
+                <input className="modal_input_field"
                   type="text"
                   id="username"
                   value={username}
@@ -47,7 +47,7 @@ const ModalRegistration = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email:</label>
-                <input
+                <input className="modal_input_field"
                   type="email"
                   id="email"
                   value={email}
@@ -56,7 +56,7 @@ const ModalRegistration = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="password">Password:</label>
-                <input
+                <input className="modal_input_field"
                   type="password"
                   id="password"
                   value={password}
