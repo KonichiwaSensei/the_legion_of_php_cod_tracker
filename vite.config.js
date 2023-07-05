@@ -6,11 +6,12 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/css/app.css', 
+                'resources/css/Global.scss',
                 'resources/js/app.js',
-                'resources/js/Navigation/Header/header-app.jsx',
                 'resources/js/Home.jsx',
-                'resources/js/Tracker.jsx'
+                'resources/js/Tracker.jsx',
+                'resources/js/Navigation/Header/header-app.jsx',
+                'resources/js/Navigation/Footer/Footer-app.jsx',
             ],
             refresh: true,
         }),
