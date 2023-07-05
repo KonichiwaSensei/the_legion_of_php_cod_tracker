@@ -5,7 +5,14 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js', 'resources/js/App.jsx'],
+            input: [
+                'resources/css/Global.scss',
+                'resources/js/app.js',
+                'resources/js/Home.jsx',
+                'resources/js/Tracker.jsx',
+                'resources/js/Navigation/Header/header-app.jsx',
+                'resources/js/Navigation/Footer/Footer-app.jsx',
+            ],
             refresh: true,
         }),
         react(),
