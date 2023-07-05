@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "../../../css/Header.scss";
 import ModalRegistration from "../../Modal/Modal";
-
-
 export default function Header() 
 {   
     

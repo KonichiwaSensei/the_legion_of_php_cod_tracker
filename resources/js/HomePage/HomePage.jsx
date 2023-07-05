@@ -3,6 +3,8 @@ import Login from '../Login/Login';
 import Modal from '../Modal/Modal';
 import "../../css/HomePage.scss";
 
+
+
 const HomePage = () => {
   return (
     <section className='HomePage'>
@@ -11,10 +13,15 @@ const HomePage = () => {
       <h1 className='title2'>Camo Tracker</h1>
       
       <Login />
+<<<<<<< HEAD
       </div>
 
 
     </section>
+=======
+
+    </div>
+>>>>>>> dev/main
   );
 };
 
