@@ -2,8 +2,8 @@
 
 // VARIABLES:
 $font: MuseoModerno;
-$background_colour:  #a6a6a6;
-$progressbar_background_colour:  #424242;
+$background_colour: #a6a6a6;
+$progressbar_background_colour: #000000;
 $font_colour: black;
 $label_colour: white;
 
@@ -17,7 +17,9 @@ $label_colour: white;
 
     //Style:
     font-family: $font;
-    background-color: $background_colour;
+    border-radius: 10px;
+    // background-color: $background_colour;
+
     .orion_tracker_title_div {
         display: flex;
         flex-direction: column;
@@ -28,7 +30,7 @@ $label_colour: white;
             font-weight: bold;
         }
 
-        .orion_tracker_title_percentage_left{
+        .orion_tracker_title_percentage_left {
             font-weight: bold;
         }
 
@@ -45,6 +47,8 @@ $label_colour: white;
         .orion_progress_bar_filler {
             height: 100%;
             background-image: url(orion-camo.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
             border-radius: inherit;
             text-align: right;
 
@@ -54,7 +58,7 @@ $label_colour: white;
                 margin-right: 5px;
                 color: $label_colour;
                 line-height: 20px;
-                
+
                 font-size: 18px;
                 font-weight: 600;
             }
@@ -72,7 +76,7 @@ $label_colour: white;
         font-size: 20px;
     }
 
-    .orion_tracker_title_percentage_left{
+    .orion_tracker_title_percentage_left {
         font-size: 15px;
     }
 }
@@ -84,7 +88,7 @@ $label_colour: white;
         font-size: 20px;
     }
 
-    .orion_tracker_title_percentage_left{
+    .orion_tracker_title_percentage_left {
         font-size: 15px;
     }
 }
@@ -96,7 +100,7 @@ $label_colour: white;
         font-size: 24px;
     }
 
-    .orion_tracker_title_percentage_left{
+    .orion_tracker_title_percentage_left {
         font-size: 18px;
     }
 }
@@ -108,7 +112,7 @@ $label_colour: white;
         font-size: 30px;
     }
 
-    .orion_tracker_title_percentage_left{
+    .orion_tracker_title_percentage_left {
         font-size: 20px;
     }
 }
