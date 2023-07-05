@@ -3,7 +3,7 @@
 // VARIABLES:
 $font: MuseoModerno;
 $background_colour: #a6a6a6;
-$progressbar_background_colour: #424242;
+$progressbar_background_colour: #000000;
 $font_colour: rgb(255, 255, 255);
 $label_colour: white;
 
@@ -17,8 +17,8 @@ $label_colour: white;
 
     //Style:
     font-family: $font;
-    background-color: $background_colour;
-
+    border-radius: 10px;
+    // background-color: $background_colour;
 
     .mastery_image {
         display: flex;
@@ -29,6 +29,7 @@ $label_colour: white;
         height: 70%;
         background-size: cover;
         background-repeat: no-repeat;
+        border-radius: 10px;
 
         &-Gold {
             background-image: url(mastery_camo_pics/gold-camo.jpg);

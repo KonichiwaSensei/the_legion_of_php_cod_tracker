@@ -32,4 +32,35 @@
     border-radius: 5px;
     cursor: pointer;
   }
+  .title{
+    display: flex;
+    justify-content: center;
+  }
+
+  .login{
+    display: flex;
+    justify-content: center;
+    font-size: small;
+  }
+  .password{
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    border-radius: 20%;
+
+  }
+
+  .login_div {
+    display: flex;
+    flex-direction: column;
+    
+    form{
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+  }
+
+
+
   

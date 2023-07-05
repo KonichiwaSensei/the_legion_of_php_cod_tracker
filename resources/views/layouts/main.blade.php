@@ -15,6 +15,7 @@
   @vite('resources/js/Modal/Modal.jsx')
   @viteReactRefresh
   @vite('resources/css/Global.scss')
+  
 </head>
 <body>
     <div id="header-render">
