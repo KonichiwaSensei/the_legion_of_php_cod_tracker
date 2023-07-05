@@ -13,15 +13,9 @@ const HomePage = () => {
       <h1 className='title2'>Camo Tracker</h1>
       
       <Login />
-<<<<<<< HEAD
-      </div>
-
-
-    </section>
-=======
 
     </div>
->>>>>>> dev/main
+    </section>
   );
 };
 
