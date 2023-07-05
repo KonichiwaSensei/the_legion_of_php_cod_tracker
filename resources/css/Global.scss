@@ -1,5 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// FONTS:
 
+// MuseoModerno
+@font-face {
+    font-family: 'MuseoModerno';
+    src: url('../../public/fonts/MuseoModerno-Thin.woff2') format('woff2'),
+        url('../../public/fonts/MuseoModerno-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+// MuseoModernoItalic
+@font-face {
+    font-family: 'MuseoModernoItalic';
+    src: url('../../public/fonts/MuseoModerno-ThinItalic.woff2') format('woff2'),
+        url('../../public/fonts/MuseoModerno-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+// BlackOpsOne
+@font-face {
+    font-family: 'BlackOpsOne';
+    src: url('../../public/fonts/BlackOpsOne-Regular.woff2') format('woff2'),
+        url('../../public/fonts/BlackOpsOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+// IMPORTING SCSS FILES:
 @import './Gun.scss';
 
 @import './Footer.scss';
@@ -8,12 +40,14 @@
 @import './Login.scss';
 @import './ModalRegistration.scss';
 
+// DEFINING VARIABLES:
+$font: BlackOpsOne;
+$font2: MuseoModerno, MuseoModernoItalic;
 
-$font: MuseoModerno;
-
+// SCSS:
 html {
     box-sizing: border-box;
-    font-family: $font;
+    font-family: $font, $font2;
 }
 
 *,
@@ -28,6 +62,7 @@ body {
     font-family: $font;
     margin: 0;
     min-height: 100vh;
+    background-color: black;
 }
 
 #root {
