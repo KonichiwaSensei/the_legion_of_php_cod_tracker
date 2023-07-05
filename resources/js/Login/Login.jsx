@@ -13,10 +13,10 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form>
-        <div>
+    <div className='login_div'>
+      <h2 className='title'>Login</h2>
+      <form >
+        <div className='login'>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
@@ -25,7 +25,7 @@ const Login = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div>
+        <div className='password'>
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -34,9 +34,11 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="button" onClick={handleLogin}>
+        <div  className='login-button_div'>
+        <button className='login-button' type="button" onClick={handleLogin}>
           Login
         </button>
+        </div>
       </form>
     </div>
   );
