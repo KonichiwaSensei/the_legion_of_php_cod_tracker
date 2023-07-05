@@ -1,0 +1,90 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f5f6f7;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.Header_title {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.Logo {
+    width: 75px;
+    height: 75px;
+    background: #f5f6f7;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    width: 200px;
+}
+
+.navigation a {
+    color: #000;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 3px;
+    text-decoration: none;
+}
+
+.burger-icon {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .Header {
+        padding: 10px;
+    }
+
+    .Header_title {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .burger-icon {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .burger-icon div {
+        background-color: gray;
+        width: 80%;
+        height: 4px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .Header {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1440px) {
+    .Header {
+        display: flex;
+        justify-content: space-between;
+    }
+}
