@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
+});
+
+Route::get('/tracker', function () {
+    return view('gunpage');
+});
+
+Route::get('/about-us', function () {
+    return view('aboutus');
 });
