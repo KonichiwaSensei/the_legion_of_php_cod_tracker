@@ -18,7 +18,7 @@ import './OrionTracker.scss'
             :
             <div className="orion_tracker_title_div">
             <span className="orion_tracker_title">Orion Mastery Progress</span>
-            <span className="orion_tracker_title_percentage_left"> Left {100 - percentage}%</span>
+            <span className="orion_tracker_title_percentage_left">{100 - percentage}%  Left</span>
             </div>
         }
             
