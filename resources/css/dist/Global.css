@@ -1,0 +1,880 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.gun_class_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  background-color: #D9D9D9;
+}
+.gun_class_section .gun_class_section_divider {
+  background: #919191;
+  border-radius: 10px;
+}
+.gun_class_section .gun_class_section_title {
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+  font-family: MuseoModerno;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.gun_class_section .gun_class_guns {
+  display: flex;
+  align-items: flex-start;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.gun_class_section .gun_class_guns {
+  scrollbar-color: #80FF00 #404040;
+  scroll-snap-type: mandatory;
+}
+.gun_class_section .gun_class_guns::-webkit-scrollbar {
+  background-color: #404040;
+  border-radius: 30px;
+}
+.gun_class_section .gun_class_guns::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #80FF00 0%, black 25%, black 50%, black 75%, #80FF00 100%);
+  border-radius: 30px;
+}
+.gun_class_section .gun_component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2.4px solid #000;
+  background: #404040;
+}
+.gun_class_section .gun_component .gun_name {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: #ffffff;
+  font-family: MuseoModerno;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+.gun_class_section .gun_component .gun_challenges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gun_class_section .gun_component .gun_challenges .gun_basic_challenge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.gun_class_section .gun_component .gun_challenges .gun_basic_challenge .gun_basic_challenge_text {
+  color: #ffffff;
+  text-align: center;
+  font-family: MuseoModerno;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-left: 10px;
+}
+.gun_class_section .gun_component .gun_challenges .gun_challenge_divider {
+  background: #919191;
+  border-radius: 10px;
+}
+.gun_class_section .gun_component .gun_challenges .gun_mastery_challenge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.gun_class_section .gun_component .gun_challenges .gun_mastery_challenge .gun_mastery_challenge_text {
+  color: #ffffff;
+  text-align: center;
+  font-family: MuseoModerno;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-left: 10px;
+}
+.gun_class_section .gun_component .gun_slider_tracking {
+  font-family: MuseoModerno;
+  color: #ffffff;
+}
+.gun_class_section .gun_basic_slider_with_tracking {
+  display: flex;
+  justify-content: space-around;
+}
+.gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider {
+  flex-shrink: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+}
+.gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-runnable-track {
+  background: linear-gradient(90deg, #000000 0%, #80FF00 35%, white 100%);
+  border-radius: 4px;
+}
+.gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-track {
+  background: linear-gradient(90deg, #000000 0%, #80FF00 35%, white 100%);
+  border-radius: 4px;
+}
+.gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: linear-gradient(#ffffff 35%, #000000 100%);
+  border: none;
+  border-radius: 4px;
+  margin: 0px;
+}
+.gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: linear-gradient(#ffffff 35%, #000000 100%);
+  border: none;
+  border-radius: 4px;
+  margin: 0px;
+}
+.gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-thumb:active {
+  background: black;
+}
+.gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-thumb:hover {
+  background: black;
+}
+.gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-thumb::active {
+  background: black;
+}
+.gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-thumb:hover {
+  background: black;
+}
+.gun_class_section .gun_mastery_slider_with_tracking {
+  display: flex;
+  justify-content: space-around;
+}
+.gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider {
+  flex-shrink: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+}
+.gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-runnable-track {
+  background: linear-gradient(90deg, white 0%, #80FF00 35%, #000000 100%);
+  border-radius: 4px;
+}
+.gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-track {
+  background: linear-gradient(90deg, white 0%, #80FF00 35%, #000000 100%);
+  border-radius: 4px;
+}
+.gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: linear-gradient(#000000 35%, #ffffff 100%);
+  border: none;
+  border-radius: 4px;
+  margin: 0px;
+}
+.gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: linear-gradient(#000000 35%, #ffffff 100%);
+  border: none;
+  border-radius: 4px;
+  margin: 0px;
+}
+.gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-thumb:active {
+  background: black;
+}
+.gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-thumb:hover {
+  background: black;
+}
+.gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-thumb::active {
+  background: black;
+}
+.gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-thumb:hover {
+  background: black;
+}
+
+.gun_page_top {
+  background-color: #404040;
+}
+.gun_page_top .gun_page_top_tracker_and_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+}
+.gun_page_top .gun_page_top_tracker_and_title .gun_page_top_title {
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .gun_class_section {
+    gap: 10px;
+  }
+  .gun_class_section .gun_class_section_divider {
+    width: 720px;
+    height: 5.6px;
+  }
+  .gun_class_section .gun_class_section_title {
+    width: 720px;
+    font-size: 40px;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .gun_class_section .gun_class_guns {
+    gap: 20px;
+    width: 720px;
+  }
+  .gun_class_section .gun_component {
+    width: 300px;
+    height: auto;
+    padding: 8px;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .gun_class_section .gun_component .gun_name {
+    width: 260px;
+    font-size: 24px;
+  }
+  .gun_class_section .gun_component .gun_challenges {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_basic_challenge {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_basic_challenge .gun_basic_challenge_text {
+    font-size: 14px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_challenge_divider {
+    width: 300px;
+    height: 5.6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_mastery_challenge {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_mastery_challenge .gun_mastery_challenge_text {
+    font-size: 14px;
+  }
+  .gun_class_section .gun_component .gun_slider_tracking {
+    font-size: 10px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking {
+    width: 300px;
+    height: auto;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider {
+    width: 260px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-runnable-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking {
+    width: 300px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider {
+    width: 260px;
+    height: 13px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-runnable-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-thumb {
+    width: 14px;
+    height: 8px;
+  }
+
+  .gun_page_top .gun_page_top_tracker_and_title .gun_page_top_title {
+    font-size: 30px;
+    width: 400px;
+  }
+}
+@media (max-width: 767px) {
+  .gun_class_section {
+    gap: 10px;
+  }
+  .gun_class_section .gun_class_section_divider {
+    width: 400px;
+    height: 5.6px;
+  }
+  .gun_class_section .gun_class_section_title {
+    width: auto;
+    font-size: 30px;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .gun_class_section .gun_class_guns {
+    gap: 20px;
+    width: 400px;
+  }
+  .gun_class_section .gun_component {
+    width: 200px;
+    height: auto;
+    padding: 8px;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .gun_class_section .gun_component .gun_name {
+    width: 180px;
+    font-size: 18px;
+  }
+  .gun_class_section .gun_component .gun_challenges {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_basic_challenge {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_basic_challenge .gun_basic_challenge_text {
+    font-size: 10px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_challenge_divider {
+    width: 180px;
+    height: 5.6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_mastery_challenge {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_mastery_challenge .gun_mastery_challenge_text {
+    font-size: 10px;
+  }
+  .gun_class_section .gun_component .gun_slider_tracking {
+    font-size: 10px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking {
+    width: 200px;
+    height: auto;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider {
+    width: 160px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-runnable-track {
+    width: 160px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-track {
+    width: 160px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking {
+    width: 200px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider {
+    width: 160px;
+    height: 13px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-runnable-track {
+    width: 160px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-track {
+    width: 160px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-thumb {
+    width: 14px;
+    height: 8px;
+  }
+
+  .gun_page_top .gun_page_top_tracker_and_title .gun_page_top_title {
+    font-size: 25px;
+    width: 340px;
+  }
+}
+@media (min-width: 1024px) {
+  .gun_class_section {
+    gap: 10px;
+  }
+  .gun_class_section .gun_class_section_divider {
+    width: 800px;
+    height: 5.6px;
+  }
+  .gun_class_section .gun_class_section_title {
+    width: 800px;
+    font-size: 45px;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .gun_class_section .gun_class_guns {
+    gap: 20px;
+    width: 800px;
+  }
+  .gun_class_section .gun_component {
+    width: 300px;
+    height: auto;
+    padding: 8px;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .gun_class_section .gun_component .gun_name {
+    width: 260px;
+    font-size: 24px;
+  }
+  .gun_class_section .gun_component .gun_challenges {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_basic_challenge {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_basic_challenge .gun_basic_challenge_text {
+    font-size: 16px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_challenge_divider {
+    width: 260px;
+    height: 5.6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_mastery_challenge {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_mastery_challenge .gun_mastery_challenge_text {
+    font-size: 16px;
+  }
+  .gun_class_section .gun_component .gun_slider_tracking {
+    font-size: 10px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking {
+    width: 300px;
+    height: auto;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider {
+    width: 260px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-runnable-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking {
+    width: 300px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider {
+    width: 260px;
+    height: auto;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-runnable-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-thumb {
+    width: 14px;
+    height: 8px;
+  }
+
+  .gun_page_top .gun_page_top_tracker_and_title .gun_page_top_title {
+    font-size: 35px;
+    width: 500px;
+  }
+}
+@media (min-width: 1440px) {
+  .gun_class_section {
+    gap: 10px;
+  }
+  .gun_class_section .gun_class_section_divider {
+    width: 1200px;
+    height: 5.6px;
+  }
+  .gun_class_section .gun_class_section_title {
+    width: 1200px;
+    font-size: 45px;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .gun_class_section .gun_class_guns {
+    gap: 20px;
+    width: 1200px;
+  }
+  .gun_class_section .gun_component {
+    width: 300px;
+    height: auto;
+    padding: 8px;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .gun_class_section .gun_component .gun_name {
+    width: 260px;
+    font-size: 24px;
+  }
+  .gun_class_section .gun_component .gun_challenges {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_basic_challenge {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_basic_challenge .gun_basic_challenge_text {
+    font-size: 16px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_challenge_divider {
+    width: 260px;
+    height: 5.6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_mastery_challenge {
+    gap: 8px;
+  }
+  .gun_class_section .gun_component .gun_challenges .gun_mastery_challenge .gun_mastery_challenge_text {
+    font-size: 16px;
+  }
+  .gun_class_section .gun_component .gun_slider_tracking {
+    font-size: 10px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking {
+    width: 300px;
+    height: auto;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider {
+    width: 260px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-runnable-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-webkit-slider-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_basic_slider_with_tracking .gun_basic_slider::-moz-range-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking {
+    width: 300px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider {
+    width: 260px;
+    height: auto;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-runnable-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-track {
+    width: 260px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-webkit-slider-thumb {
+    width: 14px;
+    height: 8px;
+  }
+  .gun_class_section .gun_mastery_slider_with_tracking .gun_mastery_slider::-moz-range-thumb {
+    width: 14px;
+    height: 8px;
+  }
+
+  .gun_page_top .gun_page_top_tracker_and_title .gun_page_top_title {
+    font-size: 40px;
+    width: 600px;
+  }
+}
+.Footer {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F5F6F7;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+.Left,
+.Right {
+  color: #000;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.Left {
+  margin-left: 10px;
+}
+
+.Right {
+  margin-right: 10px;
+}
+
+@media (min-width: 1024px) {
+  .Footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1440px) {
+  .Footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+#header-render {
+  position: sticky;
+  top: 0;
+}
+
+.Header {
+  display: flex;
+  padding: 10px 10px;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-self: stretch;
+  background: #F5F6F7;
+  width: 100%;
+  height: 100px;
+  padding: 16px;
+}
+
+.Header_title {
+  display: flex;
+  align-items: center;
+  width: 450px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.Logo {
+  width: 75px;
+  height: 75px;
+  background: #F5F6F7;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  width: 200px;
+}
+
+.navigation a {
+  color: #000;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 3px;
+  text-decoration: none;
+}
+
+.burger-icon {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .Header {
+    padding: 10px;
+  }
+
+  .Header_title {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .burger-icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .burger-icon div {
+    background-color: gray;
+    width: 80%;
+    height: 4px;
+  }
+}
+@media (min-width: 1024px) {
+  .Header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1440px) {
+  .Header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container input {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.register-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal_input_field {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: MuseoModerno;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: MuseoModerno;
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  flex-grow: 1;
+}
+
+.orion_tracker_div {
+  display: flex;
+  justify-content: center;
+}
+
+.mastery_trackers_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

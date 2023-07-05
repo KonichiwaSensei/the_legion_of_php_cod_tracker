@@ -1,0 +1,39 @@
+.Footer {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F5F6F7;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+.Left,
+.Right {
+  color: #000;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.Left {
+  margin-left: 10px;
+}
+
+.Right {
+  margin-right: 10px;
+}
+
+@media (min-width: 1024px) {
+  .Footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1440px) {
+  .Footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
