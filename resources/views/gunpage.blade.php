@@ -5,7 +5,7 @@
     @vite('resources/js/OrionTracker/OrionTracker.scss')
     @vite('resources/js/MasteryTracker/MasteryTracker.scss')
     @viteReactRefresh
-    @vite('resources/js/GunComponent/GunDisplay.jsx')
+    @vite('resources/js/Tracker.jsx')
 @endsection
 
 @section('content')

@@ -1,10 +1,17 @@
 import { useState } from "react";
 import "../../../css/Header.scss";
+import "../../Modal/Modal.jsx"
+
 
 
 
 export default function Header() 
-{
+{   
+    
+    const handleOpenModal = () => {
+        setIsOpenModal(true);
+      };
+      
     const [burger, setburger] = useState(false);
     const handleClick = () => {
         console.log(burger);
@@ -27,7 +34,10 @@ export default function Header()
             {/* show above 768px, not below - CSS */}
             <nav className="navigation">
                 <a className="Home" href="/">Home</a>
-                <a className="Register" href="#">Register</a>
+                {/* <a className="Register" href="#">Register</a> */}
+                <a className="Register" href="#" onClick={handleOpenModal}>
+                    Register
+                </a>
                 <a className="Camos" href="/tracker">Camos</a>
             </nav>
             
@@ -48,7 +58,10 @@ export default function Header()
                 </div> 
                 : 
                 <></>
-            }      
+            }   
+            
+            {isOpenModal && <ModalRegistration onClose={() => setIsOpenModal(false)} />}
+   
         </header>
         
     );
