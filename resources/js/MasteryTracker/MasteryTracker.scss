@@ -1,7 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// BlackOpsOne
+@font-face {
+    font-family: 'BlackOpsOne';
+    src: url('../../public/fonts/BlackOpsOne-Regular.woff2') format('woff2'),
+        url('../../public/fonts/BlackOpsOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 // VARIABLES:
-$font: MuseoModerno;
+$font: BlackOpsOne;
 $background_colour: #a6a6a6;
 $progressbar_background_colour: #000000;
 $font_colour: rgb(255, 255, 255);
@@ -51,6 +59,7 @@ $label_colour: white;
         align-items: center;
 
         color: $font_colour;
+        font-stretch: expanded;
 
         .mastery_tracker_title {
             font-weight: bold;
@@ -91,7 +100,7 @@ $label_colour: white;
 
     .mastery_tracker {
         width: 240px;
-        font-size: 18px;
+        font-size: 14px;
     }
 }
 
@@ -99,7 +108,7 @@ $label_colour: white;
 
     .mastery_tracker {
         width: 200px;
-        font-size: 15px;
+        font-size: 10px;
     }
 
 }
@@ -108,7 +117,7 @@ $label_colour: white;
 
     .mastery_tracker {
         width: 300px;
-        font-size: 20px;
+        font-size: 16px;
     }
 
 }
@@ -117,7 +126,7 @@ $label_colour: white;
 
     .mastery_tracker {
         width: 300px;
-        font-size: 20px;
+        font-size: 16px;
     }
 
 }
