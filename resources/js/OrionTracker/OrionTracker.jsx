@@ -1,5 +1,6 @@
 import { useState } from "react";
 import OrionProgressBar from "./OrionProgressBar";
+import './OrionTracker.scss'
 
  export default function OrionTracker() {
 
