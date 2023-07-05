@@ -28,3 +28,15 @@ font-weight: 800;
 line-height: normal;
 justify-content: center;
 }
+
+
+
+@media (min-width: 1440px){
+
+    .Footer{
+        display:flex;
+        justify-content: space-between;
+    }
+
+   
+}
