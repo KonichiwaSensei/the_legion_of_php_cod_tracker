@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../../../css/Header.scss";
-import "../../Modal/Modal.jsx"
+
 
 
 
@@ -34,10 +34,7 @@ export default function Header()
             {/* show above 768px, not below - CSS */}
             <nav className="navigation">
                 <a className="Home" href="/">Home</a>
-                {/* <a className="Register" href="#">Register</a> */}
-                <a className="Register" href="#" onClick={handleOpenModal}>
-                    Register
-                </a>
+                <a className="Register" href="#">Register</a>
                 <a className="Camos" href="/tracker">Camos</a>
             </nav>
             
@@ -60,7 +57,7 @@ export default function Header()
                 <></>
             }   
             
-            {isOpenModal && <ModalRegistration onClose={() => setIsOpenModal(false)} />}
+            
    
         </header>
         

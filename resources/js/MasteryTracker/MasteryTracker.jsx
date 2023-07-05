@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MasteryProgressBar from "./MasteryProgressBar";
+import './MasteryTracker.scss'
 
 export default function MasteryTracker({ masterycamo }) {
 
