@@ -12,7 +12,7 @@ class ChallengeWeaponSeeder extends Seeder
     {
 
         DB::table('challenge_weapon')->truncate();
-
+        
         $challengeweapon = [
             // AR -> M4 (Basic)
             [
