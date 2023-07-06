@@ -61,7 +61,7 @@ export default function Header() {
                         <div className="burger-menu">
                             <Link className="Home" to="/">Home</Link>
                             <br />
-                            <Link className="Register" >Register</Link>
+                            <Link className="Register" onClick={() => displayModal('registration')}>Register</Link>
                             <br />
                             <Link className="Camos" to="/tracker">Camos</Link>
                             <br />
