@@ -18,15 +18,9 @@
   
 </head> 
 <body>
-    <div id="header-render">
 
-    </div>
     
     @yield('content')
     
-    <div id="footer-render">
-
-    </div>
-
 </body>
 </html>
