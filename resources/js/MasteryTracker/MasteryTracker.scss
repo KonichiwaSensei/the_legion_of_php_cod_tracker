@@ -1,8 +1,8 @@
 // BlackOpsOne
 @font-face {
     font-family: 'BlackOpsOne';
-    src: url('../../public/fonts/BlackOpsOne-Regular.woff2') format('woff2'),
-        url('../../public/fonts/BlackOpsOne-Regular.woff') format('woff');
+    src: url('../../fonts/BlackOpsOne-Regular.woff2') format('woff2'),
+        url('../../fonts/BlackOpsOne-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -67,7 +67,10 @@ $label_colour: white;
     }
 
     .mastery_progress_bar {
-        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 55px;
+        grid-template-rows: 20px;
+
         height: 20px;
         width: 70%;
         background-color: $progressbar_background_colour;
@@ -75,24 +78,30 @@ $label_colour: white;
         margin: 10px;
 
         .mastery_progress_bar_filler {
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+
             height: 100%;
             background-color: black;
             background-repeat: no-repeat;
             border-radius: inherit;
             text-align: right;
+        }
 
-            .mastery_tracker_label {
-                position: absolute;
-                right: 0;
-                margin-right: 5px;
-                color: $label_colour;
-                line-height: 20px;
+        .mastery_tracker_label {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
 
-                font-size: 15px;
-                font-weight: 600;
-            }
+            right: 0;
+            margin-right: 5px;
+            color: $label_colour;
+            line-height: 20px;
+
+            font-size: 15px;
+            font-weight: 600;
         }
     }
+
 }
 
 
