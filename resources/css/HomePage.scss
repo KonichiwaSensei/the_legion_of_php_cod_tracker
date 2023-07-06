@@ -8,12 +8,17 @@
     margin: 0;
     height: auto;
     // min-height: 100vh;
-    
+
 
     .home_page_titles_and_login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 200px;
         
 
         .home_page_titles {
+            
 
             .home_page_title1 {
                 display: flex;
@@ -25,9 +30,23 @@
                 justify-content: center;
             }
         }
+        .home_page_login_section{
+                display: flex;
+                justify-content: center;
+                
+            .login-div-opens-modal{
+                border-radius: 10px;
+                color: white;
+                background-color: rgb(0, 0, 0);
+                
+            }
+        }
     }
 
     .home_page_trackers{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         flex-grow: 1;
         background-color: darkgrey;
         // height: 400px;

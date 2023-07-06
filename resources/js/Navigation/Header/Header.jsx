@@ -1,14 +1,18 @@
 import { useState } from "react";
 import "../../../css/Header.scss";
-import ModalRegistration from "../../Modal/Modal";
+import ModalRegistration from "../../RegistrationModal/Registration";
 import { Link } from "react-router-dom";
 export default function Header() {
 
 
     const [burger, setburger] = useState(false);
+
     const handleClick = () => {
-        console.log(burger);
-        setburger(true)
+        if (burger) {
+            setburger(false)
+        } else {
+            setburger(true)
+        }
 
     }
 
@@ -38,33 +42,39 @@ export default function Header() {
             <header className="Header">
                 <div className="Header_title">
                     <img className="Logo" src="/img/bullets-g501bdc5d1_640.jpg" alt="" />
-                    <h2>COD: M W 2 CAMO TRACKER</h2>
+                    <h2>COD: MW2 - CAMO TRACKER</h2>
                 </div>
 
                 {/* show above 768px, not below - CSS */}
-                <nav className="navigation">
-                    <Link className="Home" to="/">Home</Link>
-                    <Link className="Register" onClick={() => displayModal('registration')}>Register</Link>
-                    <Link className="Camos" to="/tracker">Camos</Link>
-                </nav>
+                <div className="navigation">
+                    <nav className="navigation_links">
+                        <Link className="Home" to="/">Home</Link>
+                        <Link className="Register" onClick={() => displayModal('registration')}>Register</Link>
+                        <Link className="Camos" to="/tracker">Camos</Link>
+                    </nav>
+                </div>
 
                 {/* show below 768px, not above - CSS */}
-                <div className="burger-icon" onClick={handleClick}>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div className="burger-menu" id="burger-menu">
+                    <div className="burger-icon" onClick={handleClick}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
                 {/* don't show at all, only show/hide by clicking the burger icon CSS + React */}
                 {
                     burger   // state instead of fixed value
                         ?
-                        <div className="burger-menu">
-                            <Link className="Home" to="/">Home</Link>
-                            <br />
-                            <Link className="Register" onClick={() => displayModal('registration')}>Register</Link>
-                            <br />
-                            <Link className="Camos" to="/tracker">Camos</Link>
-                            <br />
+                        <div className="burger-menu" id="burger-menu">
+                            <div className="burger-menu_links" onClick={handleClick}>
+                                <Link className="Home" to="/">Home</Link>
+                                <br />
+                                <Link className="Register" onClick={() => displayModal('registration')}>Register</Link>
+                                <br />
+                                <Link className="Camos" to="/tracker">Camos</Link>
+                                <br />
+                            </div>
                         </div>
                         :
                         <></>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../../css/ModalRegistration.scss';
+import '../../css/Modal.scss';
 
 const ModalRegistration = ({ closeModal }) => {
   const [isOpen, setIsOpen] = useState(false);
