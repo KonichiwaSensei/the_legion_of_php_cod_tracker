@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('weapons_challenges', function (Blueprint $table) {
+        Schema::create('profile_tokens', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('challeng_id');
-            $table->string('is_mastery');
-            $table->foreignId('weapon_id');
+            $table->string('token');
             $table->timestamps();
-           
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('weapons_challenges');
+        Schema::dropIfExists('profile_tokens');
     }
 };

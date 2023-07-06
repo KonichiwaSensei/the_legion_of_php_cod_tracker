@@ -2,33 +2,31 @@
 
 namespace Database\Seeders;
 
+use App\Models\Weapon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 class WeaponSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
-        $weaponClasses = [
+
+        DB::table('weapons')->truncate();
+
+        $weapons = [
             [
-                'name' => 'Assault Rifle',
-                
+                'name' => 'Nerfgun',
+                'weapon_class_id' => 1
             ],
             [
-                'name' => 'Battle Rifle',
-                
+                'name' => 'Nerfrifle',
+                'weapon_class_id' => 2
             ],
-            [
-                'name' => 'Sub-Machine Gun',
-                
-            ]
         ];
 
-       
-        DB::table('weapon_classes')->insert($weaponClasses);
+        foreach ($weapons as $weapon) {
+            Weapon::create($weapon);
+        }
     }
 }
-

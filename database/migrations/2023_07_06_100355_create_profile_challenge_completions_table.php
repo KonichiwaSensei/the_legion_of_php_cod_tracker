@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('profile_id');
             $table->foreignId('weapons_challenges_id');
+            $table->unsignedInteger('challenge_progress');
             $table->boolean('challenge_complete');
-            $table->boolean('is_mastery');
             $table->timestamps();
         });
     }

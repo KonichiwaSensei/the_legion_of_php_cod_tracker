@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('session_tokens', function (Blueprint $table) {
+        Schema::create('challenge_weapon', function (Blueprint $table) {
             $table->id();
-            $table->string('session_token');
+            $table->foreignId('challenge_id');
+            $table->foreignId('weapon_id');
             $table->timestamps();
+           
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('session_tokens');
+        Schema::dropIfExists('challenge_weapon');
     }
 };
