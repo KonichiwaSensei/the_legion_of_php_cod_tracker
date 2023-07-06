@@ -13,14 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+// Route::get('/', function () {
+//     return view('homepage');
+// });
 
-Route::get('/tracker', function () {
-    return view('gunpage');
-});
+// Route::get('/tracker', function () {
+//     return view('homepage');
+// });
 
-Route::get('/about-us', function () {
-    return view('aboutus');
-});
+// Route::get('/about-us', function () {
+//     return view('aboutus');
+// });
+
+Route::view('/{path?}', 'homepage')->where('path', '.*');
