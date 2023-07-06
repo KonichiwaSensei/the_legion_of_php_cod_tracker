@@ -25,18 +25,20 @@ const ModalRegistration = ({ closeModal }) => {
 
   useEffect(() => {
     // set styling
+    setIsOpen(true);
+
   }, [])
 
   return (
     <div>
-      <button onClick={ closeModal }>&times;</button>
-      <button type="button" onClick={handleOpenModal} className="register-button">
+      {/* <button onClick={ closeModal }>&times;</button> */}
+      {/* <button type="button" onClick={handleOpenModal} className="register-button">
         Register
-      </button>
+      </button> */}
       {isOpen && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>
+            <span className="close" onClick={closeModal}>
               &times;
             </span>
             <h2>Registration</h2>

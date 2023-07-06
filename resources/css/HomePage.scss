@@ -1,14 +1,18 @@
 .home_page {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     
     // align-content: space-between;
     background-color: lightgrey;
     margin: 0;
     height: auto;
     // min-height: 100vh;
+    
 
     .home_page_titles_and_login {
+        
+
         .home_page_titles {
 
             .home_page_title1 {
@@ -24,8 +28,9 @@
     }
 
     .home_page_trackers{
+        flex-grow: 1;
         background-color: darkgrey;
-        height: 400px;
+        // height: 400px;
     }
     // ----
     // Not used but here just in case:

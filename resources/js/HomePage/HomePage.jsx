@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from '../Login/Login';
-import Modal from '../Modal/Modal';
+// import Modal from '../Modal/Modal';
 import "../../css/HomePage.scss";
 import OrionTracker from '../OrionTracker/OrionTracker';
 import MasteryTracker from '../MasteryTracker/MasteryTracker';
