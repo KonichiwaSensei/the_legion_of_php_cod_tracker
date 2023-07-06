@@ -44,7 +44,7 @@ export default function Header() {
                 {/* show above 768px, not below - CSS */}
                 <nav className="navigation">
                     <Link className="Home" to="/">Home</Link>
-                    <a className="Register" href="#" onClick={() => displayModal('registration')}>Register</a>
+                    <Link className="Register" onClick={() => displayModal('registration')}>Register</Link>
                     <Link className="Camos" to="/tracker">Camos</Link>
                 </nav>
 
@@ -61,7 +61,7 @@ export default function Header() {
                         <div className="burger-menu">
                             <Link className="Home" to="/">Home</Link>
                             <br />
-                            <a className="Register" href="#">Register</a>
+                            <Link className="Register" >Register</Link>
                             <br />
                             <Link className="Camos" to="/tracker">Camos</Link>
                             <br />
