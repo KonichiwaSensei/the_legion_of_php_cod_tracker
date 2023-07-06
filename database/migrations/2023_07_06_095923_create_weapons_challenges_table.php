@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('weapons_challenges', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('challeng_id');
+            $table->string('is_mastery');
+            $table->foreignId('weapon_id');
             $table->timestamps();
+           
         });
     }
 

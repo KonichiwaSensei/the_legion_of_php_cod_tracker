@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('session_tokens', function (Blueprint $table) {
             $table->id();
+            $table->string('session_token');
             $table->timestamps();
         });
     }

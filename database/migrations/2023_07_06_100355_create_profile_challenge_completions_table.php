@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('profile_challenge_completions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('profile_id');
+            $table->foreignId('weapons_challenges_id');
+            $table->boolean('challenge_complete');
+            $table->boolean('is_mastery');
             $table->timestamps();
         });
     }

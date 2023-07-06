@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('weapons', function (Blueprint $table) {
             $table->id();
+            $table->string('weapon_name');
+            $table->foreignId('class_id');
             $table->timestamps();
         });
     }

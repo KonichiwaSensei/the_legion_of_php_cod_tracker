@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('session_token_id');
+            $table->foreignId('user_id');
+            $table->boolean('orion_challenge_complete');
             $table->timestamps();
         });
     }
