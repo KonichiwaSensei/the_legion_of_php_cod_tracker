@@ -52,6 +52,7 @@
 
 import React, { useEffect, useState } from 'react';
 import '../../css/Modallogin.scss';
+import '../../css/ModalLogin.scss';
 
 const ModalLogin = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,13 +75,13 @@ const ModalLogin = () => {
   };
 
   useEffect(() => {
-    // set styling
+    
   }, [])
 
   return (
     <div>
       <button className='login-button' type="button" onClick={handleOpenModal}>
-         GO TO YOUR CAMOS
+         Login
       </button>
       {isOpen && (
         <div className="modal">
