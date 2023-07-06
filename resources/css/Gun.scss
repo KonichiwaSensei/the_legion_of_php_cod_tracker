@@ -1,7 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// BlackOpsOne
+@font-face {
+    font-family: 'BlackOpsOne';
+    src: url('../../public/fonts/BlackOpsOne-Regular.woff2') format('woff2'),
+        url('../../public/fonts/BlackOpsOne-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 // VARIABLES:
-$font: MuseoModerno;
+$font: BlackOpsOne;
 $background_color: #D9D9D9;
 $gun_component_background_color: #404040;
 $gun_component_border_color: #000;
@@ -186,6 +194,10 @@ $gun_component_slider_color2: #000000;
 
         // Tracking (0/50) text styling
         .gun_slider_tracking {
+            //Layout:
+            display: flex;
+            align-items: center;
+            margin-right: 5px;
             font-family: $font;
             color: $gun_component_text_color;
         }
@@ -196,11 +208,11 @@ $gun_component_slider_color2: #000000;
         // Layout:
         display: flex;
         justify-content: space-around;
-        // margin-right: 5px;
 
         .gun_basic_slider {
             // Layout:
             flex-shrink: 0;
+            margin-left: 5px;
 
             // Slider Styles:
             -webkit-appearance: none;
@@ -245,6 +257,10 @@ $gun_component_slider_color2: #000000;
             }
 
         }
+
+        // input.gun_basic_checkbox:checked {
+        //     color: #80FF00;
+        // }
 
     }
 
@@ -317,7 +333,7 @@ $gun_component_slider_color2: #000000;
         .gun_page_top_title {
             // Style:
             color: $gun_component_text_color;
-            
+
         }
     }
 }
