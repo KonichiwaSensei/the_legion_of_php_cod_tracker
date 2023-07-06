@@ -45,31 +45,37 @@ $label_colour: white;
     }
 
     .orion_progress_bar {
-        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 50px;
+        grid-template-rows: 20px;
+        
         height: 20px;
         width: 70%;
         background-color: $progressbar_background_colour;
         border-radius: 50px;
         margin: 10px;
-
         .orion_progress_bar_filler {
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+
             height: 100%;
             background-image: url(orion-camo.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             border-radius: inherit;
             text-align: right;
+        }
+        .orion_tracker_label {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
 
-            .orion_tracker_label {
-                position: absolute;
-                right: 0;
-                margin-right: 5px;
-                color: $label_colour;
-                line-height: 20px;
+            right: 0;
+            margin-right: 5px;
+            color: $label_colour;
+            line-height: 20px;
+            font-size: 18px;
+            font-weight: 600;
 
-                font-size: 18px;
-                font-weight: 600;
-            }
         }
     }
 
