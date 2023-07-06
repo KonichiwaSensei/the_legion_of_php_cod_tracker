@@ -3,8 +3,8 @@
 // MuseoModerno
 @font-face {
     font-family: 'MuseoModerno';
-    src: url('../../public/fonts/MuseoModerno-Thin.woff2') format('woff2'),
-        url('../../public/fonts/MuseoModerno-Thin.woff') format('woff');
+    src: url('../fonts/MuseoModerno-Thin.woff2') format('woff2'),
+        url('../fonts/MuseoModerno-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -13,8 +13,8 @@
 // MuseoModernoItalic
 @font-face {
     font-family: 'MuseoModernoItalic';
-    src: url('../../public/fonts/MuseoModerno-ThinItalic.woff2') format('woff2'),
-        url('../../public/fonts/MuseoModerno-ThinItalic.woff') format('woff');
+    src: url('../fonts/MuseoModerno-ThinItalic.woff2') format('woff2'),
+        url('../fonts/MuseoModerno-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
     font-display: swap;
@@ -23,8 +23,8 @@
 // BlackOpsOne
 @font-face {
     font-family: 'BlackOpsOne';
-    src: url('../../public/fonts/BlackOpsOne-Regular.woff2') format('woff2'),
-        url('../../public/fonts/BlackOpsOne-Regular.woff') format('woff');
+    src: url('../fonts/BlackOpsOne-Regular.woff2') format('woff2'),
+        url('../fonts/BlackOpsOne-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -67,6 +67,8 @@ body {
 
 #root {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .orion_tracker_div {

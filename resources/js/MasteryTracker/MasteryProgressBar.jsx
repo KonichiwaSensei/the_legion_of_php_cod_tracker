@@ -27,9 +27,8 @@ const fillerStyles = {
 
 return (
     <div className="mastery_progress_bar">
-        <div className="mastery_progress_bar_filler" style={fillerStyles}>
-            <span className="mastery_tracker_label">{`${completion}/51`}</span>
-        </div>
+        <div className="mastery_progress_bar_filler" style={fillerStyles}></div>
+        <div className="mastery_tracker_label">{`${completion}/51`}</div>
     </div>
 );
 };
