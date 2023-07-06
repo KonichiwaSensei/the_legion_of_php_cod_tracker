@@ -18,6 +18,7 @@
         color: #000;
         font-size: 16px;
         font-weight: 800;
+        width: 500px;
         .Logo {
 
             width: 75px;
@@ -28,6 +29,7 @@
 
     .navigation {
         align-self: center;
+        width: 250px;
 
         .navigation_links {
             a {
@@ -42,6 +44,7 @@
 
     .burger-menu{
         display: none;
+        width: 75px;
         cursor: pointer;
 
         .burger-icon {
