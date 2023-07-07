@@ -8,12 +8,6 @@
   
   @yield('head')
   @viteReactRefresh
-  @vite('resources/js/Navigation/Footer/Footer-app.jsx')
-  @viteReactRefresh
-  @vite('resources/js/Navigation/Header/Header-app.jsx')
-  @viteReactRefresh
-  @vite('resources/js/Modal/Modal.jsx')
-  @viteReactRefresh
   @vite('resources/css/Global.scss')
   
 </head> 
