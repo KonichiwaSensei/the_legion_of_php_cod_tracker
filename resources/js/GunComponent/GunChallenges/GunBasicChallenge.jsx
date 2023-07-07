@@ -8,7 +8,7 @@ export default function GunBasicChallenge({challenge}) {
     return (
         <div className="gun_basic_challenge">
             <label className="gun_basic_challenge_text">{challenge.text}</label>
-            <GunBasicSlider challengeMaxValue={challenge.max_value}/>
+            <GunBasicSlider key={challenge.id} challengeMaxValue={challenge.max_value}/>
         </div>
     )
 }

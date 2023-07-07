@@ -14,13 +14,11 @@ export default function GunTracker({weapon}) {
                     weapon.challenges.map((challenge) => {
                        return challenge.is_mastery === 0
                         ?
-                        <GunBasicChallenge challenge={challenge}/>
+                        <GunBasicChallenge key={String("BASE" + weapon.id + "." + challenge.id)} challenge={challenge}/>
                         :
-                        <></>
+                        null
                     })
                 }
-                {/* <GunBasicChallenge challengetext={"Challenge 1"}/> */}
-                
 
                 <div className="gun_challenge_divider"></div>
 
@@ -28,11 +26,12 @@ export default function GunTracker({weapon}) {
                     weapon.challenges.map((challenge) => {
                         return challenge.is_mastery === 1
                         ?
-                         <GunMasteryChallenge challenge={challenge}/>
+                         <GunMasteryChallenge key={String("MASTERY" + weapon.id + "." + challenge.id)} challenge={challenge}/>
                         :
-                        <></>
+                        null
                     })
                 }
+
             </div>
         </div>
     )
