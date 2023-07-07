@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('weapon_classes', function (Blueprint $table) {
             $table->id();
-            $table->string('class_name');
+            $table->string('name');
             $table->timestamps();
         });
     }
