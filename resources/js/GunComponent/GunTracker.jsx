@@ -14,7 +14,7 @@ export default function GunTracker({weapon}) {
                     weapon.challenges.map((challenge) => {
                        return challenge.is_mastery === 0
                         ?
-                        <GunBasicChallenge key={String("BASE" + challenge.id + "." + weapon.id)} challenge={challenge}/>
+                        <GunBasicChallenge key={String("BASE" + weapon.id + "." + challenge.id)} challenge={challenge}/>
                         :
                         null
                     })
