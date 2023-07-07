@@ -4,6 +4,7 @@ import TrackerPage from "./TrackerPage/TrackerPage";
 import { useState } from "react";
 import Header from './Navigation/Header/Header'
 import Footer  from './Navigation/Footer/Footer'
+import axios from "axios";
 
 export default function App() {
 
@@ -11,6 +12,9 @@ export default function App() {
     return (
         <>
             <Header />
+            <button onClick={() => {
+                axios.get('/lougout')
+            }}>LOGOUT</button>
             {/* <button onClick={() => { setClicks(clicks + 1) }}>{clicks}</button>
             <button onClick={() => {
                 localStorage.setItem("count", JSON.stringify(clicks));
