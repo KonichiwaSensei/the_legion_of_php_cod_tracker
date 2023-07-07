@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import '../../css/Modal.scss';
+import axios from 'axios';
 
 const ModalRegistration = ({ closeModal }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -15,12 +17,21 @@ const ModalRegistration = ({ closeModal }) => {
     setIsOpen(false);
   };
 
-  const handleRegistration = () => {
+  const handleRegistration = async () => {
     
     console.log('Registering...');
     console.log('Username:', username);
     console.log('Email:', email);
     console.log('Password:', password);
+    console.log('Password Confirmation:', passwordConfirmation);
+
+    const response = await axios.post('/register',{
+        name: username,
+        email,
+        password,
+        password_confirmation: passwordConfirmation
+      }
+    )
   };
 
   useEffect(() => {
@@ -68,6 +79,15 @@ const ModalRegistration = ({ closeModal }) => {
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="password-confirmation">Password Confirmation:</label>
+                <input className="modal_input_field"
+                  type="password"
+                  id="password-confirmation"
+                  value={passwordConfirmation}
+                  onChange={(e) => setPasswordConfirmation(e.target.value)}
                 />
               </div>
               <button type="button" onClick={handleRegistration} className="register-button">

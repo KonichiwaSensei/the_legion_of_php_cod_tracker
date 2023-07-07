@@ -47,6 +47,19 @@ export default function App() {
     return (
         <>
             <Header />
+            <button onClick={() => {
+                axios.get('/lougout')
+            }}>LOGOUT</button>
+            {/* <button onClick={() => { setClicks(clicks + 1) }}>{clicks}</button>
+            <button onClick={() => {
+                localStorage.setItem("count", JSON.stringify(clicks));
+            }}>Save</button>
+            <button onClick={() => {
+                const loaded = JSON.parse(localStorage.getItem("count"));
+                console.log(localStorage);
+            }}>Load</button>
+            <button>Retrieved Data: </button> */}
+
             <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='tracker' element={<TrackerPage />} />
