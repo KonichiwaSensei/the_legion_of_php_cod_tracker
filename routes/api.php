@@ -1,5 +1,9 @@
 <?php
 
+<<<<<<< HEAD
+use App\Http\Controllers\Api\ProfileTokensController;
+=======
+>>>>>>> dev/main
 use App\Http\Controllers\Api\ChallengeController;
 use App\Http\Controllers\Api\ProfileTokensController;
 use App\Http\Controllers\Api\WeaponClassController;
@@ -24,7 +28,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('profiletokens', [ProfileTokensController::class, 'index']);
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> dev/main
 // Route::get('weapon', [WeaponController::class, 'index']);
 // Route::get('challenge', [ChallengeController::class, 'index']);
 Route::get('weapons', [WeaponClassController::class, 'index']);
