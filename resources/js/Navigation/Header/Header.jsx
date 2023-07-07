@@ -3,8 +3,7 @@ import "../../../css/Header.scss";
 import ModalRegistration from "../../RegistrationModal/Registration";
 import { Link } from "react-router-dom";
 export default function Header() {
-
-
+    
     const [burger, setburger] = useState(false);
 
     const handleClick = () => {
