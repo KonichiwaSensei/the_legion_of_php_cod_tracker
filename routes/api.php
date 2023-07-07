@@ -26,10 +26,6 @@ Route::get('profiletokens', [ProfileTokensController::class, 'index']);
 Route::post('profiletokens/validate', [ProfileTokensController::class, 'validateToken']);
 // Route::get('profiletokens/generate', [ProfileTokensController::class, 'generate']);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> dev/main
 // Route::get('weapon', [WeaponController::class, 'index']);
 // Route::get('challenge', [ChallengeController::class, 'index']);
 Route::get('weapons', [WeaponClassController::class, 'index']);
