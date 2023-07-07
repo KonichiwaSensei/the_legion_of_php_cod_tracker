@@ -32,6 +32,8 @@ const ModalRegistration = ({ closeModal }) => {
         password_confirmation: passwordConfirmation
       }
     )
+
+    console.log(response);
   };
 
   useEffect(() => {

@@ -47,9 +47,15 @@ export default function App() {
     return (
         <>
             <Header />
-            <button onClick={() => {
-                axios.get('/lougout')
+            <button onClick={async() => {
+                const response = await axios.post('/logout')
+                console.log(response);
             }}>LOGOUT</button>
+
+            <button onClick={async () => {
+                const response = await axios.get('/api/user')
+                console.log(response.data);
+            }}>Get User</button>
             {/* <button onClick={() => { setClicks(clicks + 1) }}>{clicks}</button>
             <button onClick={() => {
                 localStorage.setItem("count", JSON.stringify(clicks));
