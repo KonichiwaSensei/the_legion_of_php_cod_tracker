@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 
 // This component returns a Mastery Slider
-export default function GunMasterySlider() {
+export default function GunMasterySlider({challengeMaxValue}) {
 
     // Slider value being set by API (default state '25' for now)
-    const [maxSliderValue, setMaxSliderValue] = useState('25')
+    const [maxSliderValue, setMaxSliderValue] = useState(challengeMaxValue)
 
     // Slider value being set by event.target.value
     const [sliderValue, setSliderValue] = useState('0')
@@ -16,14 +16,15 @@ export default function GunMasterySlider() {
     // On input value change sets the sliderValue
     // and returns a true challengeDone if vlaue is maxSliderValue
     const handleSliderChange = (event) => {
-        if (event.target.value === maxSliderValue) {
+        console.log(event.target.value + "/" + maxSliderValue);
+        if (event.target.value == maxSliderValue) {
             setSliderValue(event.target.value)
             setChallengeDone(true)
             // console.log('DONE');
         } else {
             setSliderValue(event.target.value)
             setChallengeDone(false)
-            // console.log(sliderValue);
+            console.log(sliderValue);
         }
     }
 

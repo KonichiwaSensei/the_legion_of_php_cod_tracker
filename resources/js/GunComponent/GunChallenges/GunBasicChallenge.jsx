@@ -1,12 +1,14 @@
 import GunBasicSlider from "../Sliders/GunBasicSlider"
 
 // This component returns the Basic Slider component wrapped for styling purposes
-export default function GunBasicChallenge({challengetext}) {
+export default function GunBasicChallenge({challenge}) {
+
+    // console.log(challenge);
 
     return (
         <div className="gun_basic_challenge">
-            <label className="gun_basic_challenge_text">{challengetext}</label>
-            <GunBasicSlider />
+            <label className="gun_basic_challenge_text">{challenge.text}</label>
+            <GunBasicSlider challengeMaxValue={challenge.max_value}/>
         </div>
     )
 }

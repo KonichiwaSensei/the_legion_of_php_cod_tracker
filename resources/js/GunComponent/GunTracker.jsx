@@ -1,24 +1,38 @@
 import GunBasicChallenge from "./GunChallenges/GunBasicChallenge"
 import GunMasteryChallenge from "./GunChallenges/GunMasteryChallenge"
 
-export default function GunTracker() {
+export default function GunTracker({weapon}) {
 
+    // console.log(weapon);
 
     return (
         <div className="gun_component">
-            <h3 className="gun_name">Gun Name</h3>
+            <h3 className="gun_name">{weapon.name}</h3>
             <div className="gun_challenges">
                 
-                <GunBasicChallenge challengetext={"Challenge 1"}/>
-                <GunBasicChallenge challengetext={"Challenge 2"}/>
-                <GunBasicChallenge challengetext={"Challenge 3"}/>
-                <GunBasicChallenge challengetext={"Challenge 4"}/>
+                {
+                    weapon.challenges.map((challenge) => {
+                       return challenge.is_mastery === 0
+                        ?
+                        <GunBasicChallenge challenge={challenge}/>
+                        :
+                        <></>
+                    })
+                }
+                {/* <GunBasicChallenge challengetext={"Challenge 1"}/> */}
+                
 
                 <div className="gun_challenge_divider"></div>
 
-                <GunMasteryChallenge masteryname="Gold"/>
-                <GunMasteryChallenge masteryname="Platinum"/>
-                <GunMasteryChallenge masteryname="Polyatomic"/>
+                {
+                    weapon.challenges.map((challenge) => {
+                        return challenge.is_mastery === 1
+                        ?
+                         <GunMasteryChallenge challenge={challenge}/>
+                        :
+                        <></>
+                    })
+                }
             </div>
         </div>
     )
