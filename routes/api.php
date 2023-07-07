@@ -23,6 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('profiletokens', [ProfileTokensController::class, 'index']);
+Route::post('profiletokens/validate', [ProfileTokensController::class, 'validateToken']);
+// Route::get('profiletokens/generate', [ProfileTokensController::class, 'generate']);
+
 
 // Route::get('weapon', [WeaponController::class, 'index']);
 // Route::get('challenge', [ChallengeController::class, 'index']);
