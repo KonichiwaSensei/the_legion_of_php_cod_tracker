@@ -41,7 +41,7 @@ export default function Header() {
             <header className="Header">
                 <div className="Header_title">
                     <img className="Logo" src="/img/logo.png" alt="" />
-                    <h2>COD: MW2 - CAMO TRACKER</h2>
+                    <Link to=''>COD: MW2 - CAMO TRACKER</Link>
                 </div>
 
                 {/* show above 768px, not below - CSS */}
