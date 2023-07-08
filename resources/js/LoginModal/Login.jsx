@@ -15,7 +15,9 @@ const ModalLogin = () => {
     setIsOpen(false);
   };
 
-  const handleLogin = async() => {
+  const handleLogin = async(e) => {
+
+    e.preventDefault()
     
     console.log('Login...');
     console.log('Username:', username);
