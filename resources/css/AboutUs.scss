@@ -1,20 +1,7 @@
-
-
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
-body {
-    display: flex;
-    margin: 0;
-    min-height: 100vh;
-    background-color: black;
-    
-}
-
+$background_colour_of_elements: #2626267a;
+$background_colour_of_elements2: #D9D9D9;
+$font_colour: #D9D9D9;
+$font_colour2: #262626;
 
 .aboutus{
     display: flex;
