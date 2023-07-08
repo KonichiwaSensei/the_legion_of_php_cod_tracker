@@ -1,10 +1,11 @@
 $background_colour_of_elements: #262626f9;
 $font_colour: #D9D9D9;
+$link_hilight: #2F6A75;
 
 #header-render {
     position: sticky;
     top: 0;
-    
+
 }
 
 .Header {
@@ -13,16 +14,31 @@ $font_colour: #D9D9D9;
 
     background: $background_colour_of_elements;
     border-radius: 0 0 30px 30px;
-    padding: 16px;
+    padding: 16px 80px;
+    box-shadow: 2px 3px 10px black;
+
     .Header_title {
         display: flex;
         align-items: center;
 
-
-        color: $font_colour;
-        font-size: 16px;
+        text-shadow: 2px 3px 10px black;
+        
+        // width: 500px;
+        a {
+            color: $font_colour;
+        font-size: 20px;
         font-weight: 800;
-        width: 500px;
+            transition: color .5s ease-in-out, text-shadow .3s ease-in-out;
+
+            &:hover,
+            &:active {
+                text-shadow: 2px 3px 5px $font_colour;
+                color: $link_hilight;
+    
+            }
+        }
+        
+
         .Logo {
 
             width: 75px;
@@ -34,7 +50,7 @@ $font_colour: #D9D9D9;
 
     .navigation {
         align-self: center;
-        width: 250px;
+        // width: 250px;
 
         .navigation_links {
             a {
@@ -43,31 +59,47 @@ $font_colour: #D9D9D9;
                 font-weight: 800;
                 padding: 3px;
                 text-decoration: none;
+                text-shadow: 2px 3px 10px black;
+
+                transition: color .5s ease-in-out, text-shadow .3s ease-in-out;
+
+                &:hover,
+                &:active {
+                    text-shadow: 2px 3px 5px $font_colour;
+                    color: $link_hilight;
+
+                }
             }
+
         }
     }
 
-    .burger-menu{
+    .burger-menu {
         display: none;
         width: 75px;
         cursor: pointer;
-        
+
 
         .burger-icon {
             display: flex;
-            
-            div{
+
+            div {
                 background: $font_colour;
             }
         }
 
-        .burger-menu_links{
+        .burger-menu_links {
+            // position: absolute;
+            // top: 50px;
+            // right: 100px;
             a {
                 color: $font_colour;
                 font-size: 16px;
                 font-weight: 800;
                 padding: 3px;
                 text-decoration: none;
+                
+                
             }
         }
     }
@@ -78,20 +110,16 @@ $font_colour: #D9D9D9;
 
 @media screen and (max-width: 767px) {
     .Header {
-        padding: 10px;
-        align-items: center;
-
-        .Header_title {
-            width: 100%;
-            text-align: center;
-        }
+        padding: 16px 20px;
 
         .navigation {
             display: none;
         }
 
-        div#burger-menu{
+        div#burger-menu {
             display: flex;
+            justify-content: end;
+            align-items: center;
         }
 
         .burger-icon {
@@ -102,11 +130,12 @@ $font_colour: #D9D9D9;
             justify-content: space-around;
             align-items: center;
         }
-    
+
         .burger-icon div {
             background-color: gray;
             width: 80%;
             height: 4px;
         }
+
     }
 }
