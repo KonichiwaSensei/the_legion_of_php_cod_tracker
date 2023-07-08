@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+// Route::get('/', function () {
+//     // dd(\Laravel\Sanctum\Sanctum::currentApplicationUrlWithPort());
+//     return view('homepage');
+// });
 
 // Route::get('/tracker', function () {
 //     return view('homepage');
