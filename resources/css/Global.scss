@@ -1,5 +1,4 @@
 // FONTS:
-
 // MuseoModerno
 @font-face {
     font-family: 'MuseoModerno';
@@ -30,6 +29,9 @@
     font-display: swap;
 }
 
+// BACKGROUND IMAGE
+// '../../public/img/background.png'
+
 
 // IMPORTING SCSS FILES:
 @import './Gun.scss';
@@ -38,6 +40,10 @@
 @import './Header.scss';
 @import './AboutUs.scss';
 @import './Modal.scss';
+
+// GLOBAL COLOURS:
+// Background Colour 1: #262626 (opacity down = #262626f9)
+// Font Colour: #D9D9D9
 
 // DEFINING VARIABLES:
 $font: BlackOpsOne;
@@ -62,6 +68,10 @@ body {
     margin: 0;
     min-height: 100vh;
     background-color: black;
+    background-image: url('../../public/img/background.png');
+    background-position: 50%;
+    background-size: auto;
+    background-repeat: repeat-y;
 }
 
 #root {

@@ -50,7 +50,7 @@ export default function GunMasterySlider({challengeMaxValue}) {
                         onChange={handleCheckboxChange}
                         className="gun_mastery_checkbox"
                     />
-                    <span className="gun_slider_tracking">Challenge Complete!</span>
+                    <span className="gun_slider_tracking_mastery">Challenge Complete!</span>
                 </>
             ) : (
                 <>
@@ -65,7 +65,7 @@ export default function GunMasterySlider({challengeMaxValue}) {
                         className="gun_mastery_slider"
                         id="gun_mastery_slider"
                     />
-                    <span className="gun_slider_tracking">{sliderValue}/{maxSliderValue}</span>
+                    <span className="gun_slider_tracking_mastery">{sliderValue}/{maxSliderValue}</span>
                 </>
             )}
         </div>

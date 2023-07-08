@@ -40,7 +40,7 @@ export default function Header() {
             {modal}
             <header className="Header">
                 <div className="Header_title">
-                    <img className="Logo" src="/img/bullets-g501bdc5d1_640.jpg" alt="" />
+                    <img className="Logo" src="/img/logo.png" alt="" />
                     <h2>COD: MW2 - CAMO TRACKER</h2>
                 </div>
 
