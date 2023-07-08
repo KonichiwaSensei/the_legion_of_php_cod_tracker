@@ -1,24 +1,33 @@
+$background_colour_of_elements: #2626267a;
+$background_colour_of_elements2: #D9D9D9;
+$font_colour: #D9D9D9;
+$font_colour2: #262626;
+
 .home_page {
     display: flex;
     flex-direction: column;
+    align-items: center;
     flex-grow: 1;
-    
-    // align-content: space-between;
-    background-color: lightgrey;
     margin: 0;
     height: auto;
-    // min-height: 100vh;
 
 
     .home_page_titles_and_login {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 200px;
-        
+        align-items: center;
+        height: auto;
+        padding-bottom: 20px;
+        width: 400px;
+        font-size: 25px;
+        background-color: $background_colour_of_elements;
+        border-radius: 10px;
+        margin: 10px;
+
 
         .home_page_titles {
-            
+            color: $font_colour;
 
             .home_page_title1 {
                 display: flex;
@@ -30,29 +39,41 @@
                 justify-content: center;
             }
         }
-        .home_page_login_section{
-                display: flex;
-                justify-content: center;
+
+        .home_page_login_section {
+            display: flex;
+            justify-content: center;
+            
+            
+
+            div{
                 
-            .login-div-opens-modal{
-                border-radius: 10px;
-                color: white;
-                background-color: rgb(0, 0, 0);
-                
+                .login-div-opens-modal {
+                    border-radius: 5px;
+                    font-size: 15px;
+                    color: $font_colour2;
+                    background-color: $background_colour_of_elements2;
+    
+                }
             }
+
+
+
         }
     }
 
-    .home_page_trackers{
+    .home_page_trackers {
         display: flex;
         flex-direction: column;
         justify-content: center;
         flex-grow: 1;
-        background-color: darkgrey;
-        // height: 400px;
+        background-color: $background_colour_of_elements;
+        border-radius: 10px;
+        margin: 10px;
     }
+
     // ----
     // Not used but here just in case:
     // .home_page_login_section{}
-    
+
 }

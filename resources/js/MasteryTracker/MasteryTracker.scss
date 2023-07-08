@@ -11,9 +11,10 @@
 // VARIABLES:
 $font: BlackOpsOne;
 $background_colour: #a6a6a6;
+$background_colour_of_elements: #262626f9;
+$font_colour: #262626;
 $progressbar_background_colour: #000000;
-$font_colour: rgb(255, 255, 255);
-$label_colour: white;
+$label_colour: #D9D9D9;
 
 .mastery_tracker {
     // Layout:
@@ -62,7 +63,8 @@ $label_colour: white;
         font-stretch: expanded;
 
         .mastery_tracker_title {
-            font-weight: bold;
+            fill: none;
+            -webkit-text-stroke: 1px white;
         }
     }
 

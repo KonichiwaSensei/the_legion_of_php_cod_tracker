@@ -15,7 +15,7 @@ export default function GunClass({classname, weaponClass}) {
                         })
                     }
                 </div>
-                <div className="gun_class_section_divider"></div>
+                {/* <div className="gun_class_section_divider"></div> */}
             </div>
         </>
     )
