@@ -6,10 +6,6 @@ export default function MasteryTracker({ masterycamo }) {
 
   const [completion, setCompletion] = useState(32);
 
-  // if (masterycamo === "Gold") {
-
-  // }
-
   return (
     <div className="mastery_tracker">
       <div className={`mastery_image mastery_image-${masterycamo}`} alt={masterycamo}>
