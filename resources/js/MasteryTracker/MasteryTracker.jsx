@@ -1,14 +1,10 @@
 import { useState } from "react";
 import MasteryProgressBar from "./MasteryProgressBar";
-import './MasteryTracker.scss'
+
 
 export default function MasteryTracker({ masterycamo }) {
 
-  const [completion, setCompletion] = useState(32);
-
-  // if (masterycamo === "Gold") {
-
-  // }
+  const [completion, setCompletion] = useState(27);
 
   return (
     <div className="mastery_tracker">

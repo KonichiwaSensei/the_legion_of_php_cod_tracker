@@ -1,6 +1,6 @@
-import GoldImage from '/resources/js/MasteryTracker/mastery_camo_pics/gold-camo.jpg'
-import PlatinumImage from '/resources/js/MasteryTracker/mastery_camo_pics/platinum-camo.jpg'
-import PolyatomicImage from '/resources/js/MasteryTracker/mastery_camo_pics/polyatomic-camo.jpg'
+import GoldImage from '/resources/img/gold-camo.jpg'
+import PlatinumImage from '/resources/img/platinum-camo.jpg'
+import PolyatomicImage from '/resources/img/polyatomic-camo.jpg'
 
 export default function MasteryProgressBar(props) {
 
@@ -27,9 +27,8 @@ const fillerStyles = {
 
 return (
     <div className="mastery_progress_bar">
-        <div className="mastery_progress_bar_filler" style={fillerStyles}>
-            <span className="mastery_tracker_label">{`${completion}/51`}</span>
-        </div>
+        <div className="mastery_progress_bar_filler" style={fillerStyles}></div>
+        <div className="mastery_tracker_label">{`${completion}/51`}</div>
     </div>
 );
 };
