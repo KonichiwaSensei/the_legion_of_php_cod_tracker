@@ -43,7 +43,7 @@ export default function GunBasicSlider({challengeMaxValue}) {
         <div className="gun_basic_slider_with_tracking">
             {challengeDone ? (
                 <>
-                <span className="gun_slider_tracking"> &nbsp;Complete!</span>
+                {/* <span className="gun_slider_tracking"> &nbsp;Complete!</span> */}
                     <input
                         type="checkbox"
                         checked={challengeDone}
