@@ -72,24 +72,40 @@ $colour_highlight: #2F6A75;
     background-color: $background_color;
     box-shadow: 2px 3px 10px black;
 
+    // Not being used anymore
     // .gun_class_section_divider {
     //     //Style
     //     background: $gun_component_divider_color;
     //     border-radius: 10px;
     // }
 
-    .gun_class_section_title {
-        // Layout:
-        // display: flex;
-        // flex-direction: column;
-        margin-left: 43px;
-
-        //Style:
-        color: $gun_class_text_color;
-        font-family: $font;
-        text-decoration: underline;
-        text-shadow: $colour_highlight 0 0 30px;
+    .gun_class_section_title_image_div{
+        display: flex;
+        justify-content: space-between;
+        .gun_class_section_title {
+            // Layout:
+            // display: flex;
+            // flex-direction: column;
+            margin-left: 43px;
+            
+    
+            //Style:
+            color: $gun_class_text_color;
+            font-family: $font;
+            text-decoration: underline;
+            text-shadow: $colour_highlight 0 0 30px;
+        }
+        .gun_class_image{
+            width: 20%;
+            // height: 10%;
+            
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position-y: center;
+            
+        }
     }
+
 
     .gun_class_guns {
         // Layout:
