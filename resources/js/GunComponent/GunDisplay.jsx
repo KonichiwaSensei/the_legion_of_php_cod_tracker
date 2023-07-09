@@ -17,6 +17,7 @@ export default function GunDisplay() {
             console.log(error);
         }
     }
+    
 
     // const profileChallengeCompletions = async () => {
     //     // Request with Axios:
