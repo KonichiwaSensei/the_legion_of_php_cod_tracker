@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../../../css/Footer.scss'
 
 
@@ -10,7 +11,7 @@ export default function Footer(){
 
     <div className="Left">@ THE LEGION OF PHP</div>
 
-    <a className="Right" href="/about-us">About Us</a>
+    <Link className="Right" to="about-us">About Us</Link>
 
     </footer>
 )
