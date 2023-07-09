@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Api\ChallengeController;
+use App\Http\Controllers\Api\ProfileChallengeController;
 use App\Http\Controllers\Api\ProfileTokensController;
 use App\Http\Controllers\Api\WeaponClassController;
 use App\Http\Controllers\Api\WeaponController;
+use App\Models\ProfileChallengeCompletion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +32,6 @@ Route::post('profiletokens/validate', [ProfileTokensController::class, 'validate
 // Route::get('weapon', [WeaponController::class, 'index']);
 // Route::get('challenge', [ChallengeController::class, 'index']);
 Route::get('weapons', [WeaponClassController::class, 'index']);
+
+Route::get('complete', [ProfileChallengeController::class, 'index']);
+// Route::post('complete', [ProfileChallengeCompletion::class, 'post']);

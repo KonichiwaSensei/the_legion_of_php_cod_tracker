@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Challenge extends Model
+class ChallengeWeapon extends Model
 {
     use HasFactory;
 
-    public function weapons()
-    {
-        return $this->belongsToMany(Weapon::class);
+    public function profileChallengeCompletions(){
+        return $this->belongsTo(ProfileChallengeCompletion::class);
     }
 
 }

@@ -18,6 +18,18 @@ export default function GunDisplay() {
         }
     }
 
+    // const profileChallengeCompletions = async () => {
+    //     // Request with Axios:
+    //     try {
+    //         const response = await axios.get('/api/complete')
+    //         // console.log(response);
+    //         response.data
+    //         // console.log(response.data);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
+
     useEffect(() => {
         loadWeapons()
         // console.log(weapons.name);

@@ -3,6 +3,11 @@ import { useState, useEffect } from "react";
 // This component returns a Basic Slider
 export default function GunBasicSlider({challengeMaxValue}) {
 
+
+
+    
+
+
     // Slider value being set by API (default state '50' for now)
     const [maxSliderValue, setMaxSliderValue] = useState(challengeMaxValue);
 
@@ -23,7 +28,7 @@ export default function GunBasicSlider({challengeMaxValue}) {
         } else {
             setSliderValue(event.target.value);
             setChallengeDone(false);
-            // console.log(sliderValue);
+            console.log(sliderValue);
         }
     };
 

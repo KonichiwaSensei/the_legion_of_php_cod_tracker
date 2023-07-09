@@ -12,4 +12,8 @@ class Profile extends Model
     public function profiletokens(){
         return $this->hasOne(ProfileToken::class);
     }
+
+    public function profilechallengecompletions(){
+        return $this->hasMany(ProfileChallengeCompletion::class);
+    }
 }
