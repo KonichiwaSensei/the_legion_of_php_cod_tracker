@@ -19,7 +19,7 @@ $label_colour: #D9D9D9;
     
     //Style:
     border-radius: 10px;
-    background: linear-gradient( $font_colour2 0%, $progressbar_background_colour 60%);
+    background: linear-gradient( $font_colour2 0%, $background_colour_of_elements 60%);
     box-shadow: 0 10px 20px black;
     .orion_tracker_title_div {
         display: flex;
@@ -45,7 +45,7 @@ $label_colour: #D9D9D9;
         display: grid;
         grid-template-columns: 1fr 50px;
         grid-template-rows: 20px;
-        box-shadow: 0 5px 20px $font_colour2;
+        box-shadow: 0 0px 20px $font_colour2;
         height: 20px;
         width: 98%;
         background-color: $progressbar_background_colour;
