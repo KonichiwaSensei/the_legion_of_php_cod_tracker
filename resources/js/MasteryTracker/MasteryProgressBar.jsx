@@ -19,18 +19,18 @@ export default function MasteryProgressBar(props) {
             break;
     }
 
-const fillerStyles = {
-    width: `${completion / 51 * 100}%`,
-    backgroundImage: `url(${image})`
-};
+    const fillerStyles = {
+        width: `${completion / 51 * 100}%`,
+        backgroundImage: `url(${image})`
+    };
 
 
-return (
-    <div className="mastery_progress_bar">
-        <div className="mastery_progress_bar_filler" style={fillerStyles}></div>
-        <div className="mastery_tracker_label">{`${completion}/51`}</div>
-    </div>
-);
+    return (
+        <div className="mastery_progress_bar">
+            <div className="mastery_progress_bar_filler" style={fillerStyles}></div>
+            <div className="mastery_tracker_label">{`${completion}/51`}</div>
+        </div>
+    );
 };
 
 

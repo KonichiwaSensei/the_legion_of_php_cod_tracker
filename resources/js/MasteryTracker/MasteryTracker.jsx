@@ -27,7 +27,7 @@ export default function MasteryTracker({ masterycamo }) {
       <div className={`mastery_image mastery_image-${masterycamo}`} alt={masterycamo}>
         {
           completion === 51
-          // if the completion is equal to 51 (the max value required in COD)
+            // if the completion is equal to 51 (the max value required in COD)
             ?
             <div className="mastery_tracker_title_div">
               <span className="mastery_tracker_title">{masterycamo} Complete</span>
