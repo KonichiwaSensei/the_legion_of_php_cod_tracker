@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
-import MasteryProgressBar from "./MasteryProgressBar";
 import { ProfileContext } from "../ProfileContext";
+
+import MasteryProgressBar from "./MasteryProgressBar";
 
 // MasteryTracker.jsx recieves masterycamo from TrackerPage/HomePage
 export default function MasteryTracker({ masterycamo }) {
