@@ -9,11 +9,12 @@ class ProfileChallengeCompletion extends Model
 {
     use HasFactory;
 
-    public function profiles(){
-        return $this->belongsToMany(Profile::class);
+    public function profile(){
+        return $this->belongsTo(Profile::class);
     }
 
-    public function challengeWeapons(){
-        return $this->hasOne(ChallengeWeapon::class);
+    public function challengeWeapon(){
+        return $this->belongsTo(ChallengeWeapon::class, 'challenge_weapons_id');
+        // Example for the future of not being dumb with naming
     }
 }

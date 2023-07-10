@@ -28,12 +28,30 @@ export default function App() {
         } catch (error) {
             console.log(error);
         }
-
-
     }
+
+    // API for Profiles
+    const [data, setData] = useState('')
+
+    const checkUserData = async () => {
+         
+        // Request with Axios:
+        try {
+            const response = await axios.get('/api/complete/1') // TODO: make dynamic
+            // console.log(response);
+            setData(response.data)
+            console.log(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    
+
 
     useEffect(() => {
         checkForToken()
+        checkUserData()
     }, [])
 
     // Step 1: Person gets to page, we check localStorage for PersonalToken

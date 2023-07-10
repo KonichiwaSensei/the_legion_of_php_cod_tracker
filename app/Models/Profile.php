@@ -9,11 +9,16 @@ class Profile extends Model
 {
     use HasFactory;
 
-    public function profiletokens(){
-        return $this->hasOne(ProfileToken::class);
+    public function profileToken(){
+        return $this->belongsTo(ProfileToken::class, "session_token_id");
     }
 
-    public function profilechallengecompletions(){
+    public function profileChallengeCompletions(){
         return $this->hasMany(ProfileChallengeCompletion::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    
 }

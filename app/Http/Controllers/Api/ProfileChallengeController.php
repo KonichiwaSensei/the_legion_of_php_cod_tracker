@@ -8,9 +8,13 @@ use Illuminate\Http\Request;
 
 class ProfileChallengeController extends Controller
 {
-    public function index()
+    public function index($profile_id)
     {
-        $profilechallengecompletion = ProfileChallengeCompletion::orderBy('id')->get();
+        $profilechallengecompletion = ProfileChallengeCompletion::
+        where("profile_id", $profile_id)
+        ->with("challengeWeapon", "challengeWeapon.challenge", "challengeWeapon.weapon", "profile", "profile.profileToken", "profile.user")
+        ->orderBy('id')
+        ->get();
 
         return $profilechallengecompletion;
     }

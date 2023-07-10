@@ -14,4 +14,9 @@ class Challenge extends Model
         return $this->belongsToMany(Weapon::class);
     }
 
+    public function challengeWeapon()
+    {
+        return $this->belongsTo(ChallengeWeapon::class);
+    }
+
 }
