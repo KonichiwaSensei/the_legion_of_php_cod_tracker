@@ -18,7 +18,7 @@ export default function OrionTracker() {
     //    and the challenge_complete value from challenge_weapon table is "true"
     const mastery_temp = profileData.filter(data => (data.challenge_weapon.challenge.is_mastery) && (data.challenge_complete));
     console.log(mastery_temp);
-    setPercentage(mastery_temp.length); // set the completion value to 1 ("true")
+    setPercentage(Math.round((mastery_temp.length * 100) / 153));
   }, [profileData])
 
   return (
