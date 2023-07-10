@@ -7,6 +7,7 @@ export default function GunDisplay() {
 
     const [weaponsClasses, setWeaponClasses] = useState([]);
 
+    // used to get all info necessary to display components with ALL info of weapons
     const loadWeapons = async () => {
         // Request with Axios:
         try {
@@ -19,6 +20,7 @@ export default function GunDisplay() {
         }
     }
     
+    // On page load: loadWeapons
     useEffect(() => {
         loadWeapons()
     }, [])
