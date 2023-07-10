@@ -1,93 +1,83 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./HomePage/HomePage";
-import TrackerPage from "./TrackerPage/TrackerPage";
-import { useState, useEffect, createContext} from "react";
+import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+// Importing all components
 import Header from './Navigation/Header/Header'
 import Footer from './Navigation/Footer/Footer'
 import AboutUs from "./Navigation/AboutUs/AboutUs";
-import axios from "axios";
+import HomePage from "./HomePage/HomePage";
+import TrackerPage from "./TrackerPage/TrackerPage";
+
+// importing ProfileContex
 import { ProfileContext } from "./ProfileContext";
 
+// Our main component returing everything wrapped in Routes
+// and ProfileContext.Provider + "UserContext.Provider"
 export default function App() {
 
-    const checkForToken = async () => {
-        let profileToken = JSON.parse(localStorage.getItem("profile_token"))
-        // Request with Axios:
-        try {
-            const response = await axios.post('/api/profiletokens/validate', {
-                profile_token_id: profileToken ? profileToken.id : null
-            })
-            
-            if (response.data) {
-                localStorage.setItem("profile_token", JSON.stringify(response.data))
-            }
-            
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    // // API for Profiles
+    // profileData being set in checkProfileData() by setProfileData
+    // also being provided as value in ProfileContext
     const [profileData, setProfileData] = useState([])
 
+    // getting data from /api/profilecompletion/profileTokenID found by Token generated below
+    // also being provided as value in ProfileContext
     const checkProfileData = async () => {
-        
-        console.log("here");
-        let profileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null 
+
+        // console.log("here");
+
+        // Token can be found in localStorage and we want the ID of the generated Token
+        let profileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null
 
         // Request with Axios:
         try {
             const response = await axios.get(`/api/profilecompletion/${profileTokenId}`)
             // console.log(response);
             setProfileData(response.data)
-            console.log(response.data);
+            // console.log(response.data);
         } catch (error) {
             console.log(error);
         }
     }
 
+    // TOKEN CHECK
+    const checkForToken = async () => {
+        // Step 1: Person gets to page, we check localStorage for profileToken
+        //      If no token, we make using generate() in backend ProfileTokensController
+        //      If yes we go to Step 2
+        // Step 2: If token exists, check with backend if it exists in database
+        // Step 3: If token exists in database, return data!
+        //      If not go to Step 1!
+        let profileToken = JSON.parse(localStorage.getItem("profile_token"))
+        // Request with Axios:
+        try {
+            const response = await axios.post('/api/profiletokens/validate', {
+                profile_token_id: profileToken ? profileToken.id : null
+            })
+
+            if (response.data) {
+                localStorage.setItem("profile_token", JSON.stringify(response.data))
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // On page load: check for token and check profile data based on token_id
     useEffect(() => {
         checkForToken()
         checkProfileData()
     }, [])
 
-
-
-    // Step 1: Person gets to page, we check localStorage for PersonalToken
-    // If no token, we make using generateRandomString()
-    // If yes we go to Step 2
-    // Step 2: If token exists, check with backend if it exists in database
-    // Step 3: If token exists in database, return data!
-    // If not go to Step 4:
-    // Step 4: If no token found in same request generate token (using backend)
-
     return (
-        <>
-            <ProfileContext.Provider value={{profileData, setProfileData, checkProfileData}}>
+        <>  
+        {/* Setting ProfileContext Provider and giving values necessary for MasteryTracker.jsx and GunTracker.jsx */}
+            <ProfileContext.Provider value={{ profileData, setProfileData, checkProfileData }}>
                 <Header />
-                {/* <button onClick={async() => {
-                    const response = await axios.post('/logout')
-                    console.log(response);
-                }}>LOGOUT</button>
-
-                <button onClick={async () => {
-                    const response = await axios.get('/api/user')
-                    console.log(response.data);
-                }}>Get User</button> */}
-                {/* <button onClick={() => { setClicks(clicks + 1) }}>{clicks}</button>
-                <button onClick={() => {
-                    localStorage.setItem("count", JSON.stringify(clicks));
-                }}>Save</button>
-                <button onClick={() => {
-                    const loaded = JSON.parse(localStorage.getItem("count"));
-                    console.log(localStorage);
-                }}>Load</button>
-                <button>Retrieved Data: </button> */}
-
-                
                 <Routes>
-                    <Route path='/' element={<HomePage profileData={profileData}/>} />
-                    <Route path='tracker' element={<TrackerPage profileData={profileData}/>} />
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='tracker' element={<TrackerPage />} />
                     <Route path='about-us' element={<AboutUs />} />
                 </Routes>
                 <Footer />

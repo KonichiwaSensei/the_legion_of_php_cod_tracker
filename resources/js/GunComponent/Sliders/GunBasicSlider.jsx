@@ -2,29 +2,43 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { ProfileContext } from "../../ProfileContext";
 
-// This component returns a Basic Slider
-export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon /*, profileData*/ }) {
+// 1. data being sent from GunDisplay.jsx api/weapons mapped into GunClass.jsx
+// 2. GunClass.jsx sorts based on weapon_class and returns GunTracker.jsx and weapon
+// 3. GunTracker.jsx sorts by challenge and maps to GunBasicChallenge.jsx or GunMasteryChallenge.jsx...
+// ...based on is_mastery value, and and passes challengeID and challengeMaxValue
+// 4. GunBasicChallenge.jsx returns this slider and passes challengeID and challengeMaxValue
+export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon }) {
 
+    // Calling ProfileContext with values defined in App.jsx calling api/profilecompletion/{profile_id}
     const { profileData, setProfileData } = useContext(ProfileContext)
 
+    // Finding challenge based on ID from array being sent by api/weapons passed through props to here
     const challenge = weapon.challenges.find(challenge => challenge.id === challengeId);
+
     // console.log(challengeId);
 
+    // Used to get the user's saved challenges from the DB
     const userSavedChallenge = profileData.filter(data => (data.challenge_weapon.challenge_id === challengeId) && (data.challenge_weapon.weapon_id === weapon.id))[0];
+    
     // console.log(userChallengeSavedValue);
-    // Slider value being set by API (default state '50' for now)
-    const [maxSliderValue, setMaxSliderValue] = useState(challengeMaxValue);
 
-    // Slider value being set by event.target.value
-    const [sliderValue, setSliderValue] = useState(userSavedChallenge ? userSavedChallenge.challenge_progress : '0');
+    // Slider value being set by from challengeMaxValue (default state set to '0' if there is no challengeMaxValue)
+    const [maxSliderValue, setMaxSliderValue] = useState(challengeMaxValue ? challengeMaxValue : 0);
+
+    // Slider value being set userSavedChallenge.challenge_progress value (default state set to '0' if there is no challengeMaxValue
+    const [sliderValue, setSliderValue] = useState(userSavedChallenge ? userSavedChallenge.challenge_progress : 0);
 
     // Sets the state of the challenge completion
     // and used to change the input to a checkbox
+    // and stores value into challenge_complete row in DB
     const [challengeDone, setChallengeDone] = useState(userSavedChallenge ? userSavedChallenge.challenge_complete : false);
 
+    // Necessary buffer for sending the data on completion of challenge
+    // without this defined and called in useEffect it doesn't properly update
     const [send, setSend] = useState(0);
 
     // API call to store challenge value and completion
+    // based on profileTokenId taken from localStorage
     const storeProfileData = async () => {
         let profileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null
         // Request with Axios:
@@ -36,7 +50,7 @@ export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon 
                 challenge_weapon_id: challenge.pivot.id,
                 profile_token_id: profileTokenId
             });
-            // console.log(weapon);
+            return response
         } catch (error) {
             console.log(error);
         }
@@ -44,9 +58,9 @@ export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon 
 
     // On input value change sets the sliderValue
     // and returns a true challengeDone if value is maxSliderValue
+    // and setSend to to send completion value on useEffect
     const handleSliderChange = (event) => {
         event.preventDefault();
-        console.log(event.target);
         if (event.target.value == maxSliderValue) {
             setSliderValue(event.target.value);
             setChallengeDone(true);
@@ -54,12 +68,13 @@ export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon 
         } else {
             setSliderValue(event.target.value);
             setChallengeDone(false);
-            console.log(sliderValue);
+            // console.log(sliderValue);
         }
     };
 
     // On checkbox 'uncheck' set the sliderValue to be the maxSliderValue-1
-    // and challengeDone to false
+    // set challengeDone to false
+    // and setSend to to send completion value on useEffect
     const handleCheckboxChange = (event) => {
         if (event.target.checked) {
             setChallengeDone(true);
@@ -72,6 +87,8 @@ export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon 
         }
     };
 
+    // useEffect used to store challenge completion progress into DB on state "send" definded above
+    // necessary for not too many api requests
     useEffect(() => {
         if (send) {
             storeProfileData()
@@ -82,6 +99,7 @@ export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon 
         <div className="gun_basic_slider_with_tracking">
             {challengeDone ? (
                 <>
+                    {/* Not used on Basic slider */}
                     {/* <span className="gun_slider_tracking"> &nbsp;Complete!</span> */}
                     <input
                         type="checkbox"
@@ -112,3 +130,6 @@ export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon 
         </div>
     );
 }
+
+
+// Written by: Matt

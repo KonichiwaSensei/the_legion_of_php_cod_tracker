@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const HomePage = ({profileData}) => {
+const HomePage = () => {
   return (
     <section className='home_page'>
       <div className="home_page_titles_and_login">
@@ -25,9 +25,9 @@ const HomePage = ({profileData}) => {
           <OrionTracker />
         </div>
         <div className='mastery_trackers_div'>
-          <MasteryTracker profileData={profileData} masterycamo="Gold" />
-          <MasteryTracker profileData={profileData} masterycamo="Platinum" />
-          <MasteryTracker profileData={profileData} masterycamo="Polyatomic" />
+          <MasteryTracker masterycamo="Gold" />
+          <MasteryTracker masterycamo="Platinum" />
+          <MasteryTracker masterycamo="Polyatomic" />
         </div>
       </div>
 

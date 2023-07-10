@@ -3,18 +3,17 @@ import MasteryProgressBar from "./MasteryProgressBar";
 import { ProfileContext } from "../ProfileContext";
 
 
-export default function MasteryTracker({ masterycamo /*, profileData */ }) {
+export default function MasteryTracker({ masterycamo }) {
 
   const { profileData, checkProfileData } = useContext(ProfileContext)
 
   const [completion, setCompletion] = useState(0);
   
-  // const [mastery, setMastery] = useState([]);
+
 
   useEffect(() => {
     const mastery_temp = profileData.filter(data => (data.challenge_weapon.challenge.mastery_text == masterycamo) && (data.challenge_weapon.challenge.is_mastery) && (data.challenge_complete));
-    console.log(mastery_temp);
-    // setMastery(mastery_temp)
+    // console.log(mastery_temp);
     setCompletion(mastery_temp.length);
   },[profileData])
   
