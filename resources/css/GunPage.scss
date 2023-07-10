@@ -10,20 +10,21 @@
 
 // VARIABLES:
 $font: BlackOpsOne;
-$background_color: #262626c9;
+$background_color: #2626267a;
 $gun_component_background_color: rgb(25,25,25);
 $gun_component_border_color: #D9D9D9;
 $gun_component_divider_color: #D9D9D9;
 $gun_class_text_color: #D9D9D9;
 $gun_component_text_color: #D9D9D9;
-$gun_component_slider_color1: #80FF00;
-$gun_component_slider_color3: #ffffff;
-$gun_component_slider_color2: #000000;
+$gun_component_slider_color1: #2F6A75;
+$gun_component_slider_color2: #262626;
+$gun_component_slider_color3: #D9D9D9;
+$colour_highlight: #2F6A75;
 
 // MIXINS
 @mixin webkit_and_moz_track {
     // Style:    
-    background: linear-gradient(90deg, $gun_component_slider_color2 0%, $gun_component_slider_color1 35%, white 100%);
+    background: linear-gradient(90deg, $gun_component_slider_color2 0%, $gun_component_slider_color1 55%, $gun_component_slider_color3 100%);
     border-radius: 4px;
 }
 
@@ -39,7 +40,7 @@ $gun_component_slider_color2: #000000;
 
 @mixin webkit_and_moz_mastery_track {
     // Style:
-    background: linear-gradient(90deg, white 0%, $gun_component_slider_color1 35%, $gun_component_slider_color2 100%);
+    background: linear-gradient(90deg, $gun_component_slider_color3 0%, $gun_component_slider_color1 55%, $gun_component_slider_color2 100%);
     border-radius: 4px;
 }
 
@@ -57,7 +58,6 @@ $gun_component_slider_color2: #000000;
 .gun_trackers {
     display: flex;
     flex-direction: column;
-    width: 90%;
     margin: 0 auto;
 }
 .gun_class_section {
@@ -66,25 +66,46 @@ $gun_component_slider_color2: #000000;
     margin: 10px;
     margin-bottom: 20px;
     padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
     background-color: $background_color;
+    box-shadow: 2px 3px 10px black;
 
+    // Not being used anymore
     // .gun_class_section_divider {
     //     //Style
     //     background: $gun_component_divider_color;
     //     border-radius: 10px;
     // }
 
-    .gun_class_section_title {
-        // Layout:
-        // display: flex;
-        // flex-direction: column;
-        margin-left: 43px;
-
-        //Style:
-        color: $gun_class_text_color;
-        font-family: $font;
-        text-decoration: underline;
+    .gun_class_section_title_image_div{
+        display: flex;
+        justify-content: space-between;
+        .gun_class_section_title {
+            // Layout:
+            // display: flex;
+            // flex-direction: column;
+            margin-left: 43px;
+            
+    
+            //Style:
+            color: $gun_class_text_color;
+            font-family: $font;
+            text-decoration: underline;
+            text-shadow: $colour_highlight 0 0 30px;
+        }
+        .gun_class_image{
+            width: 20%;
+            // height: 10%;
+            
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position-y: center;
+            
+        }
     }
+
 
     .gun_class_guns {
         // Layout:
@@ -92,7 +113,9 @@ $gun_component_slider_color2: #000000;
         align-items: center;
         overflow-x: scroll;
         white-space: nowrap;
-        
+        // box-shadow: 2px 3px 10px black;
+        border-radius: 10px;
+        padding: 10px;
     }
 
     // Scrollbar Styling:
@@ -126,6 +149,9 @@ $gun_component_slider_color2: #000000;
         // Style:
         border: 2.4px solid $gun_component_border_color;
         background: $gun_component_background_color;
+        box-shadow: 2px 3px 10px black;
+        margin-top: 5px;
+        margin-bottom: 5px;
 
         .gun_name {
             // Style:
@@ -133,6 +159,7 @@ $gun_component_slider_color2: #000000;
             font-family: $font;
             text-decoration-line: underline;
             margin-bottom: 10px;
+            text-shadow: $colour_highlight 0 0 30px;
         }
 
         .gun_challenges {
@@ -342,22 +369,34 @@ $gun_component_slider_color2: #000000;
     }
 }
 .gun_page_top {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: auto;
+    padding-bottom: 20px;
+    width: 90%;
     background-color: $background_color;
     border-radius: 10px;
+    margin: 10px;
+    box-shadow: 2px 3px 10px black;
 
-    .gun_page_top_tracker_and_title {
-        // Layout:
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        height: 150px;
+    // .gun_page_top_tracker_and_title {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     flex-grow: 1;
+    //     width: 90%;
+    //     background-color: $background_colour_of_elements;
+    //     border-radius: 10px;
+    //     margin: 10px;
+        
 
-        .gun_page_top_title {
-            // Style:
-            color: $gun_component_text_color;
-        }
-    }
+    //     .gun_page_top_title {
+    //         // Style:
+    //         color: $gun_component_text_color;
+            
+    //     }
+    // }
 }
 
 

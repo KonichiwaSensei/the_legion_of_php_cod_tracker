@@ -9,7 +9,7 @@ export default function TrackerPage(){
         <>
             <div className='gun_page_top'>
                 <div className='gun_page_top_tracker_and_title'>
-                    <h3 className='gun_page_top_title'>COD MW:II Camo Tracker:</h3>
+                    {/* <h3 className='gun_page_top_title'>COD MW:II Camo Tracker:</h3> */}
                     <div className='orion_tracker_div'>
                         <OrionTracker />
                     </div>
