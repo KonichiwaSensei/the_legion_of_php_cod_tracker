@@ -1,10 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import MasteryProgressBar from "./MasteryProgressBar";
+import { ProfileContext } from "../ProfileContext";
 
 
-export default function MasteryTracker({ masterycamo }) {
+export default function MasteryTracker({ masterycamo /*, profileData */ }) {
 
-  const [completion, setCompletion] = useState(27);
+  const { profileData, checkProfileData } = useContext(ProfileContext)
+
+  const [completion, setCompletion] = useState(0);
+  
+  // const [mastery, setMastery] = useState([]);
+
+  useEffect(() => {
+    const mastery_temp = profileData.filter(data => (data.challenge_weapon.challenge.mastery_text == masterycamo) && (data.challenge_weapon.challenge.is_mastery) && (data.challenge_complete));
+    console.log(mastery_temp);
+    // setMastery(mastery_temp)
+    setCompletion(mastery_temp.length);
+  },[profileData])
+  
 
   return (
     <div className="mastery_tracker">

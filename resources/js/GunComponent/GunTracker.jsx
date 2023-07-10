@@ -1,7 +1,7 @@
 import GunBasicChallenge from "./GunChallenges/GunBasicChallenge"
 import GunMasteryChallenge from "./GunChallenges/GunMasteryChallenge"
 
-export default function GunTracker({weapon}) {
+export default function GunTracker({weapon, profileData}) {
 
     // console.log(weapon);
 
@@ -14,7 +14,7 @@ export default function GunTracker({weapon}) {
                     weapon.challenges.map((challenge) => {
                        return challenge.is_mastery === 0
                         ?
-                        <GunBasicChallenge key={String("BASE" + weapon.id + "." + challenge.id)} challenge={challenge}/>
+                        <GunBasicChallenge key={String("BASE" + weapon.id + "." + challenge.id)} weapon={weapon} challenge={challenge} profileData={profileData}/>
                         :
                         null
                     })
@@ -26,7 +26,7 @@ export default function GunTracker({weapon}) {
                     weapon.challenges.map((challenge) => {
                         return challenge.is_mastery === 1
                         ?
-                         <GunMasteryChallenge key={String("MASTERY" + weapon.id + "." + challenge.id)} challenge={challenge}/>
+                         <GunMasteryChallenge key={String("MASTERY" + weapon.id + "." + challenge.id)} weapon={weapon} challenge={challenge} profileData={profileData}/>
                         :
                         null
                     })

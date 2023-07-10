@@ -3,7 +3,9 @@ import GunDisplay from '../GunComponent/GunDisplay'
 import OrionTracker from '../OrionTracker/OrionTracker';
 import MasteryTracker from '../MasteryTracker/MasteryTracker';
 
-export default function TrackerPage(){
+export default function TrackerPage({profileData}){
+
+
 
     return(
         <>
@@ -16,12 +18,12 @@ export default function TrackerPage(){
                 </div>
     
                 <div className='mastery_trackers_div'>
-                    <MasteryTracker masterycamo="Gold" />
-                    <MasteryTracker masterycamo="Platinum" />
-                    <MasteryTracker masterycamo="Polyatomic" />
+                    <MasteryTracker profileData={profileData} masterycamo="Gold" />
+                    <MasteryTracker profileData={profileData} masterycamo="Platinum" />
+                    <MasteryTracker profileData={profileData} masterycamo="Polyatomic" />
                 </div>
             </div>
-            <GunDisplay />
+            <GunDisplay profileData={profileData}/>
         </>
     )
 }

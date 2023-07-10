@@ -15,7 +15,7 @@ class Weapon extends Model
     }
 
     public function challenges(){
-        return $this->belongsToMany(Challenge::class);
+        return $this->belongsToMany(Challenge::class)->withPivot('id');
     }
 
     public function challengeWeapon()

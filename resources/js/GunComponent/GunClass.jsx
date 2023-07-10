@@ -11,7 +11,7 @@ import Pistol from '/resources/img/guns/pistol.png'
 import Launcher from '/resources/img/guns/rocketlauncher.png'
 import Melee from '/resources/img/guns/melee.png'
 
-export default function GunClass({ classname, weaponClass }) {
+export default function GunClass({ classname, weaponClass, profileData }) {
 
 
     const classnameLowerCaseNoSpace = classname.replace(/\s+/g, '').toLowerCase();
@@ -65,7 +65,7 @@ export default function GunClass({ classname, weaponClass }) {
                 <div className="gun_class_guns">
                     {
                         weaponClass.weapons.map((weapon) => {
-                            return <GunTracker key={weapon.id} weapon={weapon} />
+                            return <GunTracker key={weapon.id} weapon={weapon} profileData={profileData}/>
                         })
                     }
                 </div>

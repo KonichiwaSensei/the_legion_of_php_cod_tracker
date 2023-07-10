@@ -10,7 +10,7 @@ class Profile extends Model
     use HasFactory;
 
     public function profileToken(){
-        return $this->belongsTo(ProfileToken::class, "session_token_id");
+        return $this->belongsTo(ProfileToken::class);
     }
 
     public function profileChallengeCompletions(){
