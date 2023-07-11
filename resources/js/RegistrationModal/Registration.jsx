@@ -28,6 +28,8 @@ const ModalRegistration = ({ closeModal }) => {
         console.log("Password:", password);
         console.log("Password Confirmation:", passwordConfirmation);
 
+        let profileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null
+        
         try {
             const response = await axios.post("/register", {
                 name: username,

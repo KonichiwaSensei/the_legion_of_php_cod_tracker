@@ -33,6 +33,9 @@ const ModalLogin = ({ closeModal }) => {
 
       console.log(response.data); // Handle the response data according to your needs
 
+      // another axios call to check for logged in user and try finding a profile for them
+      // if if profile exists overwrite local storage token with token saved in DB
+
       dispatch({
         type: 'user/set',
         payload: false,
