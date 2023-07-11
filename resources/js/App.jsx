@@ -1,13 +1,56 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import TrackerPage from "./TrackerPage/TrackerPage";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import Header from './Navigation/Header/Header'
 import Footer from './Navigation/Footer/Footer'
 import AboutUs from "./Navigation/AboutUs/AboutUs";
 import axios from "axios";
+import reducer from './Context/reducer';
+import state from "./Context/state";
+import Context from "./Context";
 
 export default function App() {
+
+    const [context, dispatch] = useReducer(reducer, state);
+
+
+    const loadUser = async () => {
+        // load data about the logged-in user
+        const response = await fetch('/api/user', {
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (Math.floor(response.status / 100) !== 2) {
+            // not logged in
+            dispatch({
+                type: 'user/set',
+                payload: null
+            })
+        } else {
+            // logged in
+            const data = await response.json();
+
+            dispatch({
+                type: 'user/set',
+                payload: data
+            })
+        }
+    }
+
+    useEffect(() => {
+        loadUser()
+    }, []);
+
+    // whenever the user in the context changes to false
+    // reload user information
+    useEffect(() => {
+        if (context.user === false) {
+            loadUser()
+        }
+    }, [context.user]);
 
     // const [token, setToken] = useState(null);
 
@@ -28,8 +71,6 @@ export default function App() {
         } catch (error) {
             console.log(error);
         }
-
-
     }
 
     useEffect(() => {
@@ -45,17 +86,18 @@ export default function App() {
     // Step 4: If no token found in same request generate token (using backend)
 
     return (
-        <>
+         <Context.Provider value={ { context, dispatch } }>
+            <BrowserRouter>
             <Header />
-            {/* <button onClick={async() => {
+              {/* <button onClick={async() => {
                 const response = await axios.post('/logout')
                 console.log(response);
-            }}>LOGOUT</button>
+            }}>LOGOUT</button>  */}
 
             <button onClick={async () => {
                 const response = await axios.get('/api/user')
                 console.log(response.data);
-            }}>Get User</button> */}
+            }}>Get User</button> 
             {/* <button onClick={() => { setClicks(clicks + 1) }}>{clicks}</button>
             <button onClick={() => {
                 localStorage.setItem("count", JSON.stringify(clicks));
@@ -72,7 +114,7 @@ export default function App() {
                 <Route path='about-us' element={<AboutUs />} />
             </Routes>
             <Footer />
-
-        </>
+            </BrowserRouter>
+        </Context.Provider>
     )
 }
