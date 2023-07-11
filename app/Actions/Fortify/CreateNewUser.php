@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\ProfileToken;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -31,10 +32,18 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
+
+        // Added updating a Profile based on token_id related to user_id on user registration
+        $profile_token = ProfileToken::find($input['token_id']);
+        $profile = $profile_token->profile;
+        $profile->user_id = $user->id;
+        $profile->save();
+
+        return $user; 
     }
 }
