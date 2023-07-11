@@ -111,6 +111,7 @@ export default function App() {
             <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='tracker' element={<TrackerPage />} />
+                <Route path='tracker/:searchQuery' element={<TrackerPage />} />
                 <Route path='about-us' element={<AboutUs />} />
             </Routes>
             <Footer />

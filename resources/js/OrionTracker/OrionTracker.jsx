@@ -1,11 +1,9 @@
 import { useState } from "react";
 import OrionProgressBar from "./OrionProgressBar";
 
-
  export default function OrionTracker() {
 
     const [percentage, setPercentage] = useState(73)
-
 
     return (
       <div className="orion_tracker">

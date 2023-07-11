@@ -15,6 +15,12 @@ $modal_background_color: rgba(25, 25, 25, 0.593);
   background-color: $modal_background_color;
   animation-name: slideIn;
   animation-duration: 0.5s;
+
+  &_closing {
+    background-color: $modal_background_color;
+    animation-name: slideOut;
+    animation-duration: 0.5s;
+  }
 }
 
 @keyframes slideIn {
@@ -24,6 +30,16 @@ $modal_background_color: rgba(25, 25, 25, 0.593);
 
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
   }
 }
 

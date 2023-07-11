@@ -4,6 +4,7 @@ import Login from '../LoginModal/Login';
 import "../../css/HomePage.scss";
 import OrionTracker from '../OrionTracker/OrionTracker';
 import MasteryTracker from '../MasteryTracker/MasteryTracker';
+import SearchBar from '../SearchBar/SearchBar';
 import { Link } from 'react-router-dom';
 
 
@@ -16,9 +17,6 @@ const HomePage = () => {
           <h1 className='home_page_title1'>Call of Duty: MWII</h1>
           <Link to='tracker' className='home_page_title2'>Camo Tracker</Link>
         </div>
-        <div className='home_page_login_section'>
-          <Login />
-        </div>
       </div>
       <div className='home_page_trackers'>
         <div className='orion_tracker_div'>
@@ -30,7 +28,7 @@ const HomePage = () => {
           <MasteryTracker masterycamo="Polyatomic" />
         </div>
       </div>
-
+        <SearchBar/>
 
 
     </section>

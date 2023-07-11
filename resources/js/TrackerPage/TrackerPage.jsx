@@ -3,6 +3,8 @@ import GunDisplay from '../GunComponent/GunDisplay'
 import OrionTracker from '../OrionTracker/OrionTracker';
 import MasteryTracker from '../MasteryTracker/MasteryTracker';
 
+import { useParams } from 'react-router-dom';
+
 export default function TrackerPage(){
 
     return(
