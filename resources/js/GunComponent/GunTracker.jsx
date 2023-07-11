@@ -26,14 +26,14 @@ export default function GunTracker({ weapon }) {
         <div className="gun_component">
             <div
                 ref={foundRef}
-                style={{ position: "relative", top: "-100px" }}
+                style={{ position: "relative", top: "-240px" }}
             ></div>
             {/* If profileData has a length of more than 0 show the tracker, otherwise not */}
             {/* {profileData.length > 0 ? */}
             <>
                 <h3 className="gun_name">
-                    {(searchQuery == weapon.name ? "**" : "") + weapon.name}
-                </h3>
+                    {(searchQuery == weapon.name.toLowerCase() ? "**" : "") + weapon.name}
+                </h3>       
                 <div className="gun_challenges">
                     {/* // 3. GunTracker.jsx sorts by challenge and maps to GunBasicChallenge.jsx or GunMasteryChallenge.jsx...
 // ...based on is_mastery value, and and passes challengeID and challengeMaxValue */}

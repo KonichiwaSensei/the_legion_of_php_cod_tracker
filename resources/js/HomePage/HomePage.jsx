@@ -17,6 +17,9 @@ const HomePage = () => {
           <h1 className='home_page_title1'>Call of Duty: MWII</h1>
           <Link to='tracker' className='home_page_title2'>Camo Tracker</Link>
         </div>
+        <div className='home_page_login_section'>
+        <SearchBar/>
+        </div>
       </div>
       <div className='home_page_trackers'>
         <div className='orion_tracker_div'>
@@ -28,7 +31,7 @@ const HomePage = () => {
           <MasteryTracker masterycamo="Polyatomic" />
         </div>
       </div>
-        <SearchBar/>
+        
 
 
     </section>
