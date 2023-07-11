@@ -10,7 +10,7 @@ import { ProfileContext } from "../../ProfileContext";
 export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon }) {
 
     // Calling ProfileContext with values defined in App.jsx calling api/profilecompletion/{profile_id}
-    const { profileData, setProfileData } = useContext(ProfileContext)
+    const { profileData, setProfileData, checkProfileData } = useContext(ProfileContext)
 
     // Finding challenge based on ID from array being sent by api/weapons passed through props to here
     const challenge = weapon.challenges.find(challenge => challenge.id === challengeId);
@@ -95,8 +95,13 @@ export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon 
         }
     }, [send]);
 
+        // useEffect(() => {
+        //     checkProfileData()
+        // },[])
+
     return (
         <div className="gun_basic_slider_with_tracking">
+            {console.log(profileData)}
             {challengeDone ? (
                 <>
                     {/* Not used on Basic slider */}
