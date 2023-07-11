@@ -1,6 +1,9 @@
-import { Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
+import reducer from './Context/reducer';
+import state from "./Context/state";
+import Context from "./Context";
 
 // Importing all components
 import Header from './Navigation/Header/Header'
@@ -13,8 +16,9 @@ import TrackerPage from "./TrackerPage/TrackerPage";
 import { ProfileContext } from "./ProfileContext";
 
 // Our main component returing everything wrapped in Routes
-// and ProfileContext.Provider + "UserContext.Provider"
+// and ProfileContext.Provider
 export default function App() {
+
 
     // profileData being set in checkProfileData() by setProfileData
     // also being provided as value in ProfileContext
@@ -23,8 +27,6 @@ export default function App() {
     // getting data from /api/profilecompletion/profileTokenID found by Token generated below
     // also being provided as value in ProfileContext
     const checkProfileData = async () => {
-
-        // console.log("here");
 
         // Token can be found in localStorage and we want the ID of the generated Token
         let profileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null
@@ -39,6 +41,47 @@ export default function App() {
             console.log(error);
         }
     }
+
+    const [context, dispatch] = useReducer(reducer, state);
+
+
+    const loadUser = async () => {
+        // load data about the logged-in user
+        const response = await fetch('/api/user', {
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (Math.floor(response.status / 100) !== 2) {
+            // not logged in
+            dispatch({
+                type: 'user/set',
+                payload: null
+            })
+        } else {
+            // logged in
+            const data = await response.json();
+
+            dispatch({
+                type: 'user/set',
+                payload: data
+            })
+        }
+    }
+
+    useEffect(() => {
+        loadUser()
+    }, []);
+
+    // whenever the user in the context changes to false
+    // reload user information
+    useEffect(() => {
+        if (context.user === false) {
+            loadUser()
+        }
+    }, [context.user]);
+
 
     // TOKEN CHECK
     const checkForToken = async () => {
@@ -71,18 +114,21 @@ export default function App() {
     }, [])
 
     return (
-        <>  
-        {/* Setting ProfileContext Provider and giving values necessary for MasteryTracker.jsx and GunTracker.jsx */}
+         <> 
+         <Context.Provider value={ { context, dispatch } }>
+           {/* Setting ProfileContext Provider and giving values necessary for MasteryTracker.jsx and GunTracker.jsx */}
             <ProfileContext.Provider value={{ profileData, setProfileData, checkProfileData }}>
+              <BrowserRouter>
                 <Header />
                 <Routes>
-                    <Route path='/' element={<HomePage />} />
-                    <Route path='tracker' element={<TrackerPage />} />
-                    <Route path='about-us' element={<AboutUs />} />
+                  <Route path='/' element={<HomePage />} />
+                  <Route path='tracker' element={<TrackerPage />} />
+                  <Route path='about-us' element={<AboutUs />} />
                 </Routes>
-                <Footer />
-            </ProfileContext.Provider>
-
+              <Footer />
+            </BrowserRouter>
+          </ProfileContext.Provider>
+        </Context.Provider>
         </>
     )
 }
