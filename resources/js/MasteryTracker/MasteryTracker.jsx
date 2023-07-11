@@ -18,7 +18,7 @@ export default function MasteryTracker({ masterycamo }) {
     //    where challenge_text from challenges table is equal to masterycamo (name being passed from TrackerPage/HomePage)
     //    and the challenge is_mastery value is "true"
     //    and the challenge_complete value from challenge_weapon table is "true"
-    const mastery_temp = profileData.filter(data => (data.challenge_weapon.challenge.mastery_text == masterycamo) && (data.challenge_weapon.challenge.is_mastery) && (data.challenge_complete));
+    const mastery_temp = profileData ? profileData.filter(data => (data.challenge_weapon.challenge.mastery_text == masterycamo) && (data.challenge_weapon.challenge.is_mastery) && (data.challenge_complete)) : null;
     // console.log(mastery_temp);
     setCompletion(mastery_temp.length); // set the completion value to 1 ("true")
   }, [profileData])

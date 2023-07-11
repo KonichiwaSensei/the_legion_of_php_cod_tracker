@@ -27,19 +27,22 @@ export default function App() {
     // getting data from /api/profilecompletion/profileTokenID found by Token generated below
     // also being provided as value in ProfileContext
     const checkProfileData = async () => {
-
+        
         // Token can be found in localStorage and we want the ID of the generated Token
         let profileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null
-
-        // Request with Axios:
-        try {
-            const response = await axios.get(`/api/profilecompletion/${profileTokenId}`)
-            // console.log(response);
-            setProfileData(response.data)
-            // console.log(response.data);
-        } catch (error) {
-            console.log(error);
+       
+        if (profileTokenId) {     
+            // Request with Axios:
+            try {
+                const response = await axios.get(`/api/profilecompletion/${profileTokenId}`)
+                // console.log(response);
+                setProfileData(response.data)
+                // console.log(response.data);
+            } catch (error) {
+                console.log(error);
+            }
         }
+
     }
 
     const [context, dispatch] = useReducer(reducer, state);
@@ -94,10 +97,6 @@ export default function App() {
             }
         }
 
-    useEffect(() => {
-        loadUser()
-    }, []);
-
     // whenever the user in the context changes to false
     // reload user information
     useEffect(() => {
@@ -108,7 +107,10 @@ export default function App() {
 
     // On page load: check for token and check profile data based on token_id
     useEffect(() => {
+        loadUser()
         checkForToken()
+
+
         checkProfileData()
     }, [])
 
