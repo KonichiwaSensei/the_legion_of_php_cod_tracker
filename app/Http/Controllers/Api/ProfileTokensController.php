@@ -48,6 +48,13 @@ class ProfileTokensController extends Controller
             $newToken = new ProfileToken;
             $newToken->token = $personalProfileToken;
             $newToken->save();
+
+            $newProfile = new Profile;
+            $newProfile->profile_token_id = $newToken->id;
+            $newProfile->orion_challenge_complete = 0;
+            $newProfile->save();
+
+
             return $newToken;
         }
         
