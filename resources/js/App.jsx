@@ -70,6 +70,30 @@ export default function App() {
         }
     }
 
+        // TOKEN CHECK
+        const checkForToken = async () => {
+            // Step 1: Person gets to page, we check localStorage for profileToken
+            //      If no token, we make using generate() in backend ProfileTokensController
+            //      If yes we go to Step 2
+            // Step 2: If token exists, check with backend if it exists in database
+            // Step 3: If token exists in database, return data!
+            //      If not go to Step 1!
+            let profileToken = JSON.parse(localStorage.getItem("profile_token"))
+            // Request with Axios:
+            try {
+                const response = await axios.post('/api/profiletokens/validate', {
+                    profile_token_id: profileToken ? profileToken.id : null
+                })
+    
+                if (response.data) {
+                    localStorage.setItem("profile_token", JSON.stringify(response.data))
+                }
+    
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
     useEffect(() => {
         loadUser()
     }, []);
@@ -81,31 +105,6 @@ export default function App() {
             loadUser()
         }
     }, [context.user]);
-
-
-    // TOKEN CHECK
-    const checkForToken = async () => {
-        // Step 1: Person gets to page, we check localStorage for profileToken
-        //      If no token, we make using generate() in backend ProfileTokensController
-        //      If yes we go to Step 2
-        // Step 2: If token exists, check with backend if it exists in database
-        // Step 3: If token exists in database, return data!
-        //      If not go to Step 1!
-        let profileToken = JSON.parse(localStorage.getItem("profile_token"))
-        // Request with Axios:
-        try {
-            const response = await axios.post('/api/profiletokens/validate', {
-                profile_token_id: profileToken ? profileToken.id : null
-            })
-
-            if (response.data) {
-                localStorage.setItem("profile_token", JSON.stringify(response.data))
-            }
-
-        } catch (error) {
-            console.log(error);
-        }
-    }
 
     // On page load: check for token and check profile data based on token_id
     useEffect(() => {

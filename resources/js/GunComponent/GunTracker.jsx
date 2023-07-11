@@ -14,7 +14,7 @@ export default function GunTracker({ weapon }) {
     return (
         <div className="gun_component">
             {/* If profileData has a length of more than 0 show the tracker, otherwise not */}
-            {profileData.length > 0 ?
+            {/* {profileData.length > 0 ? */}
                 <>
                     <h3 className="gun_name">{weapon.name}</h3>
                     <div className="gun_challenges">
@@ -43,9 +43,9 @@ export default function GunTracker({ weapon }) {
                         }
                     </div>
                 </>
-                :
+                {/* :
                 <span className="gun_name">Loading...</span>
-            }
+            } */}
         </div>
     )
 }

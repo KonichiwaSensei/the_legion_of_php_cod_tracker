@@ -95,13 +95,8 @@ export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon 
         }
     }, [send]);
 
-        // useEffect(() => {
-        //     checkProfileData()
-        // },[])
-
     return (
         <div className="gun_basic_slider_with_tracking">
-            {console.log(profileData)}
             {challengeDone ? (
                 <>
                     {/* Not used on Basic slider */}
