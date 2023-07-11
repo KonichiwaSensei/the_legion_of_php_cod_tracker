@@ -55,7 +55,7 @@ const ModalLogin = ({ closeModal }) => {
           // console.log("user_id: " + remoteUserId + " + token_id: " + remoteProfileTokenId + " + token: " + remoteProfileToken + " <- remote | local-> " + localProfileTokenId + " " + localProfileToken );
         } else {
           // localStorage.getItem("profile_token").token = remoteProfileTokenId
-          // dunno if this works but don't have condition for getting user id from Fortify/Sanctum due to 401 error as seen above
+          // dunno if this works but don't have condition for getting user id from Fortify/Sanctum due to 401 error as seen
         }
       });
 
