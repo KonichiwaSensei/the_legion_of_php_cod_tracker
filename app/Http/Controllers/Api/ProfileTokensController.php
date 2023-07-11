@@ -12,7 +12,7 @@ class ProfileTokensController extends Controller
     public function index()
     {
 
-        $profiletokens = ProfileToken::orderBy('id')->get();
+        $profiletokens = ProfileToken::orderBy('id')->with("profile")->get();
 
         return $profiletokens;
     }

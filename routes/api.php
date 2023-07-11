@@ -25,6 +25,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+// USER ID MIDDLEWARE
+Route::middleware('auth:sanctum')->get('/user-id', function (Request $request) {
+    return $request->user()->id;
+});
 
 // Profile Tokens API endpoints //
 // Get all profiletokens
@@ -41,7 +45,6 @@ Route::get('weapons', [WeaponClassController::class, 'index']);
 // Route::get('challengeweapon', [ChallengeWeaponController::class, 'index']);
 
 // Profile Completion API endpoints //
-// Profile Challenge Completions based on profile ID
 Route::get('profilecompletion/{profile_id}', [ProfileChallengeController::class, 'index'])->whereNumber('profile_id');
 // Saving Profile Challenge Completions
 Route::post('profilecompletion/store', [ProfileChallengeController::class, 'store']);
