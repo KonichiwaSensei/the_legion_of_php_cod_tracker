@@ -9,7 +9,7 @@ const ModalLogin = ({ closeModal }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isClosing, setIsClosing] = useState('')  
+  const [isClosing, setIsClosing] = useState('')
 
   // const handleOpenModal = () => {
   //   setIsOpen(true);
@@ -21,20 +21,43 @@ const ModalLogin = ({ closeModal }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log('Login...');
-    console.log('Username:', username);
-    console.log('Password:', password);
+    // console.log('Login...');
+    // console.log('Username:', username);
+    // console.log('Password:', password);
 
     try {
       const response = await axios.post('/login', {
         name: username,
         password,
+      })
+      // console.log(response)
+
+      // **BELOW IS THE CHECK IF LOGGED IN USER ALREADY EXISTS WITH HIS TOKEN THAT DOESN'T MATCH localStorage TOKEN
+      // **IF SO OVERWRITE NEWLY GENERATED TOKEN IN localStorage WITH TOKEN SAVED IN DB
+      // axios call to check for logged in user and try finding a profile for them... don't know if necessary
+      // const userIdResponse = await axios.get('/api/user-id', { withCredentials: true }); // 401 error... idk anymore
+      // const userId = userIdResponse.data;
+
+      // axios call to get profile tokens with profiles
+      const profileTokens = await axios.get(`/api/profiletokens`)
+
+      // getting profile token id from localStorage
+      let localProfileToken = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).token : null
+      let localProfileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null
+
+      // need to figure out how to get the user_id from the request?
+      profileTokens.data.forEach(profileToken => {
+        
+        if (localProfileTokenId ? remoteProfileTokenId === localProfileTokenId : null) {
+          let remoteProfileTokenId = profileToken.id
+          let remoteProfileToken = profileToken.token
+          let remoteUserId = profileToken.profile.user_id  
+          // console.log("user_id: " + remoteUserId + " + token_id: " + remoteProfileTokenId + " + token: " + remoteProfileToken + " <- remote | local-> " + localProfileTokenId + " " + localProfileToken );
+        } else {
+          // localStorage.getItem("profile_token").token = remoteProfileTokenId
+          // dunno if this works but don't have condition for getting user id from Fortify/Sanctum due to 401 error as seen above
+        }
       });
-
-      console.log(response.data); // Handle the response data according to your needs
-
-      // another axios call to check for logged in user and try finding a profile for them
-      // if if profile exists overwrite local storage token with token saved in DB
 
       dispatch({
         type: 'user/set',
@@ -70,9 +93,9 @@ const ModalLogin = ({ closeModal }) => {
       <div className={`modal ${isClosing}`}>
         <div className="modal-content">
           <span className="close" onClick={() => {
-              setIsClosing(' modal_closing')
-              closeModal()
-            }}>
+            setIsClosing(' modal_closing')
+            closeModal()
+          }}>
             &times;
           </span>
           <h2>Login</h2>

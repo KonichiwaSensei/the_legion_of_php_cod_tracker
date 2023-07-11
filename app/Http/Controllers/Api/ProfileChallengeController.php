@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profile;
 use App\Models\ProfileChallengeCompletion;
 use App\Models\ProfileToken;
 use Illuminate\Http\Request;
@@ -53,12 +54,4 @@ class ProfileChallengeController extends Controller
 
         return 'Stored';
     }
-
-    // public function post()
-    // {
-    //     print_r($_POST);
-    //     die;
-    // }
-
-
 }
