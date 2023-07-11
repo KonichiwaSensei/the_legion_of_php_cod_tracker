@@ -6,12 +6,14 @@ import { ProfileContext } from "../ProfileContext";
 // 2. GunClass.jsx sorts based on weapon_class and returns GunTracker.jsx and weapon
 export default function GunTracker({ weapon }) {
 
-    const { profileData, setProfileData, checkProfileData } = useContext(ProfileContext)
+    // Calling ProfileContext with values defined in App.jsx calling api/profilecompletion/{profile_id}
+    const { profileData } = useContext(ProfileContext)
 
     // console.log(weapon);
 
     return (
         <div className="gun_component">
+            {/* If profileData has a length of more than 0 show the tracker, otherwise not */}
             {profileData.length > 0 ?
                 <>
                     <h3 className="gun_name">{weapon.name}</h3>
@@ -43,7 +45,7 @@ export default function GunTracker({ weapon }) {
                 </>
                 :
                 <span className="gun_name">Loading...</span>
-        }
+            }
         </div>
     )
 }
