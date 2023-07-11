@@ -36,6 +36,7 @@ const ModalRegistration = ({ closeModal }) => {
                 email,
                 password,
                 password_confirmation: passwordConfirmation,
+                token_id: profileTokenId
             });
 
             console.log(response);
