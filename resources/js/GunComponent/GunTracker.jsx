@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import GunBasicChallenge from "./GunChallenges/GunBasicChallenge";
 import GunMasteryChallenge from "./GunChallenges/GunMasteryChallenge";
 import { useContext } from "react";
@@ -11,32 +11,70 @@ export default function GunTracker({ weapon }) {
     // Calling ProfileContext with values defined in App.jsx calling api/profilecompletion/{profile_id}
     const { profileData } = useContext(ProfileContext);
 
+    // used to get searchQuery from SearchBar.jsx using useParams
     const { searchQuery } = useParams();
-    const foundRef = useRef();
+    const foundRef = useRef(); // useRef for scrolling behaviour
 
-    console.log(searchQuery);
+    // Using regular expression to get rid of any white spaces and hyphens in both weapon.name and in searchQuery
+    const filteredWeaponResult = weapon.name ? weapon.name.toLowerCase().replace(/[\s-]/g, '') : null;
+    const filteredSearchQuery = searchQuery ? searchQuery.toLowerCase().replace(/[\s-]/g, '') : null;
 
-    // const scrollAnchor = <div></div>;
+    // console.log('Search Query: ' + ' ' + searchQuery + ' ' + 'Weapon Name: ' + ' ' + weapon.name + " | | | " + 'Filtered Search: ' + ' ' + filteredSearchQuery + ' ' + 'Filtered Weapon Name: ' + ' ' + filteredWeaponResult)
+
+    // Setting background colour based on search:
+    const [backgroundColour, setBackgroundColour] = useState('')
+    
+    const changeDivStyleToMatchSearch = () => {
+        // If in filtered searchQuery and weapon.name any character matches then:
+        if (
+            filteredSearchQuery &&
+            filteredWeaponResult &&
+            filteredWeaponResult.includes(filteredSearchQuery)
+        ) {
+            setBackgroundColour('#0f2226')
+        } else
+            setBackgroundColour('')
+    }
+
+    const backgroundStyle = {
+        background: backgroundColour
+    };
+
+    // useEffect for scrolling and filtering
     useEffect(() => {
-        searchQuery == weapon.name &&
-            foundRef.current.scrollIntoView({ behavior: "smooth" });
+        // If in filtered searchQuery and weapon.name any character matches then:
+        if (
+            filteredSearchQuery &&
+            filteredWeaponResult &&
+            filteredWeaponResult.includes(filteredSearchQuery)
+        ) {
+            foundRef.current.scrollIntoView({ behavior: "smooth" })
+            changeDivStyleToMatchSearch()
+        }
     }, []);
 
     return (
-        <div className="gun_component">
+        <div className="gun_component" style={backgroundStyle}>
             <div
                 ref={foundRef}
                 style={{ position: "relative", top: "-240px" }}
             ></div>
-            {/* If profileData has a length of more than 0 show the tracker, otherwise not */}
-            {/* {profileData.length > 0 ? */}
             <>
-                <h3 className="gun_name">
-                    {(searchQuery == weapon.name.toLowerCase() ? "**" : "") + weapon.name}
-                </h3>       
+                <h3 className="gun_name" >
+                    {
+                        // If in filtered searchQuery and weapon.name any character matches then:
+                        filteredSearchQuery
+                            &&
+                            filteredWeaponResult 
+                            &&
+                            filteredWeaponResult.includes(filteredSearchQuery)
+                            ? weapon.name + "*"
+                            : weapon.name
+                    }
+                </h3>
                 <div className="gun_challenges">
-                    {/* // 3. GunTracker.jsx sorts by challenge and maps to GunBasicChallenge.jsx or GunMasteryChallenge.jsx...
-// ...based on is_mastery value, and and passes challengeID and challengeMaxValue */}
+                    {/* // 3. GunTracker.jsx sorts by challenge and maps to GunBasicChallenge.jsx or GunMasteryChallenge.jsx... */}
+                    {/* // ...based on is_mastery value, and and passes challengeID and challengeMaxValue */}
                     {weapon.challenges.map((challenge) => {
                         return challenge.is_mastery === 0 ? (
                             <GunBasicChallenge

@@ -41,7 +41,7 @@ export default function Header() {
     return (
         <div id="header-render">
             {modal}
-            {console.log(user)}
+            {/* {console.log(user)} */}
             <header className="Header">
                 <div className="Header_title">
                     <img className="Logo" src="/img/logo.png" alt="" />

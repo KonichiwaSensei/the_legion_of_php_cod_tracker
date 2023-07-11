@@ -8,7 +8,7 @@
 @section('content')
 
 <div id="root">
-  <h1>Not to be seen </h1>
+  <h1>Loading...</h1>
 </div>
 
 @endsection
