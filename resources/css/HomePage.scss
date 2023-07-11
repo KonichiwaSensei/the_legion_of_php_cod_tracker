@@ -63,35 +63,32 @@ $link_hilight: #2F6A75;
             }
         }
 
-        .home_page_login_section {
-            display: flex;
-            justify-content: center;
-            // margin-bottom: 30px;
+        // .home_page_login_section {
+        //     display: flex;
+        //     justify-content: center;
+        //     // margin-bottom: 30px;
 
 
-            div {
+            // div {
 
-                .login-div-opens-modal {
-                    border-radius: 10px;
-                    // font-size: 20px;
-                    color: $font_colour2;
-                    background-color: $background_colour_of_elements2;
-                    box-shadow: 2px 3px 10px black;
-                    transition: color .5s ease-in-out, box-shadow .3s ease-in-out;
-                    cursor: pointer;
-                    padding: 10px;
+            //     .login-div-opens-modal {
+            //         border-radius: 10px;
+            //         // font-size: 20px;
+            //         color: $font_colour2;
+            //         background-color: $background_colour_of_elements2;
+            //         box-shadow: 2px 3px 10px black;
+            //         transition: color .5s ease-in-out, box-shadow .3s ease-in-out;
+            //         cursor: pointer;
+            //         padding: 10px;
 
-                    &:hover,
-                    &:active {
-                        color: $link_hilight;
-                        box-shadow: 0 0 10px #2F6A75;
-                    }
-                }
-            }
-
-
-
-        }
+            //         &:hover,
+            //         &:active {
+            //             color: $link_hilight;
+            //             box-shadow: 0 0 10px #2F6A75;
+            //         }
+            //     }
+            // }
+        // }
     }
 
     .home_page_trackers {

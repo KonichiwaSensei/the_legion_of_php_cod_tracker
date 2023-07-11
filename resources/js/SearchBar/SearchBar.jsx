@@ -14,10 +14,11 @@ const SearchBar = () => {
     <div className="search_bar">
       <input
         type="text"
+        className='search_input'
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button className="search_button" onClick={handleSearch}>Search</button>
     </div>
   );
 };
