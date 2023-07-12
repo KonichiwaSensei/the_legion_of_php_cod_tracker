@@ -36,7 +36,7 @@ const ModalLogin = ({ closeModal }) => {
       // then replace local token with DB token
       let localProfileToken = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).token : null
       const { data: tokenresponse } = await axios.post('/api/token-set', { token: localProfileToken })
-      console.log(tokenresponse);
+      // console.log(tokenresponse);
       localStorage.setItem("profile_token", JSON.stringify(tokenresponse))
 
       dispatch({
