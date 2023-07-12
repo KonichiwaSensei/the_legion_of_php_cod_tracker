@@ -83,7 +83,7 @@ export default function Header() {
                                     const response = await axios.post(
                                         "/logout"
                                     );
-                                    console.log(response);
+                                    // console.log(response);
 
                                     dispatch({
                                         type: "user/set",
@@ -151,7 +151,7 @@ export default function Header() {
                                             const response = await axios.post(
                                                 "/logout"
                                             );
-                                            console.log(response);
+                                            // console.log(response);
 
                                             dispatch({
                                                 type: "user/set",
