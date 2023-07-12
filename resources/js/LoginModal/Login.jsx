@@ -35,7 +35,7 @@ const ModalLogin = ({ closeModal }) => {
       // **BELOW IS THE CHECK IF LOGGED IN USER ALREADY EXISTS WITH HIS TOKEN THAT DOESN'T MATCH localStorage TOKEN
       // **IF SO OVERWRITE NEWLY GENERATED TOKEN IN localStorage WITH TOKEN SAVED IN DB
       // axios call to check for logged in user and try finding a profile for them... don't know if necessary
-      // const userIdResponse = await axios.get('/api/user-id', { withCredentials: true }); // 401 error... idk anymore
+      const userIdResponse = await axios.get('/api/user-id', { withCredentials: true }); // 401 error... idk anymore
       // const userId = userIdResponse.data;
 
       // axios call to get profile tokens with profiles
