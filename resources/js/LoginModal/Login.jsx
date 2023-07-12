@@ -32,32 +32,12 @@ const ModalLogin = ({ closeModal }) => {
       })
       // console.log(response)
 
-      // **BELOW IS THE CHECK IF LOGGED IN USER ALREADY EXISTS WITH HIS TOKEN THAT DOESN'T MATCH localStorage TOKEN
-      // **IF SO OVERWRITE NEWLY GENERATED TOKEN IN localStorage WITH TOKEN SAVED IN DB
-      // axios call to check for logged in user and try finding a profile for them... don't know if necessary
-      const userIdResponse = await axios.get('/api/user-id', { withCredentials: true }); // 401 error... idk anymore
-      // const userId = userIdResponse.data;
-
-      // axios call to get profile tokens with profiles
-      const profileTokens = await axios.get(`/api/profiletokens`)
-
-      // getting profile token id from localStorage
+      // getting profile token id from localStorage, checking on backend if user with a token exists
+      // then replace local token with DB token
       let localProfileToken = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).token : null
-      let localProfileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null
-
-      // need to figure out how to get the user_id from the request?
-      profileTokens.data.forEach(profileToken => {
-        
-        if (localProfileTokenId ? remoteProfileTokenId === localProfileTokenId : null) {
-          let remoteProfileTokenId = profileToken.id
-          let remoteProfileToken = profileToken.token
-          let remoteUserId = profileToken.profile.user_id  
-          // console.log("user_id: " + remoteUserId + " + token_id: " + remoteProfileTokenId + " + token: " + remoteProfileToken + " <- remote | local-> " + localProfileTokenId + " " + localProfileToken );
-        } else {
-          // localStorage.getItem("profile_token").token = remoteProfileToken
-          // dunno if this works but don't have condition for getting user id from Fortify/Sanctum due to 401 error as seen above
-        }
-      });
+      const { data: tokenresponse } = await axios.post('/api/token-set', { token: localProfileToken })
+      console.log(tokenresponse);
+      localStorage.setItem("profile_token", JSON.stringify(tokenresponse))
 
       dispatch({
         type: 'user/set',
