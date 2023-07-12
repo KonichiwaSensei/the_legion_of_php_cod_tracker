@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import GunClass from './GunClass'
 import axios from 'axios'
 
+// Main returing component for the TrackerPage
 export default function GunDisplay() {
 
     const [weaponsClasses, setWeaponClasses] = useState([]);
 
+    // used to get all info necessary to display components with ALL info of weapons
     const loadWeapons = async () => {
         // Request with Axios:
         try {
@@ -17,14 +19,15 @@ export default function GunDisplay() {
             console.log(error);
         }
     }
-
+    
+    // On page load: loadWeapons
     useEffect(() => {
         loadWeapons()
-        // console.log(weapons.name);
     }, [])
 
     return (
         <>
+        {/* // 1. data being sent from GunDisplay.jsx api/weapons mapped into GunClass.jsx passing className and weaponClass */}
             {
                 weaponsClasses
                     ?
@@ -32,7 +35,7 @@ export default function GunDisplay() {
                         < div className='gun_trackers' >
                             {
                                 weaponsClasses.map((weaponClass) => {
-                                    return <GunClass key={weaponClass.id} classname={weaponClass.name} weaponClass={weaponClass}/>
+                                    return <GunClass key={weaponClass.id} className={weaponClass.name} weaponClass={weaponClass} />
                                 })
                             }
                         </div >
@@ -45,3 +48,4 @@ export default function GunDisplay() {
 }
 
 
+// Written by: Matt
