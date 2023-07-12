@@ -15,6 +15,12 @@ $modal_background_color: rgba(25, 25, 25, 0.593);
   background-color: $modal_background_color;
   animation-name: slideIn;
   animation-duration: 0.5s;
+
+  &_closing {
+    background-color: $modal_background_color;
+    animation-name: slideOut;
+    animation-duration: 0.5s;
+  }
 }
 
 @keyframes slideIn {
@@ -24,6 +30,16 @@ $modal_background_color: rgba(25, 25, 25, 0.593);
 
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
   }
 }
 
@@ -80,13 +96,14 @@ $modal_background_color: rgba(25, 25, 25, 0.593);
 
 .login-button:hover,
 .register-button:hover {
-  box-shadow: inset 110px 0 0 0 $link_hilight;
+  box-shadow: inset 120px 0 0 0 $link_hilight;
   color: $font_colour;
 
 }
 
 /* Input Fields */
 .modal_input_field {
+  font-family: BlackOpsOne;
   padding: 10px;
   width: 100%;
   border: 1px solid $font_colour;
