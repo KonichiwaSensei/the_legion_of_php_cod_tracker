@@ -31,7 +31,7 @@ export default function OrionTracker() {
     //    and the challenge_complete value from challenge_weapon table is "true"
     const mastery_temp = profileData ? profileData.filter(data => (data.challenge_weapon.challenge.is_mastery) && (data.challenge_complete)) : null;
     // console.log(mastery_temp);
-    setPercentage(Math.round((mastery_temp.length * 100) / 153));
+    setPercentage(Math.min(Math.round((mastery_temp.length * 100) / 153), 100));
   }, [profileData])
 
   // useEffect for displaying confetti when percentage is 100%
