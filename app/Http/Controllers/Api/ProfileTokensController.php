@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Profile;
 use App\Models\ProfileToken;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileTokensController extends Controller
 {
@@ -38,11 +39,10 @@ class ProfileTokensController extends Controller
 
         if ($personalProfileToken) {
             $isInDB = ProfileToken::find($personalProfileToken);
-            
+
             if ($isInDB) {
                 return $isInDB;
-            } 
-
+            }
         } else {
             $personalProfileToken = $this->generate();
             $newToken = new ProfileToken;
@@ -57,7 +57,46 @@ class ProfileTokensController extends Controller
 
             return $newToken;
         }
-        
+
         return null;
+    }
+
+    public function token_set(Request $request)
+    {
+        $tokenLocal = $request->input('token');
+        
+        // $tokenOfUser = ProfileToken::orderBy('id')->with("profile");
+        $profile = Profile::where('user_id', Auth::id())->with("profileToken")->orderBy('id')->first();
+
+        // dd($profile);
+
+        $findingObsoleteToken = ProfileToken::where("token", $tokenLocal)->with("profile")->first();
+
+        // dd($findingObsoleteToken);
+
+        if ($profile && $profile->profileToken) {
+            if ($findingObsoleteToken && $profile->profileToken->id !== $findingObsoleteToken->id) {
+                $findingObsoleteToken->profile->delete();
+                $findingObsoleteToken->delete();
+            }
+            return [
+                "id" => $profile->profileToken->id,
+                "token" => $profile->profileToken->token
+            ];
+        } else {
+            if ($findingObsoleteToken && $findingObsoleteToken->profile) {
+                $findingObsoleteToken->profile->user_id = Auth::id();
+                $findingObsoleteToken->profile->save();
+                return [
+                    "id" => $findingObsoleteToken->id,
+                    "token" => $findingObsoleteToken->token
+                ];
+            } else {
+                return [
+                    "id" => $findingObsoleteToken->id,
+                    "token" => $findingObsoleteToken->token
+                ];
+            }
+        }
     }
 }

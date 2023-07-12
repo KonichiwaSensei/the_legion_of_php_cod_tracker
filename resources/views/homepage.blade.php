@@ -2,7 +2,7 @@
 
 @section('head')
     @viteReactRefresh
-    @vite('resources/js/main')
+    @vite('resources/js/main.jsx')
 @endsection
 
 @section('content')
