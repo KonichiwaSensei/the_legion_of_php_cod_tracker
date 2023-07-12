@@ -19,8 +19,10 @@ export default function MasteryProgressBar(props) {
             break;
     }
 
+    const adjustedCompletion = Math.min(completion, 51); // Limit completion to a maximum of 51
+
     const fillerStyles = {
-        width: `${completion / 51 * 100}%`,
+        width: `${adjustedCompletion / 51 * 100}%`,
         backgroundImage: `url(${image})`
     };
 
@@ -28,7 +30,7 @@ export default function MasteryProgressBar(props) {
     return (
         <div className="mastery_progress_bar">
             <div className="mastery_progress_bar_filler" style={fillerStyles}></div>
-            <div className="mastery_tracker_label">{`${completion}/51`}</div>
+            <div className="mastery_tracker_label">{`${adjustedCompletion}/51`}</div>
         </div>
     );
 };

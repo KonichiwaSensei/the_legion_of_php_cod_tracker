@@ -29,6 +29,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->get('/user-id', function (Request $request) {
     return $request->user()->id;
 });
+Route::post('token-set', [ProfileTokensController::class, 'token_set']);
 
 // Profile Tokens API endpoints //
 // Get all profiletokens

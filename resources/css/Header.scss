@@ -1,11 +1,10 @@
 $background_colour_of_elements: #262626f9;
-$font_colour: #D9D9D9;
-$link_hilight: #2F6A75;
+$font_colour: #d9d9d9;
+$link_hilight: #2f6a75;
 
 #header-render {
     position: sticky;
     top: 0;
-
 }
 
 .Header {
@@ -22,25 +21,22 @@ $link_hilight: #2F6A75;
         align-items: center;
 
         text-shadow: 2px 3px 10px black;
-        
+
         // width: 500px;
         a {
             color: $font_colour;
-        font-size: 20px;
-        font-weight: 800;
-            transition: color .5s ease-in-out, text-shadow .3s ease-in-out;
+            font-size: 20px;
+            font-weight: 800;
+            transition: color 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
 
             &:hover,
             &:active {
                 text-shadow: 2px 3px 5px $font_colour;
                 color: $link_hilight;
-    
             }
         }
-        
 
         .Logo {
-
             width: 75px;
             height: 75px;
             // background: #F5F6F7;
@@ -61,52 +57,58 @@ $link_hilight: #2F6A75;
                 text-decoration: none;
                 text-shadow: 2px 3px 10px black;
 
-                transition: color .5s ease-in-out, text-shadow .3s ease-in-out;
+                transition: color 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
 
                 &:hover,
                 &:active {
                     text-shadow: 2px 3px 5px $font_colour;
                     color: $link_hilight;
+                }
+            }
+        }
+    }
 
+    .burger-menu-and-links {
+        align-self: center;
+        display: none;
+
+        .burger-menu {
+            display: none;
+            width: 75px;
+            cursor: pointer;
+
+            .burger-icon {
+                display: flex;
+
+                div {
+                    background: $font_colour;
                 }
             }
 
-        }
-    }
+            .burger-menu_links {
+                position: absolute;
+                top: 5%;
+                right: 20px;
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    color: $font_colour;
+                    font-size: 16px;
+                    padding: 3px;
+                    text-decoration: none;
+                    transition: color 0.5s ease-in-out,
+                        text-shadow 0.3s ease-in-out;
 
-    .burger-menu {
-        display: none;
-        width: 75px;
-        cursor: pointer;
-
-
-        .burger-icon {
-            display: flex;
-
-            div {
-                background: $font_colour;
-            }
-        }
-
-        .burger-menu_links {
-            // position: absolute;
-            // top: 50px;
-            // right: 100px;
-            a {
-                color: $font_colour;
-                font-size: 16px;
-                font-weight: 800;
-                padding: 3px;
-                text-decoration: none;
-                
-                
+                    &:hover,
+                    &:active {
+                        text-shadow: 2px 3px 5px $font_colour;
+                        color: $link_hilight;
+                    }
+                }
             }
         }
     }
-
-
 }
-
 
 @media screen and (max-width: 767px) {
     .Header {
@@ -114,6 +116,10 @@ $link_hilight: #2F6A75;
 
         .navigation {
             display: none;
+        }
+
+        .burger-menu-and-links{
+            display: flex;
         }
 
         div#burger-menu {
@@ -136,6 +142,5 @@ $link_hilight: #2F6A75;
             width: 80%;
             height: 4px;
         }
-
     }
 }
