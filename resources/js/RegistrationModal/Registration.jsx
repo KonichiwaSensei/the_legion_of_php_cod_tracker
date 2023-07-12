@@ -22,11 +22,11 @@ const ModalRegistration = ({ closeModal }) => {
     // };
 
     const handleRegistration = async () => {
-        console.log("Registering...");
-        console.log("Username:", username);
-        console.log("Email:", email);
-        console.log("Password:", password);
-        console.log("Password Confirmation:", passwordConfirmation);
+        // console.log("Registering...");
+        // console.log("Username:", username);
+        // console.log("Email:", email);
+        // console.log("Password:", password);
+        // console.log("Password Confirmation:", passwordConfirmation);
 
         let profileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null
         
@@ -39,7 +39,7 @@ const ModalRegistration = ({ closeModal }) => {
                 token_id: profileTokenId
             });
 
-            console.log(response);
+            // console.log(response);
 
             dispatch({
                 type: "user/set",
