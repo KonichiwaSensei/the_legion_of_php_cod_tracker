@@ -39,7 +39,7 @@ const ModalRegistration = ({ closeModal }) => {
                 token_id: profileTokenId
             });
 
-            console.log(response);
+            // console.log(response);
 
             dispatch({
                 type: "user/set",
