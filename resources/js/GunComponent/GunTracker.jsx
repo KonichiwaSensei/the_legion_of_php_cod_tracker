@@ -48,7 +48,7 @@ export default function GunTracker({ weapon }) {
             filteredWeaponResult &&
             filteredWeaponResult.includes(filteredSearchQuery)
         ) {
-            foundRef.current.scrollIntoView({ behavior: "smooth", inline: "start"})
+            foundRef.current.scrollIntoView({ behavior: "smooth", inline: "center"})
             changeDivStyleToMatchSearch()
         }
     }, []);
