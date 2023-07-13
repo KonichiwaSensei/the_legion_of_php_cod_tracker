@@ -9,7 +9,9 @@ import { useParams } from "react-router-dom";
 // 2. GunClass.jsx sorts based on weapon_class and returns GunTracker.jsx and weapon
 export default function GunTracker({ weapon }) {
     // Calling ProfileContext with values defined in App.jsx calling api/profilecompletion/{profile_id}
-    const { profileData } = useContext(ProfileContext);
+    const { profileData, checkProfileData } = useContext(ProfileContext);
+
+    // console.log(profileData);
 
     // used to get searchQuery from SearchBar.jsx using useParams
     const { searchQuery } = useParams();
@@ -23,7 +25,7 @@ export default function GunTracker({ weapon }) {
 
     // Setting background colour based on search:
     const [backgroundColour, setBackgroundColour] = useState('')
-    
+
     const changeDivStyleToMatchSearch = () => {
         // If in filtered searchQuery and weapon.name any character matches then:
         if (
@@ -40,6 +42,7 @@ export default function GunTracker({ weapon }) {
         background: backgroundColour
     };
 
+
     // useEffect for scrolling and filtering
     useEffect(() => {
         // If in filtered searchQuery and weapon.name any character matches then:
@@ -48,10 +51,16 @@ export default function GunTracker({ weapon }) {
             filteredWeaponResult &&
             filteredWeaponResult.includes(filteredSearchQuery)
         ) {
-            foundRef.current.scrollIntoView({ behavior: "smooth", inline: "center"})
+            foundRef.current.scrollIntoView({ behavior: "smooth", inline: "center" })
             changeDivStyleToMatchSearch()
         }
     }, []);
+
+
+    // FIX FOR RELOAD
+    useEffect(() => {
+
+    }, [profileData])
 
     // console.log(["GunTracker", profileData]);
 
@@ -61,52 +70,54 @@ export default function GunTracker({ weapon }) {
                 ref={foundRef}
                 style={{ position: "relative", top: "-240px" }}
             ></div>
-            { profileData ?
-            <>
-                <h3 className="gun_name" >
-                    {
-                        // If in filtered searchQuery and weapon.name any character matches then:
-                        filteredSearchQuery
-                            &&
-                            filteredWeaponResult 
-                            &&
-                            filteredWeaponResult.includes(filteredSearchQuery)
-                            ? weapon.name + "*"
-                            : weapon.name
-                    }
-                </h3>
-                <div className="gun_challenges">
-                    {/* // 3. GunTracker.jsx sorts by challenge and maps to GunBasicChallenge.jsx or GunMasteryChallenge.jsx... */}
-                    {/* // ...based on is_mastery value, and and passes challengeID and challengeMaxValue */}
-                    {weapon.challenges.map((challenge) => {
-                        return challenge.is_mastery === 0 ? (
-                            <GunBasicChallenge
-                                key={String(
-                                    "BASE" + weapon.id + "." + challenge.id
-                                )}
-                                weapon={weapon}
-                                challenge={challenge}
-                            />
-                        ) : null;
-                    })}
+            {
+                profileData
+                    ?
+                    <>
+                        <h3 className="gun_name" >
+                            {
+                                // If in filtered searchQuery and weapon.name any character matches then:
+                                filteredSearchQuery
+                                    &&
+                                    filteredWeaponResult
+                                    &&
+                                    filteredWeaponResult.includes(filteredSearchQuery)
+                                    ? weapon.name + "*"
+                                    : weapon.name
+                            }
+                        </h3>
+                        <div className="gun_challenges">
+                            {/* // 3. GunTracker.jsx sorts by challenge and maps to GunBasicChallenge.jsx or GunMasteryChallenge.jsx... */}
+                            {/* // ...based on is_mastery value, and and passes challengeID and challengeMaxValue */}
+                            {weapon.challenges.map((challenge) => {
+                                return challenge.is_mastery === 0 ? (
+                                    <GunBasicChallenge
+                                        key={String(
+                                            "BASE" + weapon.id + "." + challenge.id
+                                        )}
+                                        weapon={weapon}
+                                        challenge={challenge}
+                                    />
+                                ) : null;
+                            })}
 
-                    <div className="gun_challenge_divider"></div>
+                            <div className="gun_challenge_divider"></div>
 
-                    {weapon.challenges.map((challenge) => {
-                        return challenge.is_mastery === 1 ? (
-                            <GunMasteryChallenge
-                                key={String(
-                                    "MASTERY" + weapon.id + "." + challenge.id
-                                )}
-                                weapon={weapon}
-                                challenge={challenge}
-                            />
-                        ) : null;
-                    })}
-                </div>
-            </>
-            :
-                <span className="gun_name">Loading...</span>
+                            {weapon.challenges.map((challenge) => {
+                                return challenge.is_mastery === 1 ? (
+                                    <GunMasteryChallenge
+                                        key={String(
+                                            "MASTERY" + weapon.id + "." + challenge.id
+                                        )}
+                                        weapon={weapon}
+                                        challenge={challenge}
+                                    />
+                                ) : null;
+                            })}
+                        </div>
+                    </>
+                    :
+                    <span className="gun_name">Loading...</span>
             }
         </div>
     );

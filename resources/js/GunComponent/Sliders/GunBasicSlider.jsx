@@ -95,6 +95,21 @@ export default function GunBasicSlider({ challengeMaxValue, challengeId, weapon 
         }
     }, [send]);
 
+
+    // FIX FOR RELOAD
+    useEffect(() => {
+        
+        setSliderValue(userSavedChallenge ? userSavedChallenge.challenge_progress : 0)
+
+        if ((userSavedChallenge ? userSavedChallenge.challenge_progress : 0) == maxSliderValue) {
+            setChallengeDone(true);
+        } else {
+            setChallengeDone(false);
+            // console.log(sliderValue);
+        }
+        // console.log('boop');
+    },[profileData])
+
     return (
         <div className="gun_basic_slider_with_tracking">
             {challengeDone ? (

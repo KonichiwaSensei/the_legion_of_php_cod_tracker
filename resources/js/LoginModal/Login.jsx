@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import '../../css/Modal.scss';
 import axios from 'axios';
 import Context from '../Context';
+import { ProfileContext } from "../ProfileContext";
 
 const ModalLogin = ({ closeModal }) => {
   const { dispatch } = useContext(Context);
@@ -10,6 +11,9 @@ const ModalLogin = ({ closeModal }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isClosing, setIsClosing] = useState('')
+
+
+  const { checkProfileData, setProfileTokenId } = useContext(ProfileContext);
 
   // const handleOpenModal = () => {
   //   setIsOpen(true);
@@ -45,6 +49,11 @@ const ModalLogin = ({ closeModal }) => {
       });
 
       closeModal()
+
+      // FIX FOR RELOAD
+      response && setProfileTokenId(tokenresponse)
+
+
     } catch (error) {
       if (error.response) {
         // The request was made and the server responded with a status code
