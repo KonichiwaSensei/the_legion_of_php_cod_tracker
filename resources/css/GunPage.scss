@@ -459,25 +459,33 @@ $colour_highlight: #2F6A75;
 
 @media (max-width: 600px) {
 
+    .gun_basic_challenge_text{
+        font-size: 12px;
+    }
+    .gun_mastery_challenge_text{
+        font-size: 14px;
+    }
+
     .gun_basic_slider {
         // Slider Track Style
         &::-webkit-slider-runnable-track {
-            height: 8px;
+            height: 4px;
             
         }
 
         &::-moz-range-track {            
-            height: 8px;
+            height: 4px;
         }
 
         // Slider Thumb Style
         &::-webkit-slider-thumb {
-            height: 16px;
+            height: 12px;
             width: 16px;
+           
         }
 
         &::-moz-range-thumb {
-            height: 16px;
+            height: 12px;
             width: 16px;
         }
     }
@@ -486,22 +494,22 @@ $colour_highlight: #2F6A75;
         .gun_mastery_slider {
             // Slider Track Style
             &::-webkit-slider-runnable-track {
-                height: 8px;
+                height: 4px;
                 
             }
 
             &::-moz-range-track {
-                height: 8px;
+                height: 4px;
             }
 
             // Slider Thumb Style
             &::-webkit-slider-thumb {
-                height: 16px;
+                height: 12px;
                 width: 16px;
             }
 
             &::-moz-range-thumb {
-                height: 16px;
+                height: 12px;
                 width: 16px;
             }
 
