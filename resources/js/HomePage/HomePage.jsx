@@ -14,7 +14,7 @@ const HomePage = () => {
     <section className='home_page'>
       <div className="home_page_titles_and_login">
         <div className='home_page_titles'>
-          <h1 className='home_page_title1'>Call of Duty: MWII</h1>
+          <h1 className='home_page_title1'>Go To:</h1>
           <Link to='tracker' className='home_page_title2'>Camo Tracker</Link>
         </div>
         <div className='home_page_login_section'>

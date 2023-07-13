@@ -53,12 +53,15 @@ export default function GunTracker({ weapon }) {
         }
     }, []);
 
+    // console.log(["GunTracker", profileData]);
+
     return (
         <div className="gun_component" style={backgroundStyle}>
             <div
                 ref={foundRef}
                 style={{ position: "relative", top: "-240px" }}
             ></div>
+            { profileData ?
             <>
                 <h3 className="gun_name" >
                     {
@@ -102,9 +105,9 @@ export default function GunTracker({ weapon }) {
                     })}
                 </div>
             </>
-            {/* :
+            :
                 <span className="gun_name">Loading...</span>
-            } */}
+            }
         </div>
     );
 }
