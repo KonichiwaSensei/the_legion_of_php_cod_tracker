@@ -101,6 +101,22 @@ export default function GunMasterySlider({ challengeMaxValue, challengeId, weapo
         }
     }, [send]);
 
+    // FIX FOR RELOAD
+    useEffect(() => {
+        
+        setSliderValue(userSavedChallenge ? userSavedChallenge.challenge_progress : 0)
+
+        if ((userSavedChallenge ? userSavedChallenge.challenge_progress : 0) == maxSliderValue) {
+            setChallengeDone(true);
+        } else {
+            setChallengeDone(false);
+            // console.log(sliderValue);
+        }
+        // console.log('boop');
+    }, [profileData])
+
+    // if (weapon.id == 1) {console.log({ '0' : userSavedChallenge ? userSavedChallenge.challenge_progress : 'wtf', challengeMaxValue, challengeId, weapon, profileData, userSavedChallenge, sliderValue })}
+
     return (
         <div className="gun_mastery_slider_with_tracking">
             {challengeDone ? (

@@ -5,8 +5,6 @@ import GunMasterySlider from "../Sliders/GunMasterySlider"
 // 3. GunTracker.jsx sorts by challenge and maps to GunBasicChallenge.jsx or GunMasteryChallenge.jsx...
 // ...based on is_mastery value, and and passes challengeID and challengeMaxValue
 export default function GunMasteryChallenge({ challenge, weapon }) {
-
-    // console.log(challenge);
     
     return (
         <div className="gun_mastery_challenge">

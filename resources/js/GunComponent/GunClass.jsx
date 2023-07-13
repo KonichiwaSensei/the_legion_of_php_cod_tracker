@@ -11,10 +11,13 @@ import Sniper from '/resources/img/guns/sniperrifle.png'
 import Pistol from '/resources/img/guns/pistol.png'
 import Launcher from '/resources/img/guns/rocketlauncher.png'
 import Melee from '/resources/img/guns/melee.png'
+// import { useContext } from "react";
+// import { ProfileContext } from "../ProfileContext";
 
 // 1. data being sent from GunDisplay.jsx api/weapons mapped into GunClass.jsx passing className and weaponClass
 export default function GunClass({ className, weaponClass }) {
 
+    // const { profileData } = useContext(ProfileContext);
 
     // Making class name all lowercase and no spaces using regular expression
     const classnameLowerCaseNoSpace = className.replace(/\s+/g, '').toLowerCase();
