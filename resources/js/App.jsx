@@ -44,6 +44,8 @@ export default function App() {
         }
 
     }
+    
+    // console.log(["App", profileData]);
 
     const [context, dispatch] = useReducer(reducer, state);
 
@@ -109,8 +111,6 @@ export default function App() {
     useEffect(() => {
         loadUser()
         checkForToken()
-
-
         checkProfileData()
     }, [])
 

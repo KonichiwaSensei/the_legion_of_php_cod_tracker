@@ -35,7 +35,6 @@ $label_colour: #D9D9D9;
 
         .orion_tracker_title_percentage_left {
             // font-size: 30px;
-            font-weight: bold;
             color: $progressbar_background_colour;
             text-shadow: $label_colour 0 0 12px;
         }
@@ -44,7 +43,7 @@ $label_colour: #D9D9D9;
 
     .orion_progress_bar {
         display: grid;
-        grid-template-columns: 1fr 50px;
+        grid-template-columns: 1fr 65px;
         grid-template-rows: 20px;
         box-shadow: 0 0px 20px $font_colour2;
         height: 20px;
