@@ -48,6 +48,7 @@ const ModalRegistration = ({ closeModal }) => {
 
             closeModal();
         } catch (error) {
+            console.log(error)
             if (error.response) {
                 // The request was made and the server responded with a status code
                 console.log("Login failed with status:", error.response.status);
@@ -138,6 +139,7 @@ const ModalRegistration = ({ closeModal }) => {
                         >
                             Register
                         </button>
+                        {error && <p className="error-message">{error}</p>}
                     </form>
                 </div>
             </div>

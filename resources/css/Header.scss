@@ -87,8 +87,8 @@ $link_hilight: #2f6a75;
 
             .burger-menu_links {
                 position: absolute;
-                top: 5%;
-                right: 20px;
+                top: 3%; // burger link phone fix
+                right: 5px; // burger link  phone fix
                 a {
                     display: flex;
                     flex-direction: column;
@@ -96,8 +96,10 @@ $link_hilight: #2f6a75;
                     font-size: 16px;
                     padding: 3px;
                     text-decoration: none;
-                    transition: color 0.5s ease-in-out,
-                        text-shadow 0.3s ease-in-out;
+                    text-shadow: 2px 3px 10px black;
+                    transition: color 0.5s ease-in-out, text-shadow 0.3s ease-in-out;
+                    
+
 
                     &:hover,
                     &:active {

@@ -31,23 +31,22 @@ export default function OrionTracker() {
     //    and the challenge_complete value from challenge_weapon table is "true"
     const mastery_temp = profileData ? profileData.filter(data => (data.challenge_weapon.challenge.is_mastery) && (data.challenge_complete)) : null;
     // console.log(mastery_temp);
-    setPercentage(Math.min(Math.round((mastery_temp.length * 100) / 153), 100));
-  }, [profileData])
+    let percentageCounted = Math.min(Math.round((mastery_temp.length * 100) / 153), 100);
+    setPercentage(percentageCounted);
 
-  // useEffect for displaying confetti when percentage is 100%
-  useEffect(() => {
-    if (percentage === 100) {
+    if (percentageCounted >= 100) {
       setStyle('block')
+
       setTimeout(() => {
         setStyle('none')
       }, 5000)
     }
-  },[])
+  }, [profileData])
 
   return (
     <div className="orion_tracker">
       {
-        percentage === 100
+        percentage >= 100
           ?
           <div className="orion_tracker_title_div">
             <span className="orion_tracker_title">Orion Mastery Complete</span>
