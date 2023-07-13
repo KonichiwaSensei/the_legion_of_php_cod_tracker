@@ -45,7 +45,7 @@ export default function GunClass({ className, weaponClass }) {
         case "sniperrifles":
             image = Sniper;
             break;
-        case "handgun":
+        case "handguns":
             image = Pistol;
             break;
         case "launchers":

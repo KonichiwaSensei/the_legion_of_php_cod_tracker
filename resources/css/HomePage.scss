@@ -39,24 +39,25 @@ $link_hilight: #2F6A75;
 
             .home_page_title1 {
                 // font-size: 45px;
+                text-align: center;
                 text-shadow: 2px 3px 10px black;
                 margin-bottom: 0;
             }
 
             .home_page_title2 {
-                color: $font_colour;
+                color: $link_hilight;
                 // font-size: 40px;
                 font-weight: 800;
                 text-align: center;
                 text-decoration: none;
-                text-shadow: 2px 3px 10px black;
+                text-shadow: 2px 3px 10px $font_colour;
                 transition: color .5s ease-in-out, text-shadow .3s ease-in-out;
 
                 &:hover,
                 &:active {
                     // box-shadow: inset 100px 0 0 0 $font_colour;
                     color: $font_colour3;
-                    text-shadow: 0 0 10px $font_colour;
+                    text-shadow: 0 0 10px $link_hilight;
                 }
 
                 // margin-bottom: 10px;
@@ -119,11 +120,11 @@ $link_hilight: #2F6A75;
     }
 
     .home_page_title1 {
-        font-size: 45px;
+        font-size: 40px;
     }
 
     .home_page_title2 {
-        font-size: 40px;
+        font-size: 45px;
         margin-bottom: 10px;
     }
 
@@ -142,11 +143,11 @@ $link_hilight: #2F6A75;
     }
 
     .home_page_title1 {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .home_page_title2 {
-        font-size: 20px;
+        font-size: 25px;
         margin-bottom: 0px;
     }
 

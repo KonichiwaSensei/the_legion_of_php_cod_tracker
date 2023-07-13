@@ -48,10 +48,12 @@ export default function GunTracker({ weapon }) {
             filteredWeaponResult &&
             filteredWeaponResult.includes(filteredSearchQuery)
         ) {
-            foundRef.current.scrollIntoView({ behavior: "smooth", inline: "start"})
+            foundRef.current.scrollIntoView({ behavior: "smooth", inline: "center"})
             changeDivStyleToMatchSearch()
         }
     }, []);
+
+    // console.log(["GunTracker", profileData]);
 
     return (
         <div className="gun_component" style={backgroundStyle}>
@@ -59,6 +61,7 @@ export default function GunTracker({ weapon }) {
                 ref={foundRef}
                 style={{ position: "relative", top: "-240px" }}
             ></div>
+            { profileData ?
             <>
                 <h3 className="gun_name" >
                     {
@@ -102,9 +105,9 @@ export default function GunTracker({ weapon }) {
                     })}
                 </div>
             </>
-            {/* :
+            :
                 <span className="gun_name">Loading...</span>
-            } */}
+            }
         </div>
     );
 }
