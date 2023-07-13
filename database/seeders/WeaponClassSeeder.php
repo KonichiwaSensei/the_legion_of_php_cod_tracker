@@ -37,7 +37,7 @@ class WeaponClassSeeder extends Seeder
                 'name' => 'Sniper Rifles',
             ],
             [
-                'name' => 'Handgun',
+                'name' => 'Handguns',
             ],
             [
                 'name' => 'Launchers',

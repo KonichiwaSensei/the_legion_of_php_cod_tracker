@@ -192,7 +192,7 @@ $colour_highlight: #2F6A75;
             .gun_challenge_divider {
                 width: 90%;
                 height: 2px;
-                margin: 5px;
+                margin: 5px auto;
 
                 // Style:
                 background: $gun_component_divider_color;
@@ -256,27 +256,27 @@ $colour_highlight: #2F6A75;
 
             // Slider Track Style
             &::-webkit-slider-runnable-track {
-                height: 2px;
+                // height: 2px;
                 
                 @include webkit_and_moz_track;
             }
 
             &::-moz-range-track {            
-                height: 2px;
+                // height: 2px;
                 @include webkit_and_moz_track;
             }
 
             // Slider Thumb Style
             &::-webkit-slider-thumb {
-                height: 10px;
-                width: 10px;
+                // height: 10px;
+                // width: 10px;
                 margin-top: -3px;
                 @include webkit_and_moz_thumb;
             }
 
             &::-moz-range-thumb {
-                height: 10px;
-                width: 10px;
+                // height: 10px;
+                // width: 10px;
                 @include webkit_and_moz_thumb;
             }
 
@@ -324,27 +324,27 @@ $colour_highlight: #2F6A75;
 
             // Slider Track Style
             &::-webkit-slider-runnable-track {
-                height: 4px;
+                // height: 4px;
                 
                 @include webkit_and_moz_mastery_track;
             }
 
             &::-moz-range-track {
-                height: 4px;
+                // height: 4px;
                 @include webkit_and_moz_mastery_track;
             }
 
             // Slider Thumb Style
             &::-webkit-slider-thumb {
-                height: 10px;
-                width: 10px;
+                // height: 10px;
+                // width: 10px;
                 margin-top: -3px;
                 @include webkit_and_moz_mastery_thumb;
             }
 
             &::-moz-range-thumb {
-                height: 10px;
-                width: 10px;
+                // height: 10px;
+                // width: 10px;
                 @include webkit_and_moz_mastery_thumb;
             }
 
@@ -399,9 +399,115 @@ $colour_highlight: #2F6A75;
     // }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
     .gun_class_section_title{
         font-size: 20px;
         text-align: center;
     }
+
+    .gun_basic_slider {
+        // Slider Track Style
+        &::-webkit-slider-runnable-track {
+            height: 4px;
+            
+        }
+
+        &::-moz-range-track {            
+            height: 4px;
+        }
+
+        // Slider Thumb Style
+        &::-webkit-slider-thumb {
+            height: 10px;
+            width: 10px;
+        }
+
+        &::-moz-range-thumb {
+            height: 10px;
+            width: 10px;
+        }
+    }
+
+    .gun_mastery_slider_with_tracking {
+        .gun_mastery_slider {
+            // Slider Track Style
+            &::-webkit-slider-runnable-track {
+                height: 4px;
+                
+            }
+
+            &::-moz-range-track {
+                height: 4px;
+            }
+
+            // Slider Thumb Style
+            &::-webkit-slider-thumb {
+                height: 10px;
+                width: 10px;
+            }
+
+            &::-moz-range-thumb {
+                height: 10px;
+                width: 10px;
+            }
+
+        }
+    }
+
+
 }
+
+@media (max-width: 600px) {
+
+    .gun_basic_slider {
+        // Slider Track Style
+        &::-webkit-slider-runnable-track {
+            height: 8px;
+            
+        }
+
+        &::-moz-range-track {            
+            height: 8px;
+        }
+
+        // Slider Thumb Style
+        &::-webkit-slider-thumb {
+            height: 16px;
+            width: 16px;
+        }
+
+        &::-moz-range-thumb {
+            height: 16px;
+            width: 16px;
+        }
+    }
+
+    .gun_mastery_slider_with_tracking {
+        .gun_mastery_slider {
+            // Slider Track Style
+            &::-webkit-slider-runnable-track {
+                height: 8px;
+                
+            }
+
+            &::-moz-range-track {
+                height: 8px;
+            }
+
+            // Slider Thumb Style
+            &::-webkit-slider-thumb {
+                height: 16px;
+                width: 16px;
+            }
+
+            &::-moz-range-thumb {
+                height: 16px;
+                width: 16px;
+            }
+
+        }
+    }
+
+
+}
+
