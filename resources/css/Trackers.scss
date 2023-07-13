@@ -133,6 +133,8 @@ $label_colour: #D9D9D9;
             text-shadow: 2px 3px 5px black;
             -webkit-text-stroke: 1px $background_colour_of_elements;
             // -webkit-text-stroke
+            margin-bottom: 30px;
+            text-align: center;
         }
     }
 
@@ -216,10 +218,9 @@ $label_colour: #D9D9D9;
 
 @media (max-width: 700px) {
 
-
     .mastery_tracker_title {
         font-size: 16px;
-        text-align: center;
+
     }
 }
 
@@ -238,7 +239,7 @@ $label_colour: #D9D9D9;
 
     .mastery_tracker_title {
         font-size: 16px;
-        text-align: center;
+
     }
 }
 
@@ -256,8 +257,8 @@ $label_colour: #D9D9D9;
 
 
     .mastery_tracker_title {
-        font-size: 10px;
-        text-align: center;
+        font-size: 14px;
+
     }
 }
 
@@ -275,7 +276,7 @@ $label_colour: #D9D9D9;
 
 
     .mastery_tracker_title {
-        font-size: 10px;
-        text-align: center;
+        font-size: 14px;
+
     }
 }
