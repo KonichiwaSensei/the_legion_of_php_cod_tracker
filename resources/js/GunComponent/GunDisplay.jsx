@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { ProfileContext } from "../ProfileContext";
 import GunClass from './GunClass'
 import axios from 'axios'
 
@@ -6,6 +7,8 @@ import axios from 'axios'
 export default function GunDisplay() {
 
     const [weaponsClasses, setWeaponClasses] = useState([]);
+
+    const { profileData } = useContext(ProfileContext);
 
     // used to get all info necessary to display components with ALL info of weapons
     const loadWeapons = async () => {

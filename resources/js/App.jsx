@@ -23,15 +23,17 @@ export default function App() {
     // profileData being set in checkProfileData() by setProfileData
     // also being provided as value in ProfileContext
     const [profileData, setProfileData] = useState([])
+    const [profileTokenId, setProfileTokenId] = useState(null)
 
     // getting data from /api/profilecompletion/profileTokenID found by Token generated below
     // also being provided as value in ProfileContext
     const checkProfileData = async () => {
-        
+
         // Token can be found in localStorage and we want the ID of the generated Token
         let profileTokenId = localStorage.getItem("profile_token") ? JSON.parse(localStorage.getItem("profile_token")).id : null
-       
-        if (profileTokenId) {     
+
+        // console.log(profileTokenId);
+        if (profileTokenId) {
             // Request with Axios:
             try {
                 const response = await axios.get(`/api/profilecompletion/${profileTokenId}`)
@@ -44,7 +46,7 @@ export default function App() {
         }
 
     }
-    
+
     // console.log(["App", profileData]);
 
     const [context, dispatch] = useReducer(reducer, state);
@@ -75,29 +77,32 @@ export default function App() {
         }
     }
 
-        // TOKEN CHECK
-        const checkForToken = async () => {
-            // Step 1: Person gets to page, we check localStorage for profileToken
-            //      If no token, we make using generate() in backend ProfileTokensController
-            //      If yes we go to Step 2
-            // Step 2: If token exists, check with backend if it exists in database
-            // Step 3: If token exists in database, return data!
-            //      If not go to Step 1!
-            let profileToken = JSON.parse(localStorage.getItem("profile_token"))
-            // Request with Axios:
-            try {
-                const response = await axios.post('/api/profiletokens/validate', {
-                    profile_token_id: profileToken ? profileToken.id : null
-                })
-    
-                if (response.data) {
-                    localStorage.setItem("profile_token", JSON.stringify(response.data))
-                }
-    
-            } catch (error) {
-                console.log(error);
+    // TOKEN CHECK
+    const checkForToken = async () => {
+        // Step 1: Person gets to page, we check localStorage for profileToken
+        //      If no token, we make using generate() in backend ProfileTokensController
+        //      If yes we go to Step 2
+        // Step 2: If token exists, check with backend if it exists in database
+        // Step 3: If token exists in database, return data!
+        //      If not go to Step 1!
+        let profileToken = JSON.parse(localStorage.getItem("profile_token"))
+        // Request with Axios:
+        try {
+            const response = await axios.post('/api/profiletokens/validate', {
+                profile_token_id: profileToken ? profileToken.id : null
+            })
+
+            if (response.data) {
+                localStorage.setItem("profile_token", JSON.stringify(response.data))
             }
+
+            setProfileTokenId(response.data)
+            return response.data
+
+        } catch (error) {
+            console.log(error);
         }
+    }
 
     // whenever the user in the context changes to false
     // reload user information
@@ -109,28 +114,42 @@ export default function App() {
 
     // On page load: check for token and check profile data based on token_id
     useEffect(() => {
-        loadUser()
-        checkForToken()
-        checkProfileData()
+        (async () => {
+            loadUser()
+            const tokenResponse = await checkForToken()
+        })()
     }, [])
 
+    // FIX FOR RELOAD
+    useEffect(() => {
+        checkProfileData()
+    }, [profileTokenId])
+
+    // console.log(profileData, profileTokenId);
+
+    // useEffect(() => {console.log("refreshing app")},[profileData])
+
+
     return (
-         <> 
-         <Context.Provider value={ { context, dispatch } }>
-           {/* Setting ProfileContext Provider and giving values necessary for MasteryTracker.jsx and GunTracker.jsx */}
-            <ProfileContext.Provider value={{ profileData, setProfileData, checkProfileData }}>
-              <BrowserRouter>
-                <Header />
-                <Routes>
-                  <Route path='/' element={<HomePage />} />
-                  <Route path='tracker' element={<TrackerPage />} />
-                  <Route path='tracker/:searchQuery' element={<TrackerPage />} />
-                  <Route path='about-us' element={<AboutUs />} />
-                </Routes>
-              <Footer />
-            </BrowserRouter>
-          </ProfileContext.Provider>
-        </Context.Provider>
+        <>
+
+            <Context.Provider value={{ context, dispatch }}>
+                {/* Setting ProfileContext Provider and giving values necessary for MasteryTracker.jsx and GunTracker.jsx */}
+                <ProfileContext.Provider value={{ profileData, profileTokenId, setProfileData, checkProfileData, setProfileTokenId }}>
+                    <BrowserRouter>
+                        <Header />
+                        {/* {console.log(profileData)} */}
+
+                        <Routes>
+                            <Route path='/' element={<HomePage />} />
+                            <Route path='tracker' element={<TrackerPage />} />
+                            <Route path='tracker/:searchQuery' element={<TrackerPage />} />
+                            <Route path='about-us' element={<AboutUs />} />
+                        </Routes>
+                        <Footer />
+                    </BrowserRouter>
+                </ProfileContext.Provider>
+            </Context.Provider>
         </>
     )
 }
